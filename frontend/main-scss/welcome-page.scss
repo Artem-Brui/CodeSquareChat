@@ -1,0 +1,26 @@
+@use 'main' as *;
+
+body {
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: $background-lm;
+  padding: 1rem;
+  width: 10rem;
+  height: 15rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.5rem;
+  border: double black 0.1rem;
+}
+
+.logo {
+  border: inset grey 0.0625rem;
+  border-radius: 0.625rem;
+  margin: 0;
+}
