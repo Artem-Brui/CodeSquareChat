@@ -367,6 +367,9 @@ h2 {
   font-size: 1.5rem;
   padding: 1rem;
 }
+.conditions-paragraph .confirmation-buttons {
+  margin-bottom: 2rem;
+}
 .conditions-paragraph .confirmation-buttons button {
   background-color: #2452f5;
   padding: 1rem 2rem;
