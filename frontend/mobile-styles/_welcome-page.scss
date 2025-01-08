@@ -58,8 +58,17 @@
 }
 h2 {
   font-size: 5rem;
+  font-weight: bolder;
   color: $frame;
   margin: 0.5rem 0;
+  text-shadow: -0.075rem 0.075rem 0 mix(#fff, $frame, 94%),
+    0.05rem 0.5rem 0 mix(#fff, $frame, 60%),
+    0.1rem 0.1rem 0 mix(#fff, $frame, 62%),
+    0.15rem 0.15rem mix(#fff, $frame, 64%),
+    0.2rem 0.2rem 0 mix(#fff, $frame, 66%),
+    0.25rem 0.25rem 0 mix(#fff, $frame, 68%),
+    0.3rem 0.3rem 0 mix(#fff, $frame, 70%),
+    0.35rem 0.35rem 0 mix(#fff, $frame, 72%);
 }
 .login-form,
 .login-form-full {
@@ -71,11 +80,11 @@ h2 {
 }
 .login-form input {
   width: 100%;
-  background-color: $new-background-color;
+  background-color: $background-lm;
   font-size: 2.5rem;
   outline: none;
   border-bottom: 0.038rem solid #ccc;
-  padding: 0.3rem;
+  padding: 1rem;
 }
 
 .signup-button-div,
@@ -89,12 +98,15 @@ h2 {
   button {
     width: 90%;
     color: $text-col-lm;
-    background-color: $text-col-dm;
     padding: 0.5rem;
     cursor: pointer;
     font-size: 2.5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
     &:hover {
       opacity: 0.7;
+    }
+    &:active {
+      box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
     }
   }
   a {
@@ -106,9 +118,9 @@ h2 {
 }
 .faq {
   color: blue;
-  border: 0.2rem solid #ccc;
   padding: 0.8rem;
   margin: 3rem 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
   a {
     font-size: 1.5rem;
   }

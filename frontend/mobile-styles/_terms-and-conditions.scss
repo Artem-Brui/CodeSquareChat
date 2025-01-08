@@ -1,0 +1,63 @@
+@import "variables";
+
+.terms-conditions-title {
+  margin: 2rem 1rem;
+  padding: 0.5rem;
+  background-color: $text-col-dm;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: $text-col-lm;
+  }
+}
+.conditions-paragraph {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(210, 213, 221, 0.322);
+  .attention-condition {
+    color: $offline;
+    font-size: 2rem;
+    width: 90%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    margin: 2rem 0;
+    border-radius: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+    p {
+      font-weight: bolder;
+      color: $offline;
+      font-size: 2rem;
+    }
+  }
+  .conditions-sections {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(210, 213, 221, 0.322);
+    margin: 2rem 0;
+    p {
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
+  }
+  .confirmation-buttons {
+    button {
+      background-color: $button-chat-sent;
+      padding: 1rem 2rem;
+      margin: 1rem 2rem;
+      color: $text-col-dm;
+      font-size: 1.8rem;
+      font-weight: 600;
+
+      &:hover {
+        background-color: $button-hover;
+      }
+    }
+  }
+}

@@ -10,27 +10,25 @@
   font-family: "Quicksand", serif;
   font-weight: 400;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
 }
 
 body {
-  background-color: grey;
+  background-color: #f9fcff;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 1rem;
+  justify-content: center;
+  background-color: #f9fcff;
+  border-radius: 1.5rem;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 a {
@@ -245,7 +243,7 @@ a:visited {
   justify-content: center;
   display: flex;
   flex-direction: column;
-  background-color: #eaebeb;
+  background-color: #f9fcff;
 }
 .h1-title-welcome h1 {
   font-weight: bolder;
@@ -254,8 +252,10 @@ a:visited {
 
 h2 {
   font-size: 5rem;
+  font-weight: bolder;
   color: #a926f0;
   margin: 0.5rem 0;
+  text-shadow: -0.075rem 0.075rem 0 #faf2fe, 0.05rem 0.5rem 0 #dda8f9, 0.1rem 0.1rem 0 #deadf9, 0.15rem 0.15rem #e0b1fa, 0.2rem 0.2rem 0 #e2b5fa, 0.25rem 0.25rem 0 #e3bafa, 0.3rem 0.3rem 0 #e5befb, 0.35rem 0.35rem 0 #e7c2fb;
 }
 
 .login-form,
@@ -273,7 +273,7 @@ h2 {
   font-size: 2.5rem;
   outline: none;
   border-bottom: 0.038rem solid #ccc;
-  padding: 0.3rem;
+  padding: 1rem;
 }
 
 .signup-button-div,
@@ -289,14 +289,18 @@ h2 {
 .login-button-div button {
   width: 90%;
   color: #2b2b2c;
-  background-color: #eaebeb;
   padding: 0.5rem;
   cursor: pointer;
   font-size: 2.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
 }
 .signup-button-div button:hover,
 .login-button-div button:hover {
   opacity: 0.7;
+}
+.signup-button-div button:active,
+.login-button-div button:active {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 }
 .signup-button-div a,
 .login-button-div a {
@@ -308,10 +312,69 @@ h2 {
 
 .faq {
   color: blue;
-  border: 0.2rem solid #ccc;
   padding: 0.8rem;
   margin: 3rem 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
 }
 .faq a {
   font-size: 1.5rem;
+}
+
+.terms-conditions-title {
+  margin: 2rem 1rem;
+  padding: 0.5rem;
+  background-color: #eaebeb;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.terms-conditions-title h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2b2b2c;
+}
+
+.conditions-paragraph {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(210, 213, 221, 0.322);
+}
+.conditions-paragraph .attention-condition {
+  color: #ff0000;
+  font-size: 2rem;
+  width: 90%;
+  padding: 1rem 1.5rem;
+  display: flex;
+  margin: 2rem 0;
+  border-radius: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
+.conditions-paragraph .attention-condition p {
+  font-weight: bolder;
+  color: #ff0000;
+  font-size: 2rem;
+}
+.conditions-paragraph .conditions-sections {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(210, 213, 221, 0.322);
+  margin: 2rem 0;
+}
+.conditions-paragraph .conditions-sections p {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.conditions-paragraph .confirmation-buttons button {
+  background-color: #2452f5;
+  padding: 1rem 2rem;
+  margin: 1rem 2rem;
+  color: #eaebeb;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.conditions-paragraph .confirmation-buttons button:hover {
+  background-color: #1a40ca;
 }/*# sourceMappingURL=main.css.map */

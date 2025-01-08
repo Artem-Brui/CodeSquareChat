@@ -1,3 +1,4 @@
+@import "variables";
 //---------------------Universal Selector--------------
 :root {
   font-size: 62.5%;
@@ -9,26 +10,24 @@
   font-family: "Quicksand", serif;
   font-weight: 400;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
 }
 
 body {
-  background-color: grey;
+  background-color: $background-lm;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 1rem;
+  justify-content: center;
+  background-color: $background-lm;
+  border-radius: 1.5rem;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 a {
   text-decoration: none;
