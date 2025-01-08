@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: $background-lm;
+  background-color: $new-background-color;
   padding: 1.3rem;
   width: 9rem;
   height: 18rem;
@@ -31,48 +31,45 @@ body {
   height: 3.5rem;
   text-align: center;
 }
-
 h2 {
   font-size: 0.8rem;
   color: $frame;
   margin: 0.5rem 0;
 }
-
 .login-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
   gap: 0.5rem;
 }
-
 .login-form input {
   width: 100%;
+  background-color: $new-background-color;
   font-size: 0.5rem;
-  background-color: $background-lm;
   outline: none;
   border-bottom: 0.038rem solid #ccc;
-  padding: 0.2rem;
+  padding: 0.3rem;
 }
-
 button {
   width: 90%;
   color: $text-col-lm;
-  background-color: white;
-  border-radius: 0.1rem;
-  margin: 0.5rem;
+  background-color: $text-col-dm;
+  border-radius: 1rem;
+  padding: 0.25rem;
+  margin: 0.25rem;
   cursor: pointer;
   font-size: 0.4rem;
 }
-
 button:hover {
   opacity: 0.7;
 }
-
 a {
   font-size: 0.3rem;
   color: $text-col-lm;
   text-decoration: none;
+  font-family: 'Quicksand', serif;
 }
-
 .faq {
   color: blue;
 }
