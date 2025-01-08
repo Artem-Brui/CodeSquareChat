@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,27 +8,35 @@
   </head>
   <body>
     <div class="container">
-      <div class="logo">
-        <h1>Code <br/>SQUARE<br/>Chat
-        </h1>
+      <div
+        class="logo"
+        style="
+          --f: url(#glow-1);
+          --b: 2px;
+          --m: 1;
+          --l: #7bdff27f, #b2f7ef7f, #eff7f67f, #f7d6e07f, #f2b5d47f, #7bdff27f;
+        "
+      >
+        <div class="h1-title-welcome">
+          <h1>Code <br />SQUARE<br />Chat</h1>
+        </div>
       </div>
       <h2>Welcome!</h2>
-      <form class="login-form">
-        <input type="text" placeholder="username / E-Mail" required>
-        <input type="password" placeholder="Password" required>
-       
-
-      </form>
-       <button type="submit">Log In</button>
-        <a href="#" class="forgot-password">Forgot Password?</a>
-         <button type="sign-up">Sign Up</button>
-        <a href="#" class="signup-account">Don't have an Account?</a>
-         <a href="#" class="faq">FAQ</a>
-
-
-
-    </div>
-
+      <div class="login-form-full">
+        <form class="login-form">
+          <input type="text" placeholder="Username / E-Mail" required />
+          <input type="password" placeholder="Password" required />
+        </form>
+        <div class="login-button-div">
+          <button type="submit">Log In</button>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        <div class="signup-button-div">
+          <button type="sign-up">Sign Up</button>
+          <a href="#" class="signup-account">Don't have an Account?</a>
+        </div>
+      </div>
+      <div class="faq"><a href="#">FAQ</a></div>
     </div>
   </body>
 </html>
