@@ -1,24 +1,4 @@
-@use 'main' as *;
-body {
-  background-color: grey;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-color: $new-background-color;
-  padding: 1.3rem;
-  width: 9rem;
-  height: 18rem;
-  border-radius: 1rem;
-  box-shadow: 0 0.5rem 1.5rem;
-  border: double black 0.1rem;
-}
+// @use 'main' as *;
 .logo {
   display: flex;
   flex-direction: column;

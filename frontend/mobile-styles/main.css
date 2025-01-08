@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Belleza&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", serif;
+  font-weight: 400;
+  font-size: 0.625rem;
+  border: none;
+}
+
+body {
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1.3rem;
+  width: 9rem;
+  height: 18rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  border: double black 0.1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem; /* Adattato alle dimensioni del container */
+}
+
+.user-icon {
+  width: 1.5rem; /* Adattato per stare nel container */
+  height: 1.5rem;
+  background-color: lightgray;
+  border-radius: 50%;
+}
+
+.menu-icon {
+  width: 1.5rem; /* Adattato per stare nel container */
+  height: 1.5rem;
+  background-color: lightgray;
+  border-radius: 0.3rem;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem;
+  width: 100%;
+}
+
+.search-bar input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3rem;
+  border: 0.0625rem solid #ccc; /* 1px */
+  border-radius: 0.3rem;
+}
+
+.search-bar button {
+  padding: 0.3rem;
+  border: none;
+  background-color: #ccc;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0.5rem 0; /* Margine ridotto per adattarsi al container */
+  border-bottom: 0.0625rem solid #ccc; /* 1px */
+}
+
+.tabs span {
+  padding: 0.2rem 0.5rem; /* Adattato per il container */
+  cursor: pointer;
+}
+
+.active-tab {
+  font-weight: bold;
+  border-bottom: 0.1rem solid black; /* 1.6px */
+}
+
+.user-list {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem; /* Spazi ridotti per il container */
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar {
+  width: 1rem; /* 32px */
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.online {
+  background-color: #26f034;
+}
+
+.busy {
+  background-color: #ffed21;
+}
+
+.offline {
+  background-color: #ff0000;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.add-button {
+  background-color: purple;
+  color: white;
+  font-size: 1.5rem; /* Ridotto per il container */
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem; /* Adattato alle dimensioni del container */
+}
+
+.user-icon {
+  width: 1.5rem; /* Adattato per stare nel container */
+  height: 1.5rem;
+  background-color: lightgray;
+  border-radius: 50%;
+}
+
+.menu-icon {
+  width: 1.5rem; /* Adattato per stare nel container */
+  height: 1.5rem;
+  background-color: lightgray;
+  border-radius: 0.3rem;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem;
+  width: 100%;
+}
+
+.search-bar input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3rem;
+  border: 0.0625rem solid #ccc; /* 1px */
+  border-radius: 0.3rem;
+}
+
+.search-bar button {
+  padding: 0.3rem;
+  border: none;
+  background-color: #ccc;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: inset grey 0.0625rem;
+  border-radius: 0.625rem;
+  margin-bottom: 0.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 0.8rem;
+  color: #a926f0;
+  margin: 0.5rem 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.login-form input {
+  width: 100%;
+  background-color: #f9fcff;
+  font-size: 0.5rem;
+  outline: none;
+  border-bottom: 0.038rem solid #ccc;
+  padding: 0.3rem;
+}
+
+button {
+  width: 90%;
+  color: #2b2b2c;
+  background-color: #eaebeb;
+  border-radius: 1rem;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  cursor: pointer;
+  font-size: 0.4rem;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+a {
+  font-size: 0.3rem;
+  color: #2b2b2c;
+  text-decoration: none;
+  font-family: "Quicksand", serif;
+}
+
+.faq {
+  color: blue;
+}/*# sourceMappingURL=main.css.map */
