@@ -1,6 +1,8 @@
 .textbox {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 0.5rem;
   .chat-textbox {
     height: 6rem;
@@ -17,9 +19,13 @@
   }
   .send-text-btn,
   .add-file-btn {
+    box-shadow: $unclicked-button;
     .svg-icon {
       padding: 0.5rem;
       border-radius: 3rem;
+    }
+    &:active {
+      box-shadow: $clicked-button;
     }
   }
 }
