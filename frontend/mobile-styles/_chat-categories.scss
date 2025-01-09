@@ -1,0 +1,27 @@
+.chat-categories {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  border: $frame 0.3rem outset;
+  padding: 1rem;
+  box-shadow: $unclicked-button;
+  .chat-rooms,
+  .private-chats {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .category-name {
+    display: flex;
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: $frame;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+  }
+}

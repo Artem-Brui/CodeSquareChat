@@ -352,4 +352,31 @@ a:visited {
 .conditions-paragraph .confirmation-buttons button:active {
   background-color: #1a40ca;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+.chat-categories {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  border: #a926f0 0.3rem outset;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+}
+.chat-categories .chat-rooms,
+.chat-categories .private-chats {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.chat-categories .category-name {
+  display: flex;
+}
+.chat-categories .category-name h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #a926f0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }/*# sourceMappingURL=main.css.map */
