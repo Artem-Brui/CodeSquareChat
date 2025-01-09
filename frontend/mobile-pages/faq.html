@@ -8,3 +8,65 @@
   </head>
   <body></body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frequently asked questions (FAQ)</title>
+    <link rel="stylesheet" href="/frontend/mobile-styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="h1-faq">FAQ</h1>
+
+      <div class="faq-section">
+        <button class="faq-button">General Questions</button>
+        <div class="faq-content"></div>
+      </div>
+
+      <div class="faq-section">
+        <button class="faq-button">Account & Registration</button>
+        <div class="faq-content"></div>
+      </div>
+
+      <div class="faq-section">
+        <button class="faq-button">Messaging & Chats</button>
+        <div class="faq-content"></div>
+      </div>
+
+      <div class="faq-section">
+        <button class="faq-button">Rooms</button>
+        <div class="faq-content"></div>
+      </div>
+
+      <div class="faq-section">
+        <button class="faq-button">Privacy & Security</button>
+        <div class="faq-content"></div>
+      </div>
+
+      <div class="faq-section">
+        <button class="faq-button">Technical Issues</button>
+        <div class="faq-content"></div>
+      </div>
+
+      <div class="faq-section">
+        <button class="faq-button">Data Protection</button>
+        <div class="faq-content"></div>
+      </div>
+
+      <div class="faq-section">
+        <button class="faq-button">Feedback and Support</button>
+        <div class="faq-content"></div>
+      </div>
+    </div>
+    <!-- FAQ Toggle Script -->
+    <script>
+      document.querySelectorAll(".faq-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          button.parentElement.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
