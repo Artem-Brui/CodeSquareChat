@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>User Registration</title>
+        <link rel="stylesheet" href="../mobile-styles/main.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Page title -->
+            <h1>Create your user profile</h1>
+
+            <!-- Profile picture upload section -->
+            <div class="profile-picture-upload">
+                <div class="picture-placeholder">
+                    <!-- Placeholder text for the image formats -->
+                    <div class="picture-formats">jpg, png, jpeg</div>
+                </div>
+            </div>
+            <!-- Gender selection section -->
+            <div class="gender-selection">
+                <label>
+                    <input type="radio" name="gender" value="he" required />
+                    <div>He</div>
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="she" required />
+                    <div>She</div>
+                </label>
+            </div>
+
+            <!-- User information form -->
+            <form class="registration-form">
+                <div class="form-group">
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        class="input-field"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <input
+                        type="text"
+                        placeholder="Display Name"
+                        class="input-field"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <input
+                        type="email"
+                        placeholder="E-Mail"
+                        class="input-field"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <input
+                        type="password"
+                        placeholder="Password (10+ letters & numbers)"
+                        class="input-field"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <input
+                        type="date"
+                        placeholder="Birthdate (dd/mm/yyyy)"
+                        class="input-field"
+                        required
+                    />
+                </div>
+
+                <!-- Checkbox group for agreements -->
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" required />
+                        <div>Yes, I am 18 or older</div>
+                    </label>
+                    <label>
+                        <input type="checkbox" required />
+                        <div>No, I am under 18</div>
+                    </label>
+                    <label>
+                        <input type="checkbox" required />
+                        <div>General Terms and Conditions (GTC)...</div>
+                    </label>
+                </div>
+
+                <!-- Submit button -->
+                <div class="signin-button">
+                    <button type="submit" class="submit-button">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

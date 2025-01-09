@@ -1,0 +1,74 @@
+// ========================================
+// FAQ Title
+// ========================================
+.h1-faq {
+    text-align: center;
+    color: blue;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 400;
+    padding-top: 1rem;
+}
+
+// ========================================
+// FAQ Section
+// ========================================
+.faq-section {
+    border-bottom: 1px solid #e5e7eb;
+    margin: 1rem 0;
+    padding: 0;
+
+    // Expanded state for active FAQ
+    &.active .faq-button::after {
+        transform: rotate(-135deg);
+    }
+
+    &.active .faq-content {
+        max-height: 400px;
+        padding: 1rem 0;
+    }
+}
+
+// ========================================
+// FAQ Button
+// ========================================
+.faq-button {
+    width: 100%;
+    padding: 0.5rem 0;
+    background: none;
+    border: none;
+    text-align: left;
+    color: #374151;
+    font-size: 1.8rem;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+        color: #4a6fa5;
+    }
+
+    &::after {
+        content: '';
+        width: 0.8rem;
+        height: 0.8rem;
+        border-right: 2px solid #4a6fa5;
+        border-bottom: 2px solid #4a6fa5;
+        transform: rotate(45deg);
+        transition: transform 0.3s ease;
+        margin-left: 1rem;
+    }
+}
+
+// ========================================
+// FAQ Content
+// ========================================
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0;
+}
