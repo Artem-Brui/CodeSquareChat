@@ -1,67 +1,20 @@
 // @use 'main' as *;
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem; /* Adattato alle dimensioni del container */
-}
-
-.user-icon {
-  width: 1.5rem; /* Adattato per stare nel container */
-  height: 1.5rem;
-  background-color: lightgray;
-  border-radius: 50%;
-}
-
-.menu-icon {
-  width: 1.5rem; /* Adattato per stare nel container */
-  height: 1.5rem;
-  background-color: lightgray;
-  border-radius: 0.3rem;
-}
-
-.search-bar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.3rem;
-  width: 100%;
-}
-
-.search-bar input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.3rem;
-  border: 0.0625rem solid #ccc; /* 1px */
-  border-radius: 0.3rem;
-}
-
-.search-bar button {
-  padding: 0.3rem;
-  border: none;
-  background-color: #ccc;
-  border-radius: 0.3rem;
-  cursor: pointer;
-}
-
 .tabs {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin: 0.5rem 0; /* Margine ridotto per adattarsi al container */
-  border-bottom: 0.0625rem solid #ccc; /* 1px */
+  margin: 0.5rem 0;
+  border-bottom: 0.0625rem solid #ccc;
 }
 
 .tabs span {
-  padding: 0.2rem 0.5rem; /* Adattato per il container */
+  padding: 0.2rem 0.5rem;
   cursor: pointer;
 }
 
 .active-tab {
   font-weight: bold;
-  border-bottom: 0.1rem solid black; /* 1.6px */
+  border-bottom: 0.1rem solid black;
 }
 
 .user-list {
@@ -69,7 +22,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem; /* Spazi ridotti per il container */
+  gap: 0.3rem;
 }
 
 .user {
@@ -79,7 +32,7 @@
 }
 
 .avatar {
-  width: 1rem; /* 32px */
+  width: 1rem;
   height: 1rem;
   border-radius: 50%;
 }
@@ -96,14 +49,14 @@
   background-color: $offline;
 }
 
-.blue {
-  background-color: blue;
+.ai-user {
+  background-color: $frame2;
 }
 
 .add-button {
-  background-color: purple;
+  background-color: $frame;
   color: white;
-  font-size: 1.5rem; /* Ridotto per il container */
+  font-size: 1.5rem;
   width: 1.5rem;
   height: 1.5rem;
   border: none;

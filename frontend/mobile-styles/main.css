@@ -40,68 +40,22 @@ a:visited {
   color: inherit;
 }
 
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem; /* Adattato alle dimensioni del container */
-}
-
-.user-icon {
-  width: 1.5rem; /* Adattato per stare nel container */
-  height: 1.5rem;
-  background-color: lightgray;
-  border-radius: 50%;
-}
-
-.menu-icon {
-  width: 1.5rem; /* Adattato per stare nel container */
-  height: 1.5rem;
-  background-color: lightgray;
-  border-radius: 0.3rem;
-}
-
-.search-bar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.3rem;
-  width: 100%;
-}
-
-.search-bar input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.3rem;
-  border: 0.0625rem solid #ccc; /* 1px */
-  border-radius: 0.3rem;
-}
-
-.search-bar button {
-  padding: 0.3rem;
-  border: none;
-  background-color: #ccc;
-  border-radius: 0.3rem;
-  cursor: pointer;
-}
-
 .tabs {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin: 0.5rem 0; /* Margine ridotto per adattarsi al container */
-  border-bottom: 0.0625rem solid #ccc; /* 1px */
+  margin: 0.5rem 0;
+  border-bottom: 0.0625rem solid #ccc;
 }
 
 .tabs span {
-  padding: 0.2rem 0.5rem; /* Adattato per il container */
+  padding: 0.2rem 0.5rem;
   cursor: pointer;
 }
 
 .active-tab {
   font-weight: bold;
-  border-bottom: 0.1rem solid black; /* 1.6px */
+  border-bottom: 0.1rem solid black;
 }
 
 .user-list {
@@ -109,7 +63,7 @@ a:visited {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem; /* Spazi ridotti per il container */
+  gap: 0.3rem;
 }
 
 .user {
@@ -119,7 +73,7 @@ a:visited {
 }
 
 .avatar {
-  width: 1rem; /* 32px */
+  width: 1rem;
   height: 1rem;
   border-radius: 50%;
 }
@@ -136,14 +90,14 @@ a:visited {
   background-color: #ff0000;
 }
 
-.blue {
-  background-color: blue;
+.ai-user {
+  background-color: #66a4ea;
 }
 
 .add-button {
-  background-color: purple;
+  background-color: #a926f0;
   color: white;
-  font-size: 1.5rem; /* Ridotto per il container */
+  font-size: 1.5rem;
   width: 1.5rem;
   height: 1.5rem;
   border: none;
@@ -152,55 +106,70 @@ a:visited {
 }
 
 .header {
+  margin-top: 4rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
 }
-
-.user-info {
+.header .user-info {
   display: flex;
   align-items: center;
-  gap: 0.3rem; /* Adattato alle dimensioni del container */
+  justify-content: center;
+  gap: 3.5rem;
+  margin-bottom: 1rem;
 }
-
-.user-icon {
-  width: 1.5rem; /* Adattato per stare nel container */
-  height: 1.5rem;
-  background-color: lightgray;
+.header .user-info .username-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: -0.075rem 0.075rem 0 #faf2fe, 0.05rem 0.5rem 0 #dda8f9, 0.1rem 0.1rem 0 #7f74ec, 0.15rem 0.15rem #7e77ec;
+}
+.header .user-info .username-title h1 {
+  font-size: 3rem;
+  color: #a926f0;
+  font-weight: 900;
+}
+.header .user-info .svg-icon {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  padding: 1rem;
   border-radius: 50%;
 }
-
-.menu-icon {
-  width: 1.5rem; /* Adattato per stare nel container */
-  height: 1.5rem;
-  background-color: lightgray;
-  border-radius: 0.3rem;
+.header .user-info .svg-icon:active {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 }
-
-.search-bar {
+.header .search-bar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.3rem;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem;
   width: 100%;
 }
-
-.search-bar input {
+.header .search-bar .input-search-field input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.3rem;
-  border: 0.0625rem solid #ccc; /* 1px */
-  border-radius: 0.3rem;
+  justify-content: center;
+  padding: 1rem;
+  border: 0.3rem solid #ccc;
+  border-radius: 0.8rem;
+  width: 100%;
+  font-size: 2rem;
 }
-
-.search-bar button {
-  padding: 0.3rem;
-  border: none;
-  background-color: #ccc;
-  border-radius: 0.3rem;
-  cursor: pointer;
+.header .search-bar .button-search-field {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+}
+.header .search-bar .button-search-field .search-bar button {
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+}
+.header .search-bar .button-search-field:active {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+.header .search-bar .button-search-field .svg-icon {
+  padding: 0.5rem;
 }
 
 @property --a {
@@ -251,7 +220,7 @@ a:visited {
   text-shadow: -1px -1px 1px #efede3, 0px 1px 0 #ffffff, 0px 2px 0 #ffffff, 0px 3px 0 #faf8f8, 0px 4px 0 #fffdfd, 0px 5px 0 #ffffff;
 }
 
-h2 {
+.h2-welcome-title {
   font-size: 5rem;
   font-weight: bolder;
   color: #a926f0;
@@ -314,7 +283,7 @@ h2 {
 .faq {
   color: blue;
   padding: 0.8rem;
-  margin: 3rem 0;
+  margin: 4rem 0;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
 }
 .faq a {
@@ -325,7 +294,7 @@ h2 {
   margin: 2rem 1rem;
   padding: 0.5rem;
   background-color: #eaebeb;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
 }
 .terms-conditions-title h1 {
   text-align: center;
@@ -350,7 +319,7 @@ h2 {
   display: flex;
   margin: 2rem 0;
   border-radius: 1.5rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
 }
 .conditions-paragraph .attention-condition p {
   font-weight: bolder;
@@ -378,7 +347,9 @@ h2 {
   color: #eaebeb;
   font-size: 1.8rem;
   font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
 }
-.conditions-paragraph .confirmation-buttons button:hover {
+.conditions-paragraph .confirmation-buttons button:active {
   background-color: #1a40ca;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 }/*# sourceMappingURL=main.css.map */

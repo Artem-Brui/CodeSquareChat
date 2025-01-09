@@ -1,52 +1,72 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 
   .user-info {
     display: flex;
     align-items: center;
-    gap: 0.3rem; /* Adattato alle dimensioni del container */
+    justify-content: center;
+    gap: 3.5rem;
+    margin-bottom: 1rem;
+    .username-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: -0.075rem 0.075rem 0 mix(#fff, $frame, 94%),
+        0.05rem 0.5rem 0 mix(#fff, $frame, 60%),
+        0.1rem 0.1rem 0 mix($frame2, $frame, 62%),
+        0.15rem 0.15rem mix($frame2, $frame, 64%);
+      h1 {
+        font-size: 3rem;
+        color: $frame;
+        font-weight: 900;
+      }
+    }
+    .svg-icon {
+      box-shadow: $unclicked-button;
+      padding: 1rem;
+      border-radius: 50%;
+      &:active {
+        box-shadow: $clicked-button;
+      }
+    }
   }
-  
-  .user-icon {
-    width: 1.5rem; /* Adattato per stare nel container */
-    height: 1.5rem;
-    background-color: lightgray;
-    border-radius: 50%;
-  }
-  
-  .menu-icon {
-    width: 1.5rem; /* Adattato per stare nel container */
-    height: 1.5rem;
-    background-color: lightgray;
-    border-radius: 0.3rem;
-  }
-  
+
   .search-bar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.3rem;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem;
     width: 100%;
+    .input-search-field input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      border: 0.3rem solid #ccc;
+      border-radius: 0.8rem;
+      width: 100%;
+      font-size: 2rem;
+    }
+
+    .button-search-field {
+      box-shadow: $unclicked-button;
+      .search-bar button {
+        padding: 0.8rem;
+        border-radius: 0.8rem;
+      }
+      &:active {
+        box-shadow: $clicked-button;
+      }
+      .svg-icon {
+        padding: 0.5rem;
+      }
+    }
   }
-  
-  .search-bar input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.3rem;
-    border: 0.0625rem solid #ccc; /* 1px */
-    border-radius: 0.3rem;
-  }
-  
-  .search-bar button {
-    padding: 0.3rem;
-    border: none;
-    background-color: #ccc;
-    border-radius: 0.3rem;
-    cursor: pointer;
-  }
-  
+}
