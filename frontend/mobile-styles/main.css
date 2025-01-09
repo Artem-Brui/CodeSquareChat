@@ -362,19 +362,23 @@ a:visited {
   display: flex;
   flex-direction: row;
   gap: 0.3rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
 }
-.chat-categories .chat-rooms,
-.chat-categories .private-chats {
+.chat-categories .chat-rooms button,
+.chat-categories .private-chats button {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
   border: #a926f0 0.2rem outset;
+  background-color: rgba(210, 213, 221, 0.322);
+  height: 8rem;
+  width: 19rem;
 }
-.chat-categories .chat-rooms:active,
-.chat-categories .private-chats:active {
+.chat-categories .chat-rooms button:active,
+.chat-categories .private-chats button:active {
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 }
 .chat-categories .category-name {
@@ -400,7 +404,7 @@ a:visited {
 .textbox .chat-textbox {
   height: 6rem;
   width: 25rem;
-  border: 0.3rem solid #a926f0;
+  border: 0.4rem solid #a926f0;
 }
 .textbox .chat-textbox input {
   width: 100%;
