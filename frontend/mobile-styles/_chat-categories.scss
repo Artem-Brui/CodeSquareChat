@@ -1,15 +1,19 @@
 .chat-categories {
   display: flex;
   flex-direction: row;
-  gap: 4rem;
-  border: $frame 0.3rem outset;
-  padding: 1rem;
+  gap: 0.3rem;
   box-shadow: $unclicked-button;
   .chat-rooms,
   .private-chats {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    padding: 1rem;
+    box-shadow: $unclicked-button;
+    border: $frame 0.2rem outset;
+    &:active {
+      box-shadow: $clicked-button;
+    }
   }
   .category-name {
     display: flex;
