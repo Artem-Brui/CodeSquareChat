@@ -1,7 +1,7 @@
 // ========================================
 // Main Title 01
 // ========================================
-h1 {
+.create-h1 {
     text-align: center;
     margin-top: 4rem;
     color: $text-col-lm;
@@ -72,7 +72,7 @@ h1 {
     padding: 0.3rem;
 }
 
-input {
+.regis {
     font-size: 1.7rem;
     width: 95%;
     padding: 0.5rem;
@@ -87,7 +87,7 @@ input {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    max-width: 18.75rem;
+    max-width: 18rem;
     margin: 0 auto;
     padding: 1.25rem 0;
 }
@@ -110,6 +110,7 @@ input {
     appearance: none;
     cursor: pointer;
     position: relative;
+    padding: 1rem;
 }
 
 .checkbox-group input[type='checkbox']:checked {

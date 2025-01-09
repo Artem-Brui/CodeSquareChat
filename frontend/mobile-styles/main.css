@@ -106,12 +106,13 @@ a:visited {
 }
 
 .header {
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
+  height: auto;
 }
 .header .user-info {
   display: flex;
@@ -129,6 +130,10 @@ a:visited {
   font-size: 3rem;
   color: #a926f0;
   font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25%;
 }
 .header .user-info .svg-icon {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
@@ -144,7 +149,6 @@ a:visited {
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  margin: 2rem;
   width: 100%;
 }
 .header .search-bar .input-search-field input {
@@ -389,6 +393,20 @@ a:visited {
 .textbox {
   display: flex;
   flex-direction: row;
+  gap: 0.5rem;
+}
+.textbox .chat-textbox {
+  height: 6rem;
+  width: 25rem;
+  border: 0.3rem solid #a926f0;
+}
+.textbox .chat-textbox input {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  outline: none;
+  border: none;
 }
 .textbox .send-text-btn .svg-icon,
 .textbox .add-file-btn .svg-icon {
@@ -457,8 +475,7 @@ h1 {
   border-bottom: 0.038rem solid #ccc;
   padding: 0.3rem;
 }
-
-input {
+.form-group input {
   font-size: 1.7rem;
   width: 95%;
   padding: 0.5rem;
