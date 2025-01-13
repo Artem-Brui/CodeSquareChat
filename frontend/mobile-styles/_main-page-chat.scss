@@ -1,65 +1,93 @@
 // @use 'main' as *;
-.tabs {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: 0.5rem 0;
-  border-bottom: 0.0625rem solid #ccc;
-}
-
-.tabs span {
-  padding: 0.2rem 0.5rem;
-  cursor: pointer;
-}
-
-.active-tab {
-  font-weight: bold;
-  border-bottom: 0.1rem solid black;
-}
 
 .user-list {
-  flex: 1;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   gap: 0.3rem;
-}
-
-.user {
-  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-}
+  margin-bottom: 3rem;
+  .user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 90%;
+    border-radius: 2rem;
+    background-color: $paragraphs-background;
+    box-shadow: $unclicked-button;
+  }
 
-.avatar {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-}
+  .user-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 500;
+    width: 60%;
+  }
+  .avatar {
+    width: 12rem;
+    height: 12rem;
+    border: 0.7rem outset;
+    overflow: hidden;
+    margin: 1rem 0;
+    img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  }
+  .avatar-online {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border-color: $online;
+  }
 
-.online {
-  background-color: $online;
-}
+  .avatar-busy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border-color: $busy;
+  }
 
-.busy {
-  background-color: $busy;
-}
+  .avatar-offline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border-color: $offline;
+  }
 
-.offline {
-  background-color: $offline;
-}
-
-.ai-user {
-  background-color: $frame2;
+  .avatar-ai-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border-color: $frame2;
+  }
 }
 
 .add-button {
   background-color: $frame;
-  color: white;
-  font-size: 1.5rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 5rem;
+  height: 5rem;
   border: none;
   border-radius: 50%;
-  cursor: pointer;
+  box-shadow: $unclicked-button;
+  margin-top: auto;
+}
+
+.add-button:active {
+  box-shadow: $clicked-button;
 }
