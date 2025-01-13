@@ -118,8 +118,14 @@ a:visited {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
   margin-bottom: 1rem;
+}
+.header .user-info .user-icon {
+  margin-left: 3rem;
+}
+.header .user-info .menu-icon {
+  margin-right: 3rem;
 }
 .header .user-info .username-title {
   font-size: 1.5rem;
@@ -133,10 +139,9 @@ a:visited {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25%;
 }
 .header .user-info .svg-icon {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   padding: 1rem;
   border-radius: 50%;
 }
@@ -148,7 +153,7 @@ a:visited {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
   width: 100%;
 }
 .header .search-bar .input-search-field input {
@@ -163,7 +168,7 @@ a:visited {
   font-size: 2rem;
 }
 .header .search-bar .button-search-field {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .header .search-bar .button-search-field .search-bar button {
   padding: 0.8rem;
@@ -266,7 +271,7 @@ a:visited {
   padding: 0.5rem;
   cursor: pointer;
   font-size: 2.5rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .signup-button-div button:hover,
 .login-button-div button:hover {
@@ -298,7 +303,7 @@ a:visited {
   margin: 2rem 1rem;
   padding: 0.5rem;
   background-color: #eaebeb;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .terms-conditions-title h1 {
   text-align: center;
@@ -323,7 +328,7 @@ a:visited {
   display: flex;
   margin: 2rem 0;
   border-radius: 1.5rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .conditions-paragraph .attention-condition p {
   font-weight: bolder;
@@ -351,7 +356,7 @@ a:visited {
   color: #eaebeb;
   font-size: 1.8rem;
   font-weight: 600;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .conditions-paragraph .confirmation-buttons button:active {
   background-color: #1a40ca;
@@ -371,7 +376,7 @@ a:visited {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   border: #a926f0 0.2rem outset;
   background-color: rgba(210, 213, 221, 0.322);
   height: 8rem;
@@ -416,7 +421,7 @@ a:visited {
 }
 .textbox .send-text-btn,
 .textbox .add-file-btn {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .textbox .send-text-btn .svg-icon,
 .textbox .add-file-btn .svg-icon {
@@ -633,4 +638,43 @@ a:visited {
   overflow: hidden;
   transition: max-height 0.3s ease;
   padding: 0;
+}
+
+.burger-menu-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  width: 100%;
+}
+.burger-menu-mobile .burger-button {
+  margin: 1rem 2rem;
+  width: 80%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.burger-menu-mobile .burger-button:active {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+.burger-menu-mobile .burger-button .burger-menu-buttons {
+  flex-direction: row;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+.burger-menu-mobile .burger-button .burger-menu-buttons .burger-button-name {
+  margin: 0 2rem;
+}
+.burger-menu-mobile .burger-button .burger-menu-buttons .burger-button-name h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.burger-menu-mobile .burger-button .burger-menu-buttons .not-visible-icon {
+  display: none;
+}
+.burger-menu-mobile .svg-icon {
+  padding: 0.8rem;
+  background-color: #a926f0;
 }/*# sourceMappingURL=main.css.map */
