@@ -805,4 +805,69 @@ a:visited {
 }
 .user-profile-menu .dropdown-menu .dropdown-item .status-indicator.offline {
   background-color: #ff0000;
+}
+
+.other-user-profile-settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.other-user-profile-settings .other-user-profile-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  border: 0.7rem outset #a926f0;
+}
+.other-user-profile-settings .other-user-profile-img img {
+  width: 90%;
+}
+.other-user-profile-settings .other-user-menu {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.other-user-profile-settings .other-user-menu .other-user-setting-item {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+  background-color: rgba(210, 213, 221, 0.322);
+}
+.other-user-profile-settings .other-user-menu .other-user-setting-item .svg-icon {
+  background-color: #a926f0;
+  padding: 1rem;
+  margin: 1rem 2rem;
+}
+.other-user-profile-settings .other-user-menu .other-user-setting-item button {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  margin-right: 1rem;
+}
+.other-user-profile-settings .other-user-menu .other-user-setting-item button:active {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  background-color: #ff0000;
+}
+.other-user-profile-settings .other-user-menu .info-field {
+  font-size: 2.5rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+.other-user-profile-settings .warning-notes {
+  background-color: rgba(210, 213, 221, 0.322);
+  font-size: 2rem;
+  color: #ff0000;
+  margin: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  padding: 1rem;
+}
+.other-user-profile-settings .warning-notes b {
+  font-weight: 800;
 }/*# sourceMappingURL=main.css.map */
