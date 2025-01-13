@@ -98,7 +98,6 @@
     left: 0;
     border-radius: 0.5rem;
     z-index: 10;
-
     .dropdown-item {
       display: flex;
       align-items: center;
@@ -113,6 +112,9 @@
         padding: 1rem 0.5rem;
         font-size: 1.7rem;
         font-weight: 700;
+        color: $text-col-lm;
+        text-shadow: 1px 1px 10px rgb(255, 255, 255),
+          0 0 1rem rgb(255, 255, 255), 0 0 1rem rgb(255, 255, 255);
         &.online {
           background-color: $online;
         }
