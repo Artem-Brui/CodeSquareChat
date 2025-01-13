@@ -1,0 +1,39 @@
+.burger-menu-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  width: 100%;
+  .burger-button {
+    margin: 1rem 2rem;
+    width: 80%;
+    box-shadow: $unclicked-button;
+    &:active {
+      box-shadow: $clicked-button;
+    }
+    .burger-menu-buttons {
+      flex-direction: row;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      padding: 1rem;
+      width: 100%;
+      .burger-button-name {
+        margin: 0 2rem;
+        h2 {
+          font-size: 3rem;
+          font-weight: 700;
+        }
+      }
+      .not-visible-icon {
+        display: none;
+      }
+    }
+  }
+
+  .svg-icon {
+    padding: 0.8rem;
+    background-color: $frame;
+  }
+}
