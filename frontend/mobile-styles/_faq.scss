@@ -2,73 +2,75 @@
 // FAQ Title
 // ========================================
 .h1-faq {
-    text-align: center;
-    color: blue;
-    margin-bottom: 1rem;
-    font-size: 3rem;
-    font-weight: 400;
-    padding-top: 1rem;
+  text-align: center;
+  color: $text-col-lm;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 // ========================================
 // FAQ Section
 // ========================================
 .faq-section {
-    border-bottom: 1px solid #e5e7eb;
-    margin: 1rem 0;
-    padding: 0;
+  // border-bottom: 1px solid $text-col-lm;
+  border-top: 1px solid $text-col-lm;
+  padding: 1rem 0;
+  margin: 2rem;
 
-    // Expanded state for active FAQ
-    &.active .faq-button::after {
-        transform: rotate(-135deg);
-    }
+  &.active .faq-button::after {
+    transform: rotate(-135deg);
+  }
 
-    &.active .faq-content {
-        max-height: 400px;
-        padding: 1rem 0;
-    }
+  &.active .faq-content {
+    max-height: 500px;
+    padding-top: 1rem;
+  }
 }
 
 // ========================================
 // FAQ Button
 // ========================================
 .faq-button {
-    width: 100%;
-    padding: 0.5rem 0;
-    background: none;
-    border: none;
-    text-align: left;
-    color: #374151;
-    font-size: 1.8rem;
-    font-weight: 400;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    &:hover {
-        color: #4a6fa5;
-    }
-
-    &::after {
-        content: '';
-        width: 0.8rem;
-        height: 0.8rem;
-        border-right: 2px solid #4a6fa5;
-        border-bottom: 2px solid #4a6fa5;
-        transform: rotate(45deg);
-        transition: transform 0.3s ease;
-        margin-left: 1rem;
-    }
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  color: $button-hover;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  &::after {
+    content: "";
+    width: 0.8rem;
+    height: 0.8rem;
+    border-right: 2px solid $frame2;
+    border-bottom: 2px solid $frame2;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+  }
 }
 
 // ========================================
 // FAQ Content
 // ========================================
 .faq-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 1rem;
+  color: $text-col-lm;
+  font-size: 1.4rem;
+}
+
+// ========================================
+// Separator Styles
+// ========================================
+.faq-section + .faq-section {
+  border-top: 1px solid $text-col-dm;
 }
