@@ -1,105 +1,72 @@
 .rooms {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5.5rem;
-    margin-top: 4rem;
-    cursor: auto;
-}
-
-.room {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5.5rem;
+  margin-top: 4rem;
+  cursor: auto;
+  .room-green {
+    border: $online 0.5rem solid;
+  }
+  .room-red {
+    border: $offline 0.5rem solid;
+  }
+  .room-yellow {
+    border: $busy 0.5rem solid;
+  }
+  .room-blue {
+    border: $frame2 0.5rem solid;
+  }
+  .room {
     background-color: $background-lm;
-    border-radius: 0.625rem; // Rounded corners
+    border-radius: 0.625rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 10px 10px 51px 0px rgba(0,0,0,0.75);
-}
-
-.room-green {
-    border: 0.4rem solid $online;
-    box-shadow: 10px 10px 51px 0px rgba(0,0,0,0.75);
-
-    &:active {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Press effect
-    }
-}
-
-.room-yellow {
-    border: 0.4rem solid $busy;
-    box-shadow: 10px 10px 51px 0px rgba(0,0,0,0.75);
-
-    &:active {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Press effect
-    }
-}
-
-.room-red {
-    border: 0.4rem solid $offline;
-    box-shadow: 10px 10px 51px 0px rgba(0,0,0,0.75);
-
-    &:active {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Press effect
-    }
-}
-
-.room-blue {
-    border: 0.4rem solid blue;
     box-shadow: 10px 10px 51px 0px rgba(0, 0, 0, 0.75);
-
     &:active {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Press effect
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+    .room-image {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .room-placeholder img {
+        width: 12rem;
+        height: 8rem;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+    }
+    .room-name {
+      margin-top: 1rem;
+      font-size: 1.9rem;
+      font-weight: bold;
+      color: $text-col-lm;
+    }
+    .room-capacity {
+      font-size: 1.4rem;
+      color: $text-col-lm;
+      text-align: right;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
 }
-
-.room-image {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.room-placeholder img {
-    width: 12rem;
-    height: 8rem;
-    object-fit: cover;
-    border-radius: 0.5rem; // Slightly rounded corners for images
-}
-
-.room-name {
-    margin-top: 1rem;
-    font-size: 1.9rem;
-    font-weight: bold;
-    color: $text-col-lm;
-}
-
-.room-capacity {
-    font-size: 1.4rem;
-    color: $text-col-lm;
-    text-align: right;
-    text-style: italic;
-    width: 100%;
-    margin-top: 0.5rem;
-}
-
 .create-room-button {
-    background-color: purple; // Button color
-    width: 5rem;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%; // Fully round
-    margin-top: 12rem;
-    cursor: pointer;
-    box-shadow: 10px 10px 51px 0px rgba(0,0,0,0.75);
+  background-color: $frame;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-top: 12rem;
+  cursor: pointer;
+  box-shadow: $unclicked-button;
 
-
-    &:hover {
-        background-color: #9c27b0; // Slightly lighter on hover
-    }
-
-    &:active {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Press effect
-    }
+  &:active {
+    box-shadow: $clicked-button;
+  }
 }
