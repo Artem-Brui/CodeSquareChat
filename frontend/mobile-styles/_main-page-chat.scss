@@ -20,6 +20,9 @@
     border-radius: 2rem;
     background-color: $paragraphs-background;
     box-shadow: $unclicked-button;
+    &:active {
+      box-shadow: $clicked-button;
+    }
   }
 
   .user-name {

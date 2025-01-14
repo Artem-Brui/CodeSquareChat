@@ -23,9 +23,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 10px 10px 51px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: $unclicked-button;
     &:active {
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: $clicked-button;
     }
     .room-image {
       width: 100%;

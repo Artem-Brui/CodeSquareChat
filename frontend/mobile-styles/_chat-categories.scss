@@ -1,7 +1,9 @@
 .chat-categories {
   display: flex;
   flex-direction: row;
-  gap: 0.3rem;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
   .chat-rooms,
   .private-chats {
     button {
@@ -15,7 +17,7 @@
       border: $frame 0.2rem outset;
       background-color: $paragraphs-background;
       height: 8rem;
-      width: 19rem;
+      width: 18rem;
       &:active {
         box-shadow: $clicked-button;
       }
@@ -25,7 +27,7 @@
     display: flex;
 
     h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 800;
       color: $frame;
       text-align: center;

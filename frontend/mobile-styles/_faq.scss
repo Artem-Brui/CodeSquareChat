@@ -11,7 +11,6 @@
   font-size: 3.5rem;
   font-weight: 600;
 }
-
 // ========================================
 // FAQ Section
 // ========================================
@@ -20,17 +19,14 @@
   padding: 1rem 0;
   margin: 2rem;
   width: 80%;
-
   &.active .faq-button::after {
     transform: rotate(-135deg);
   }
-
   &.active .faq-content {
     max-height: 50rem;
     padding-top: 1rem;
   }
 }
-
 // ========================================
 // FAQ Button
 // ========================================
@@ -49,7 +45,16 @@
   align-items: center;
   padding: 0.8rem 1rem;
 }
-
+.faq-button::after {
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  border-right: 0.2rem solid $button-hover;
+  border-bottom: 0.2rem solid $button-hover;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-left: 1rem;
+}
 // ========================================
 // FAQ Content
 // ========================================

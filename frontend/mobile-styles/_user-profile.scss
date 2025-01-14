@@ -26,8 +26,6 @@
   }
   .add-button {
     background-color: transparent;
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,10 +35,11 @@
       justify-content: center;
       align-items: center;
       background-color: $frame;
-      width: 5rem;
+      width: 7rem;
       height: 5rem;
       border-radius: 50%;
       box-shadow: $unclicked-button;
+
       &:active {
         box-shadow: $clicked-button;
       }
@@ -103,18 +102,23 @@
       align-items: center;
       padding: 0.5rem 0;
       width: 100%;
-      margin: 0 0.4rem;
+      margin: 1rem 0.4rem;
 
       .status-indicator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         height: 100%;
-        border-radius: 50%;
         padding: 1rem 0.5rem;
+        margin: 0.5rem 0;
         font-size: 1.7rem;
-        font-weight: 700;
         color: $text-col-lm;
         text-shadow: 1px 1px 10px rgb(255, 255, 255),
           0 0 1rem rgb(255, 255, 255), 0 0 1rem rgb(255, 255, 255);
+        span {
+          font-weight: 900;
+        }
         &.online {
           background-color: $online;
         }
