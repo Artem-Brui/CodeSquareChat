@@ -3,9 +3,12 @@
 // ========================================
 .h1-faq {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: $text-col-lm;
   margin-bottom: 2rem;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 600;
 }
 
@@ -14,9 +17,10 @@
 // ========================================
 .faq-section {
   // border-bottom: 1px solid $text-col-lm;
-  border-top: 1px solid $text-col-lm;
+  border-top: 0.1rem solid $text-col-lm;
   padding: 1rem 0;
   margin: 2rem;
+  width: 80%;
 
   &.active .faq-button::after {
     transform: rotate(-135deg);

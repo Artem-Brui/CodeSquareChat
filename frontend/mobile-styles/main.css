@@ -610,16 +610,20 @@ a:visited {
 
 .h1-faq {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #2b2b2c;
   margin-bottom: 2rem;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 600;
 }
 
 .faq-section {
-  border-top: 1px solid #2b2b2c;
+  border-top: 0.1rem solid #2b2b2c;
   padding: 1rem 0;
   margin: 2rem;
+  width: 80%;
 }
 .faq-section.active .faq-button::after {
   transform: rotate(-135deg);
@@ -906,8 +910,19 @@ a:visited {
   margin-top: 4rem;
   cursor: auto;
 }
-
-.room {
+.rooms .room-green {
+  border: #26f034 0.5rem solid;
+}
+.rooms .room-red {
+  border: #ff0000 0.5rem solid;
+}
+.rooms .room-yellow {
+  border: #ffed21 0.5rem solid;
+}
+.rooms .room-blue {
+  border: #66a4ea 0.5rem solid;
+}
+.rooms .room {
   background-color: #f9fcff;
   border-radius: 0.625rem;
   padding: 1rem;
@@ -916,62 +931,29 @@ a:visited {
   align-items: center;
   box-shadow: 10px 10px 51px 0px rgba(0, 0, 0, 0.75);
 }
-
-.room-green {
-  border: 0.4rem solid #26f034;
-  box-shadow: 10px 10px 51px 0px rgba(0, 0, 0, 0.75);
-}
-.room-green:active {
+.rooms .room:active {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.room-yellow {
-  border: 0.4rem solid #ffed21;
-  box-shadow: 10px 10px 51px 0px rgba(0, 0, 0, 0.75);
-}
-.room-yellow:active {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.room-red {
-  border: 0.4rem solid #ff0000;
-  box-shadow: 10px 10px 51px 0px rgba(0, 0, 0, 0.75);
-}
-.room-red:active {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.room-blue {
-  border: 0.4rem solid #66a4ea;
-  box-shadow: 10px 10px 51px 0px rgba(0, 0, 0, 0.75);
-}
-.room-blue:active {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.room-image {
+.rooms .room .room-image {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.room-placeholder img {
+.rooms .room .room-image .room-placeholder img {
   width: 12rem;
   height: 8rem;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0.5rem;
 }
-
-.room-name {
+.rooms .room .room-name {
   margin-top: 1rem;
   font-size: 1.9rem;
   font-weight: bold;
   color: #2b2b2c;
 }
-
-.room-capacity {
+.rooms .room .room-capacity {
   font-size: 1.4rem;
   color: #2b2b2c;
   text-align: right;
@@ -989,10 +971,10 @@ a:visited {
   border-radius: 50%;
   margin-top: 12rem;
   cursor: pointer;
-  box-shadow: 10px 10px 51px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .create-room-button:active {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 }
 
 .private-chat-container {
