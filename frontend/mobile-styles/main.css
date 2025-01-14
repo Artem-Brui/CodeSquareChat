@@ -629,7 +629,7 @@ a:visited {
   transform: rotate(-135deg);
 }
 .faq-section.active .faq-content {
-  max-height: 500px;
+  max-height: 50rem;
   padding-top: 1rem;
 }
 
@@ -639,23 +639,14 @@ a:visited {
   border: none;
   text-align: left;
   color: #1a40ca;
-  font-size: 1.6rem;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 700;
   cursor: pointer;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 1rem;
-}
-.faq-button::after {
-  content: "";
-  width: 0.8rem;
-  height: 0.8rem;
-  border-right: 2px solid #66a4ea;
-  border-bottom: 2px solid #66a4ea;
-  transform: rotate(45deg);
-  transition: transform 0.3s ease;
 }
 
 .faq-content {
@@ -664,11 +655,10 @@ a:visited {
   transition: max-height 0.3s ease;
   padding: 0 1rem;
   color: #2b2b2c;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
-
-.faq-section + .faq-section {
-  border-top: 1px solid #eaebeb;
+.faq-content strong {
+  font-weight: 600;
 }
 
 .burger-menu-mobile {
@@ -1011,4 +1001,54 @@ a:visited {
 .private-chat-container .private-chat-header .private-chat-header-name h2 {
   font-size: 2.5rem;
   font-weight: 800;
+}
+.private-chat-container .private-chat-body .avatar {
+  width: 8rem;
+  height: 8rem;
+}
+.private-chat-container .private-chat-body .my-user {
+  width: 100%;
+  border: red solid 0.5rem;
+}
+.private-chat-container .private-chat-body .other-user {
+  width: 100%;
+}
+
+.room-card {
+  background-color: #f9fcff;
+  border-radius: 0.938rem;
+  width: 25%;
+  max-width: 320px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-upload img {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.room-name {
+  width: 100%;
+  margin: 0.1rem;
+  padding: 1rem;
+  font-size: 1.8rem;
+}
+
+#description {
+  width: 100%;
+  border: 1px solid #2b2b2c;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0.1rem;
+  padding: 1rem;
+  resize: none;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+
+.plus-add-users {
+  display: flex;
+  margin-top: 3rem;
+  font-size: 2rem;
 }/*# sourceMappingURL=main.css.map */
