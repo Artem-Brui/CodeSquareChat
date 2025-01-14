@@ -50,7 +50,7 @@ a:visited {
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
-  overflow-x: scroll;
+  overflow-y: scroll;
 }
 .user-list .user {
   display: flex;
