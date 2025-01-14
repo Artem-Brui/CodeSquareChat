@@ -3,19 +3,23 @@
 // ========================================
 .room-card {
   background-color: $background-lm;
-  border-radius: 0.938rem;
-  width: 25%;
-  max-width: 320px;
+  border-radius: 1rem;
+  width: 25rem;
 }
 
 // ========================================
 // Image Upload
 // ========================================
-.image-upload img {
-  width: 100%;
-  border-radius: 0.5rem;
-  box-shadow: $unclicked-button;
-  border: 0.6rem outset $frame2;
+.image-upload {
+  padding: 1rem;
+  .uploaded-image {
+    img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: $unclicked-button;
+      border: 0.8rem outset $frame2;
+    }
+  }
 }
 
 // ========================================
@@ -33,9 +37,8 @@
 // ========================================
 #description {
   width: 100%;
-  border: 0.1rem solid $text-col-lm;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0.1rem;
   padding: 1rem;
   resize: none;
@@ -53,45 +56,56 @@
   font-size: 2rem;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
-}
-.plus-icon {
-  background-color: $frame;
-  border-radius: 50%;
-  padding: 0.3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: $unclicked-button;
-}
-
-.add-users {
-  margin-left: 1rem;
-  font-weight: 600;
-}
-.confirmation-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5rem;
-    border-radius: 50%;
     box-shadow: $unclicked-button;
-    border: red solid 0.5rem;
+    background-color: $frame;
+    border-radius: 50%;
     &:active {
       box-shadow: $clicked-button;
     }
-    .svg-icon {
-      margin-top: 4rem;
-      padding: 0.5rem;
+  }
+  .plus-icon {
+    background-color: $frame;
+    border-radius: 50%;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $unclicked-button;
+  }
+
+  .add-users {
+    margin-left: 1rem;
+    font-weight: 600;
+  }
+}
+
+.confirmation-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .svg-icon {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $frame;
+    border-radius: 50%;
+    button {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $frame;
       border-radius: 50%;
+      padding: 0.5rem;
+      box-shadow: $unclicked-button;
+      background-color: $frame;
+
+      &:active {
+        box-shadow: $clicked-button;
+      }
     }
   }
 }

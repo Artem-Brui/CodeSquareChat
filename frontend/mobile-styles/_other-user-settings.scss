@@ -47,7 +47,9 @@
       justify-content: center;
       display: flex;
       align-items: center;
-      font-weight: 700;
+      span {
+        font-weight: 700;
+      }
     }
   }
   .warning-notes {

@@ -67,7 +67,6 @@
     .button-search-field {
       box-shadow: $unclicked-button;
       .search-bar button {
-        padding: 0.8rem;
         border-radius: 0.8rem;
       }
       &:active {
@@ -75,6 +74,7 @@
       }
       .svg-icon {
         padding: 0.5rem;
+        background-color: $background-lm;
       }
     }
   }
