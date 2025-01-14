@@ -61,7 +61,7 @@ a:visited {
   width: 90%;
   border-radius: 2rem;
   background-color: rgba(210, 213, 221, 0.322);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .user-list .user-name {
   display: flex;
@@ -123,12 +123,12 @@ a:visited {
   height: 5rem;
   border: none;
   border-radius: 50%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   margin-top: auto;
 }
 
 .add-button:active {
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .header {
@@ -167,12 +167,12 @@ a:visited {
   justify-content: center;
 }
 .header .user-info .svg-icon {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   padding: 1rem;
   border-radius: 50%;
 }
 .header .user-info .svg-icon:active {
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 .header .search-bar {
   display: flex;
@@ -194,14 +194,14 @@ a:visited {
   font-size: 2rem;
 }
 .header .search-bar .button-search-field {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .header .search-bar .button-search-field .search-bar button {
   padding: 0.8rem;
   border-radius: 0.8rem;
 }
 .header .search-bar .button-search-field:active {
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 .header .search-bar .button-search-field .svg-icon {
   padding: 0.5rem;
@@ -297,7 +297,7 @@ a:visited {
   padding: 0.5rem;
   cursor: pointer;
   font-size: 2.5rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .signup-button-div button:hover,
 .login-button-div button:hover {
@@ -305,7 +305,7 @@ a:visited {
 }
 .signup-button-div button:active,
 .login-button-div button:active {
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 .signup-button-div a,
 .login-button-div a {
@@ -319,7 +319,7 @@ a:visited {
   color: blue;
   padding: 0.8rem;
   margin: 4rem 0;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .faq a {
   font-size: 1.5rem;
@@ -329,7 +329,7 @@ a:visited {
   margin: 2rem 1rem;
   padding: 0.5rem;
   background-color: #eaebeb;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .terms-conditions-title h1 {
   text-align: center;
@@ -354,7 +354,7 @@ a:visited {
   display: flex;
   margin: 2rem 0;
   border-radius: 1.5rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .conditions-paragraph .attention-condition p {
   font-weight: bolder;
@@ -382,11 +382,11 @@ a:visited {
   color: #eaebeb;
   font-size: 1.8rem;
   font-weight: 600;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .conditions-paragraph .confirmation-buttons button:active {
   background-color: #1a40ca;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .chat-categories {
@@ -402,7 +402,7 @@ a:visited {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   border: #a926f0 0.2rem outset;
   background-color: rgba(210, 213, 221, 0.322);
   height: 8rem;
@@ -410,7 +410,7 @@ a:visited {
 }
 .chat-categories .chat-rooms button:active,
 .chat-categories .private-chats button:active {
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 .chat-categories .category-name {
   display: flex;
@@ -447,7 +447,7 @@ a:visited {
 }
 .textbox .send-text-btn,
 .textbox .add-file-btn {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .textbox .send-text-btn .svg-icon,
 .textbox .add-file-btn .svg-icon {
@@ -456,7 +456,7 @@ a:visited {
 }
 .textbox .send-text-btn:active,
 .textbox .add-file-btn:active {
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .create-h1 {
@@ -672,10 +672,10 @@ a:visited {
 .burger-menu-mobile .burger-button {
   margin: 1rem 2rem;
   width: 80%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .burger-menu-mobile .burger-button:active {
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 .burger-menu-mobile .burger-button .burger-menu-buttons {
   flex-direction: row;
@@ -744,10 +744,10 @@ a:visited {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .user-profile-menu .add-button .svg-icon:active {
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 .user-profile-menu .user-profile-settings {
   display: flex;
@@ -771,10 +771,10 @@ a:visited {
   justify-content: start;
   align-items: center;
   padding: 1rem 0.2rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .user-profile-menu .user-profile-settings .user-settings-field button:active {
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 .user-profile-menu .user-profile-settings .user-settings-field .user-profile-settings-title {
   display: flex;
@@ -866,11 +866,11 @@ a:visited {
   margin: 1rem 2rem;
 }
 .other-user-profile-settings .other-user-menu .other-user-setting-item button {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   margin-right: 1rem;
 }
 .other-user-profile-settings .other-user-menu .other-user-setting-item button:active {
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   background-color: #ff0000;
 }
 .other-user-profile-settings .other-user-menu .info-field {
@@ -885,7 +885,7 @@ a:visited {
   font-size: 2rem;
   color: #ff0000;
   margin: 1rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   padding: 1rem;
   width: 90%;
 }
@@ -961,10 +961,10 @@ a:visited {
   border-radius: 50%;
   margin-top: 12rem;
   cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .create-room-button:active {
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .private-chat-container {
@@ -982,7 +982,7 @@ a:visited {
   align-items: center;
   width: 90%;
   background-color: rgba(210, 213, 221, 0.322);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   padding: 1rem 0;
 }
 .private-chat-container .private-chat-header .private-chat-header-image {
@@ -1019,13 +1019,13 @@ a:visited {
   border-radius: 0.938rem;
   width: 25%;
   max-width: 320px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .image-upload img {
   width: 100%;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border: 0.6rem outset #66a4ea;
 }
 
 .room-name {
@@ -1037,7 +1037,7 @@ a:visited {
 
 #description {
   width: 100%;
-  border: 1px solid #2b2b2c;
+  border: 0.1rem solid #2b2b2c;
   font-size: 1.8rem;
   font-weight: 600;
   margin: 0.1rem;
@@ -1047,8 +1047,54 @@ a:visited {
   border-radius: 1rem;
 }
 
-.plus-add-users {
+.plus-add-users,
+.add-image-button {
   display: flex;
   margin-top: 3rem;
   font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.plus-icon {
+  background-color: #a926f0;
+  border-radius: 50%;
+  padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.add-users {
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+.confirmation-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.confirmation-button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border: red solid 0.5rem;
+}
+.confirmation-button button:active {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.confirmation-button button .svg-icon {
+  margin-top: 4rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a926f0;
+  border-radius: 50%;
 }/*# sourceMappingURL=main.css.map */
