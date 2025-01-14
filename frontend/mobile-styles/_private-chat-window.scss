@@ -35,4 +35,17 @@
       }
     }
   }
+  .private-chat-body {
+    .avatar {
+      width: 8rem;
+      height: 8rem;
+    }
+    .my-user {
+      width: 100%;
+      border: red solid 0.5rem;
+    }
+    .other-user {
+      width: 100%;
+    }
+  }
 }

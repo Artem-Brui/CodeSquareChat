@@ -16,7 +16,6 @@
 // FAQ Section
 // ========================================
 .faq-section {
-  // border-bottom: 1px solid $text-col-lm;
   border-top: 0.1rem solid $text-col-lm;
   padding: 1rem 0;
   margin: 2rem;
@@ -27,7 +26,7 @@
   }
 
   &.active .faq-content {
-    max-height: 500px;
+    max-height: 50rem;
     padding-top: 1rem;
   }
 }
@@ -41,23 +40,14 @@
   border: none;
   text-align: left;
   color: $button-hover;
-  font-size: 1.6rem;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 700;
   cursor: pointer;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 1rem;
-  &::after {
-    content: "";
-    width: 0.8rem;
-    height: 0.8rem;
-    border-right: 2px solid $frame2;
-    border-bottom: 2px solid $frame2;
-    transform: rotate(45deg);
-    transition: transform 0.3s ease;
-  }
 }
 
 // ========================================
@@ -69,12 +59,8 @@
   transition: max-height 0.3s ease;
   padding: 0 1rem;
   color: $text-col-lm;
-  font-size: 1.4rem;
-}
-
-// ========================================
-// Separator Styles
-// ========================================
-.faq-section + .faq-section {
-  border-top: 1px solid $text-col-dm;
+  font-size: 1.6rem;
+  strong {
+    font-weight: 600;
+  }
 }

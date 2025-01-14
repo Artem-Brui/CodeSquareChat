@@ -1,0 +1,61 @@
+// ========================================
+// Room Card
+// ========================================
+.room-card {
+    background-color: $background-lm;
+    border-radius: 0.938rem;
+    width: 25%;
+    max-width: 320px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+// ========================================
+// Image Upload
+// ========================================
+.image-upload img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+// ========================================
+// Room Name
+// ========================================
+.room-name {
+    width: 100%;
+    margin: 0.1rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+}
+
+// ========================================
+// Description Textbox
+// ========================================
+#description {
+    width: 100%;
+    border: 1px solid $text-col-lm;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0.1rem;
+    padding: 1rem;
+    resize: none;
+    box-sizing: border-box;
+    border-radius: 1rem;
+}
+
+// ========================================
+// Add Users Section
+// ========================================
+.plus-add-users {
+    display: flex;
+    margin-top: 3rem;
+    font-size: 2rem;
+}
+
+.plus-icon {
+    // Add specific styles if needed
+}
+
+.add-users {
+    // Add specific styles if needed
+}
