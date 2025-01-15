@@ -80,6 +80,10 @@ a:visited {
   border: 0.7rem outset;
   overflow: hidden;
   margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 .user-list .avatar img {
   display: flex;
@@ -92,31 +96,15 @@ a:visited {
   overflow: hidden;
 }
 .user-list .avatar-online {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
   border-color: #26f034;
 }
 .user-list .avatar-busy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
   border-color: #ffed21;
 }
 .user-list .avatar-offline {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
   border-color: #ff0000;
 }
 .user-list .avatar-ai-user {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
   border-color: #66a4ea;
 }
 
