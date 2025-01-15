@@ -976,8 +976,10 @@ a:visited {
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
-.private-chat-container {
+.private-chat-container,
+.room-chat-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #f9fcff;
@@ -985,42 +987,128 @@ a:visited {
   width: 100%;
   margin-top: 0.5rem;
 }
-.private-chat-container .private-chat-header {
+.private-chat-container .private-chat-header,
+.private-chat-container .room-chat-header,
+.room-chat-container .private-chat-header,
+.room-chat-container .room-chat-header {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 90%;
   background-color: rgba(210, 213, 221, 0.322);
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  padding: 1rem 0;
+  padding: 1rem 3rem;
 }
-.private-chat-container .private-chat-header .private-chat-header-image {
+.private-chat-container .private-chat-header:active,
+.private-chat-container .room-chat-header:active,
+.room-chat-container .private-chat-header:active,
+.room-chat-container .room-chat-header:active {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.private-chat-container .private-chat-header .private-chat-header-image,
+.private-chat-container .private-chat-header .room-chat-header-image,
+.private-chat-container .room-chat-header .private-chat-header-image,
+.private-chat-container .room-chat-header .room-chat-header-image,
+.room-chat-container .private-chat-header .private-chat-header-image,
+.room-chat-container .private-chat-header .room-chat-header-image,
+.room-chat-container .room-chat-header .private-chat-header-image,
+.room-chat-container .room-chat-header .room-chat-header-image {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 10rem;
   height: 10rem;
-  border-radius: 50%;
   border: 0.7rem outset #a926f0;
   margin-right: 2rem;
 }
-.private-chat-container .private-chat-header .private-chat-header-image img {
+.private-chat-container .private-chat-header .private-chat-header-image img,
+.private-chat-container .private-chat-header .room-chat-header-image img,
+.private-chat-container .room-chat-header .private-chat-header-image img,
+.private-chat-container .room-chat-header .room-chat-header-image img,
+.room-chat-container .private-chat-header .private-chat-header-image img,
+.room-chat-container .private-chat-header .room-chat-header-image img,
+.room-chat-container .room-chat-header .private-chat-header-image img,
+.room-chat-container .room-chat-header .room-chat-header-image img {
   width: 90%;
 }
-.private-chat-container .private-chat-header .private-chat-header-name h2 {
+.private-chat-container .private-chat-header .private-chat-header-image,
+.private-chat-container .room-chat-header .private-chat-header-image,
+.room-chat-container .private-chat-header .private-chat-header-image,
+.room-chat-container .room-chat-header .private-chat-header-image {
+  border-radius: 50%;
+}
+.private-chat-container .private-chat-header .private-chat-header-name h2,
+.private-chat-container .room-chat-header .private-chat-header-name h2,
+.room-chat-container .private-chat-header .private-chat-header-name h2,
+.room-chat-container .room-chat-header .private-chat-header-name h2 {
   font-size: 2.5rem;
   font-weight: 800;
 }
-.private-chat-container .private-chat-body .avatar {
+.private-chat-container .private-chat-body,
+.room-chat-container .private-chat-body {
+  width: 90%;
+  margin-top: 2rem;
+}
+.private-chat-container .private-chat-body .avatar,
+.room-chat-container .private-chat-body .avatar {
   width: 8rem;
   height: 8rem;
 }
-.private-chat-container .private-chat-body .my-user {
-  width: 100%;
-  border: red solid 0.5rem;
+.private-chat-container .private-chat-body .my-user,
+.private-chat-container .private-chat-body .other-user,
+.room-chat-container .private-chat-body .my-user,
+.room-chat-container .private-chat-body .other-user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.private-chat-container .private-chat-body .other-user {
+.private-chat-container .private-chat-body .my-user .bubble,
+.private-chat-container .private-chat-body .other-user .bubble,
+.room-chat-container .private-chat-body .my-user .bubble,
+.room-chat-container .private-chat-body .other-user .bubble {
+  color: #eaebeb;
+  font-weight: 500;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem;
+  position: relative;
+  max-width: 70rem;
+}
+.private-chat-container .private-chat-body .my-user .bubble p,
+.private-chat-container .private-chat-body .other-user .bubble p,
+.room-chat-container .private-chat-body .my-user .bubble p,
+.room-chat-container .private-chat-body .other-user .bubble p {
+  font-size: 1.5rem;
+  padding: 0.7rem;
+}
+.private-chat-container .private-chat-body .my-user img,
+.private-chat-container .private-chat-body .other-user img,
+.room-chat-container .private-chat-body .my-user img,
+.room-chat-container .private-chat-body .other-user img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+.private-chat-container .private-chat-body .my-user,
+.room-chat-container .private-chat-body .my-user {
   width: 100%;
+  justify-content: flex-end;
+}
+.private-chat-container .private-chat-body .my-user .bubble,
+.room-chat-container .private-chat-body .my-user .bubble {
+  border-radius: 2rem 2rem 0.3rem 2rem;
+  background-color: #2452f5;
+}
+.private-chat-container .private-chat-body .other-user,
+.room-chat-container .private-chat-body .other-user {
+  width: 100%;
+  justify-content: flex-start;
+}
+.private-chat-container .private-chat-body .other-user .bubble,
+.room-chat-container .private-chat-body .other-user .bubble {
+  border-radius: 2rem 2rem 2rem 0.3rem;
+  background-color: #dc4ae9;
 }
 
 .room-card {
