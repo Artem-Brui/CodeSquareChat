@@ -1018,7 +1018,6 @@ a:visited {
   align-items: center;
   width: 10rem;
   height: 10rem;
-  border: 0.7rem outset #a926f0;
   margin-right: 2rem;
 }
 .private-chat-container .private-chat-header .private-chat-header-image img,
@@ -1031,11 +1030,18 @@ a:visited {
 .room-chat-container .room-chat-header .room-chat-header-image img {
   width: 90%;
 }
+.private-chat-container .private-chat-header .room-chat-header-image,
+.private-chat-container .room-chat-header .room-chat-header-image,
+.room-chat-container .private-chat-header .room-chat-header-image,
+.room-chat-container .room-chat-header .room-chat-header-image {
+  border: 0.7rem outset #a926f0;
+}
 .private-chat-container .private-chat-header .private-chat-header-image,
 .private-chat-container .room-chat-header .private-chat-header-image,
 .room-chat-container .private-chat-header .private-chat-header-image,
 .room-chat-container .room-chat-header .private-chat-header-image {
   border-radius: 50%;
+  border: 0.7rem outset #26f034;
 }
 .private-chat-container .private-chat-header .private-chat-header-name h2,
 .private-chat-container .room-chat-header .private-chat-header-name h2,

@@ -29,14 +29,17 @@
       align-items: center;
       width: 10rem;
       height: 10rem;
-      border: 0.7rem outset $frame;
       margin-right: 2rem;
       img {
         width: 90%;
       }
     }
+    .room-chat-header-image {
+      border: 0.7rem outset $frame;
+    }
     .private-chat-header-image {
       border-radius: 50%;
+      border: 0.7rem outset $online; // color will change according to the status of the other user
     }
 
     .private-chat-header-name {
