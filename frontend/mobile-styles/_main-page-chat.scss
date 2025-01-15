@@ -39,6 +39,10 @@
     border: 0.7rem outset;
     overflow: hidden;
     margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
     img {
       display: flex;
       justify-content: center;
@@ -50,34 +54,18 @@
     }
   }
   .avatar-online {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
     border-color: $online;
   }
 
   .avatar-busy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
     border-color: $busy;
   }
 
   .avatar-offline {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
     border-color: $offline;
   }
 
   .avatar-ai-user {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
     border-color: $frame2;
   }
 }
