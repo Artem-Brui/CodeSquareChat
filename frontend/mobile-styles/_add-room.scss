@@ -1,0 +1,118 @@
+// ========================================
+// Room Card
+// ========================================
+.room-card {
+  background-color: $background-lm;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+// ========================================
+// Image Upload
+// ========================================
+.image-upload {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .uploaded-image {
+    img {
+      width: 20rem;
+      border-radius: 1rem;
+      box-shadow: $unclicked-button;
+      border: 0.8rem outset $frame2;
+    }
+  }
+}
+.form-group {
+  width: 80%;
+  margin-top: 3rem;
+  // ========================================
+  // Room Name
+  // ========================================
+  .room-name {
+    width: 100%;
+    margin: 0.1rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+  }
+
+  // ========================================
+  // Description Textbox
+  // ========================================
+  #description {
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0.1rem;
+    padding: 1rem;
+    resize: none;
+    box-sizing: border-box;
+    border-radius: 1rem;
+  }
+}
+
+// ========================================
+// Add Users Section
+// ========================================
+.plus-add-users,
+.add-image-button {
+  display: flex;
+  margin-top: 3rem;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $unclicked-button;
+    background-color: $frame;
+    border-radius: 50%;
+    &:active {
+      box-shadow: $clicked-button;
+    }
+  }
+  .plus-icon {
+    background-color: $frame;
+    border-radius: 50%;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $unclicked-button;
+  }
+
+  .add-users {
+    margin-left: 1rem;
+    font-weight: 600;
+  }
+}
+
+.confirmation-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .svg-icon {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $frame;
+    border-radius: 50%;
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      padding: 0.5rem;
+      box-shadow: $unclicked-button;
+      background-color: $frame;
+
+      &:active {
+        box-shadow: $clicked-button;
+      }
+    }
+  }
+}

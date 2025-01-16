@@ -1,0 +1,101 @@
+@import "variables";
+// ! This page includes the styles for the room chat window
+.private-chat-container,
+.room-chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $background-lm;
+  color: $text-col-lm;
+  width: 100%;
+  margin-top: 0.5rem;
+  .private-chat-header,
+  .room-chat-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background-color: $paragraphs-background;
+    box-shadow: $unclicked-button;
+    padding: 1rem 3rem;
+    &:active {
+      box-shadow: $clicked-button;
+    }
+    .private-chat-header-image,
+    .room-chat-header-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10rem;
+      height: 10rem;
+      margin-right: 2rem;
+      img {
+        width: 90%;
+      }
+    }
+    .room-chat-header-image {
+      border: 0.7rem outset $frame;
+    }
+    .private-chat-header-image {
+      border-radius: 50%;
+      border: 0.7rem outset $online; // color will change according to the status of the other user
+    }
+
+    .private-chat-header-name {
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+      }
+    }
+  }
+  .private-chat-body {
+    width: 90%;
+    margin-top: 2rem;
+    .avatar {
+      width: 8rem;
+      height: 8rem;
+    }
+    .my-user,
+    .other-user {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .bubble {
+        color: $text-col-dm;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0.5rem;
+        position: relative;
+        max-width: 70rem;
+        p {
+          font-size: 2rem;
+          padding: 0.7rem;
+          font-weight: 500;
+        }
+      }
+      img {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+      }
+    }
+    .my-user {
+      width: 100%;
+      justify-content: flex-end;
+      .bubble {
+        border-radius: 2rem 2rem 0.3rem 2rem;
+        background-color: $button-chat-sent;
+      }
+    }
+    .other-user {
+      width: 100%;
+      justify-content: flex-start;
+      .bubble {
+        border-radius: 2rem 2rem 2rem 0.3rem;
+        background-color: $button-chat-other-user;
+      }
+    }
+  }
+}

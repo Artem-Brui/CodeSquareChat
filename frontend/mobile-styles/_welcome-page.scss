@@ -1,0 +1,127 @@
+// @use 'main' as *;
+@property --a {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.logo {
+  place-items: center;
+  color: var(--text-col-lm, black);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin: 4rem 2rem;
+  width: 15rem;
+  height: 15rem;
+  border: solid var(--b, 1px) #0000;
+  background: repeating-conic-gradient(
+    from var(--a, 0deg),
+    #a926f0 0% 20%,
+    #66a4ea 20% 40%,
+    #dc4ae9 40% 60%,
+    #9f04f3 60% 80%,
+    #4093f3 80% 100%
+  );
+  box-shadow: 0 0 1rem #9f04f3, 0 0 2rem #dc4ae9, 0 0 3rem #66a4ea;
+  animation: a 2s linear infinite, glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes a {
+  to {
+    --a: 1turn;
+  }
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 1rem #9f04f3, 0 0 2rem #dc4ae9, 0 0 3rem #66a4ea;
+  }
+  100% {
+    box-shadow: 0 0 1.5rem #a926f0, 0 0 2.5rem #66a4ea, 0 0 4rem #dc4ae9;
+  }
+}
+
+.h1-title-welcome {
+  font-size: 1.5rem;
+  color: $frame;
+  padding: 1rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: $background-lm;
+  h1 {
+    font-weight: bolder;
+    text-shadow: -1px -1px 1px #efede3, 0px 1px 0 #ffffff, 0px 2px 0 #ffffff,
+      0px 3px 0 #faf8f8, 0px 4px 0 #fffdfd, 0px 5px 0 #ffffff;
+  }
+}
+.h2-welcome-title {
+  font-size: 5rem;
+  font-weight: bolder;
+  color: $frame;
+  margin: 0.5rem 0;
+  text-shadow: -0.075rem 0.075rem 0 mix(#fff, $frame, 94%),
+    0.05rem 0.5rem 0 mix(#fff, $frame, 60%),
+    0.1rem 0.1rem 0 mix(#fff, $frame, 62%),
+    0.15rem 0.15rem mix(#fff, $frame, 64%),
+    0.2rem 0.2rem 0 mix(#fff, $frame, 66%),
+    0.25rem 0.25rem 0 mix(#fff, $frame, 68%),
+    0.3rem 0.3rem 0 mix(#fff, $frame, 70%),
+    0.35rem 0.35rem 0 mix(#fff, $frame, 72%);
+}
+.login-form,
+.login-form-full {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  gap: 2rem;
+}
+.login-form input {
+  width: 100%;
+  background-color: $background-lm;
+  font-size: 2.5rem;
+  outline: none;
+  border-bottom: 0.038rem solid #ccc;
+  padding: 1rem;
+}
+
+.signup-button-div,
+.login-button-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1.5rem 0;
+  button {
+    width: 90%;
+    color: $text-col-lm;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 2.5rem;
+    box-shadow: $unclicked-button;
+    &:hover {
+      opacity: 0.7;
+    }
+    &:active {
+      box-shadow: $clicked-button;
+    }
+  }
+  a {
+    font-size: 1.5rem;
+    color: $text-col-lm;
+    margin: 1rem 0;
+    color: blue;
+  }
+}
+.faq {
+  color: blue;
+  padding: 0.8rem;
+  margin: 4rem 0;
+  box-shadow: $unclicked-button;
+  a {
+    font-size: 1.5rem;
+  }
+}

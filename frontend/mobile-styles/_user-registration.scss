@@ -1,0 +1,191 @@
+.user-registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  // ========================================
+  // Main Title 01
+  // ========================================
+  .create-h1 {
+    text-align: center;
+    margin-top: 4rem;
+    color: $text-col-lm;
+    font-size: 2.5rem;
+    text-decoration: underline;
+  }
+  // ========================================
+  // Profile Picture Upload Section
+  // ========================================
+  .profile-picture-upload {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .picture-placeholder {
+    display: flex;
+    border-radius: 4rem;
+    width: 15rem;
+    height: 15rem;
+  }
+  .picture-formats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-style: italic;
+    color: $text-col-lm;
+    font-size: 1.4rem;
+    text-align: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .add-button {
+    background-color: $frame;
+    border-radius: 50%;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $unclicked-button;
+    margin-bottom: 2rem;
+
+    &:active {
+      box-shadow: $clicked-button;
+    }
+    .svg-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  // ========================================
+  // Gender Selection Section
+  // ========================================
+  .gender-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 4rem;
+    font-size: 1.7rem;
+    color: $text-col-lm;
+    label {
+      display: flex;
+
+      .gender-title {
+        margin-left: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+  // ========================================
+  // Registration Form Section
+  // ========================================
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .form-group {
+    width: 80%;
+    background-color: $background-lm;
+    font-size: 1.7rem;
+    border-bottom: 0.038rem solid #ccc;
+    padding: 0.3rem;
+  }
+  .regis {
+    font-size: 1.7rem;
+    width: 95%;
+    padding: 0.5rem;
+    outline: none;
+  }
+  // ========================================
+  // Checkbox Group Section
+  // ========================================
+  .checkbox-group {
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    label {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+      input[type="checkbox"] {
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+        margin: 0;
+        border: 0.125rem solid $text-col-dm;
+        border-radius: 0.4rem;
+        appearance: none;
+        cursor: pointer;
+        &:checked {
+          background-color: $frame;
+          border-color: $frame;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 45%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 0.5rem;
+            height: 1rem;
+            border: solid white;
+            border-width: 0 0.2rem 0.2rem 0;
+          }
+        }
+      }
+      div {
+        flex: 1;
+        font-size: clamp(1.2rem, 3.5vw, 1.4rem);
+        line-height: 1.4;
+        color: $text-col-lm;
+      }
+    }
+  }
+  // ========================================
+  // Submit Button Section
+  // ========================================
+  .signin-button {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    .submit-button {
+      font-size: 2rem;
+    }
+    button {
+      width: 100%;
+      padding: 1rem;
+      font-size: clamp(1.3rem, 4vw, 1.5rem);
+      color: $text-col-lm;
+      background-color: $text-col-dm;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+      box-shadow: $unclicked-button;
+      &:hover {
+        opacity: 0.85;
+      }
+      &:active {
+        transform: translateY(1px);
+        box-shadow: $clicked-button;
+      }
+    }
+  }
+}

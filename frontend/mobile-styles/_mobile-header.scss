@@ -1,0 +1,86 @@
+.header {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+
+    .user-icon {
+      margin-left: 3rem;
+    }
+    .menu-icon {
+      margin-right: 3rem;
+    }
+    .username-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: -0.075rem 0.075rem 0 mix(#fff, $frame, 94%),
+        0.05rem 0.5rem 0 mix(#fff, $frame, 60%),
+        0.1rem 0.1rem 0 mix($frame2, $frame, 62%),
+        0.15rem 0.15rem mix($frame2, $frame, 64%);
+      h1 {
+        font-size: 3rem;
+        color: $frame;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .svg-icon {
+      box-shadow: $unclicked-button;
+      padding: 1rem;
+      border-radius: 50%;
+      &:active {
+        box-shadow: $clicked-button;
+      }
+    }
+  }
+
+  .search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+
+    .input-search-field {
+      width: 70%;
+      input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        border: 0.2rem solid #ccc;
+        border-radius: 0.8rem;
+        width: 100%;
+        font-size: 2rem;
+      }
+    }
+
+    .button-search-field {
+      box-shadow: $unclicked-button;
+      .search-bar button {
+        border-radius: 0.8rem;
+      }
+      &:active {
+        box-shadow: $clicked-button;
+      }
+      .svg-icon {
+        padding: 0.5rem;
+        background-color: $background-lm;
+      }
+    }
+  }
+}

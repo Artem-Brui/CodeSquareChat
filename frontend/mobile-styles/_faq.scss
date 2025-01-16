@@ -1,0 +1,71 @@
+// ========================================
+// FAQ Title
+// ========================================
+.h1-faq {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $text-col-lm;
+  margin-bottom: 2rem;
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+// ========================================
+// FAQ Section
+// ========================================
+.faq-section {
+  border-top: 0.1rem solid $text-col-lm;
+  padding: 1rem 0;
+  margin: 2rem;
+  width: 80%;
+  &.active .faq-button::after {
+    transform: rotate(-135deg);
+  }
+  &.active .faq-content {
+    max-height: 50rem;
+    padding-top: 1rem;
+  }
+}
+// ========================================
+// FAQ Button
+// ========================================
+.faq-button {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  color: $button-hover;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+}
+.faq-button::after {
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  border-right: 0.2rem solid $button-hover;
+  border-bottom: 0.2rem solid $button-hover;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-left: 1rem;
+}
+// ========================================
+// FAQ Content
+// ========================================
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 1rem;
+  color: $text-col-lm;
+  font-size: 1.6rem;
+  strong {
+    font-weight: 600;
+  }
+}

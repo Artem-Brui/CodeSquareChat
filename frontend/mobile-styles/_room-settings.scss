@@ -1,0 +1,70 @@
+// ========================================
+// Image Upload
+// ========================================
+.image-upload {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-items: center;
+
+  .uploaded-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    img {
+      width: 25rem;
+      border-radius: 1rem;
+      border: 0.5rem outset $frame2;
+    }
+  }
+}
+
+// ========================================
+// Settings Menu
+// ========================================
+.settings-menu {
+  background-color: $background-lm;
+  width: 80%;
+  padding: 1rem;
+}
+
+// ========================================
+// Menu Item
+// ========================================
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 1rem;
+  box-shadow: $unclicked-button;
+
+  // &:hover {
+  //     background-color: $online;
+  // }
+
+  &:active {
+    box-shadow: $clicked-button;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+    background-color: $frame;
+
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  .text-fields {
+    font-size: 1.8rem;
+    color: $text-col-lm;
+  }
+}

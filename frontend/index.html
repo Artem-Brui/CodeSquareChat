@@ -1,13 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
+    <link rel="stylesheet" href="./mobile-styles/main.css">
   </head>
   <body>
     <div id="root"></div>
+
+    <div class="svg-icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="2rem"
+        height="2rem"
+        viewBox="0 0 50 50"
+      >
+        <rect width="50" height="50" fill="none" />
+        <path
+          fill="#fff"
+          d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17s-7.6 17-17 17m0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15s15-6.7 15-15s-6.7-15-15-15"
+        />
+        <path fill="#fff" d="M16 24h18v2H16z" />
+        <path fill="#fff" d="M24 16h2v18h-2z" />
+      </svg>
+    </div>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

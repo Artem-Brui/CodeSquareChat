@@ -1,0 +1,33 @@
+.textbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 90%;
+  .chat-textbox {
+    height: 6rem;
+    width: 60%;
+    border: 0.4rem solid $frame;
+
+    input {
+      width: 60%;
+      height: 100%;
+      padding: 1rem;
+      font-size: 2rem;
+      outline: none;
+      border: none;
+    }
+  }
+  .send-text-btn,
+  .add-file-btn {
+    box-shadow: $unclicked-button;
+    .svg-icon {
+      padding: 0.5rem;
+      border-radius: 3rem;
+    }
+    &:active {
+      box-shadow: $clicked-button;
+    }
+  }
+}
