@@ -4,7 +4,7 @@
 .room-card {
   background-color: $background-lm;
   border-radius: 1rem;
-  width: 25rem;
+  width: 100%;
 }
 
 // ========================================
@@ -12,38 +12,45 @@
 // ========================================
 .image-upload {
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   .uploaded-image {
     img {
-      width: 100%;
+      width: 20rem;
       border-radius: 1rem;
       box-shadow: $unclicked-button;
       border: 0.8rem outset $frame2;
     }
   }
 }
+.form-group {
+  width: 80%;
+  margin-top: 3rem;
+  // ========================================
+  // Room Name
+  // ========================================
+  .room-name {
+    width: 100%;
+    margin: 0.1rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+  }
 
-// ========================================
-// Room Name
-// ========================================
-.room-name {
-  width: 100%;
-  margin: 0.1rem;
-  padding: 1rem;
-  font-size: 1.8rem;
-}
-
-// ========================================
-// Description Textbox
-// ========================================
-#description {
-  width: 100%;
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin: 0.1rem;
-  padding: 1rem;
-  resize: none;
-  box-sizing: border-box;
-  border-radius: 1rem;
+  // ========================================
+  // Description Textbox
+  // ========================================
+  #description {
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0.1rem;
+    padding: 1rem;
+    resize: none;
+    box-sizing: border-box;
+    border-radius: 1rem;
+  }
 }
 
 // ========================================
