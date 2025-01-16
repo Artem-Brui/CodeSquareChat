@@ -1,4 +1,10 @@
 .user-registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
   // ========================================
   // Main Title 01
   // ========================================
@@ -16,7 +22,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 3rem 0;
+    margin-top: 2rem;
   }
   .picture-placeholder {
     display: flex;
@@ -40,16 +46,44 @@
       object-fit: cover;
     }
   }
+  .add-button {
+    background-color: $frame;
+    border-radius: 50%;
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $unclicked-button;
+    margin-bottom: 2rem;
+
+    &:active {
+      box-shadow: $clicked-button;
+    }
+    .svg-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
   // ========================================
   // Gender Selection Section
   // ========================================
   .gender-selection {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    gap: 3rem;
+    gap: 4rem;
     font-size: 1.7rem;
     color: $text-col-lm;
+    label {
+      display: flex;
+
+      .gender-title {
+        margin-left: 1rem;
+        font-weight: 600;
+      }
+    }
   }
   // ========================================
   // Registration Form Section
@@ -63,7 +97,7 @@
     margin-bottom: 3rem;
   }
   .form-group {
-    width: 94%;
+    width: 80%;
     background-color: $background-lm;
     font-size: 1.7rem;
     border-bottom: 0.038rem solid #ccc;
@@ -131,6 +165,9 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 0 1rem;
+    .submit-button {
+      font-size: 2rem;
+    }
     button {
       width: 100%;
       padding: 1rem;
@@ -141,11 +178,13 @@
       border-radius: 0.5rem;
       cursor: pointer;
       transition: opacity 0.2s ease;
+      box-shadow: $unclicked-button;
       &:hover {
         opacity: 0.85;
       }
       &:active {
         transform: translateY(1px);
+        box-shadow: $clicked-button;
       }
     }
   }

@@ -78,8 +78,7 @@
   border-radius: 50%;
   box-shadow: $unclicked-button;
   margin-top: auto;
-}
-
-.add-button:active {
-  box-shadow: $clicked-button;
+  &:active {
+    box-shadow: $clicked-button;
+  }
 }

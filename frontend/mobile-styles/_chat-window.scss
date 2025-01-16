@@ -64,15 +64,15 @@
       align-items: center;
       .bubble {
         color: $text-col-dm;
-        font-weight: 500;
         display: flex;
         flex-wrap: wrap;
         margin: 0.5rem;
         position: relative;
         max-width: 70rem;
         p {
-          font-size: 1.5rem;
+          font-size: 2rem;
           padding: 0.7rem;
+          font-weight: 500;
         }
       }
       img {
