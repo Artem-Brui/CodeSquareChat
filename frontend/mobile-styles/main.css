@@ -1102,7 +1102,6 @@ a:visited {
 .room-chat-container .private-chat-body .my-user .bubble,
 .room-chat-container .private-chat-body .other-user .bubble {
   color: #eaebeb;
-  font-weight: 500;
   display: flex;
   flex-wrap: wrap;
   margin: 0.5rem;
@@ -1113,8 +1112,9 @@ a:visited {
 .private-chat-container .private-chat-body .other-user .bubble p,
 .room-chat-container .private-chat-body .my-user .bubble p,
 .room-chat-container .private-chat-body .other-user .bubble p {
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 0.7rem;
+  font-weight: 500;
 }
 .private-chat-container .private-chat-body .my-user img,
 .private-chat-container .private-chat-body .other-user img,
@@ -1148,27 +1148,34 @@ a:visited {
 .room-card {
   background-color: #f9fcff;
   border-radius: 1rem;
-  width: 25rem;
+  width: 100%;
 }
 
 .image-upload {
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .image-upload .uploaded-image img {
-  width: 100%;
+  width: 20rem;
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   border: 0.8rem outset #66a4ea;
 }
 
-.room-name {
+.form-group {
+  width: 80%;
+  margin-top: 3rem;
+}
+.form-group .room-name {
   width: 100%;
   margin: 0.1rem;
   padding: 1rem;
   font-size: 1.8rem;
 }
-
-#description {
+.form-group #description {
   width: 100%;
   font-size: 1.8rem;
   font-weight: 400;
@@ -1414,4 +1421,56 @@ a:visited {
 .user-registration-container .signin-button button:active {
   transform: translateY(1px);
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.image-upload {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-items: center;
+}
+.image-upload .uploaded-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.image-upload .uploaded-image img {
+  width: 25rem;
+  border-radius: 1rem;
+  border: 0.5rem outset #66a4ea;
+}
+
+.settings-menu {
+  background-color: #f9fcff;
+  width: 80%;
+  padding: 1rem;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.menu-item:active {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.menu-item .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+  background-color: #a926f0;
+}
+.menu-item .icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.menu-item .text-fields {
+  font-size: 1.8rem;
+  color: #2b2b2c;
 }/*# sourceMappingURL=main.css.map */
