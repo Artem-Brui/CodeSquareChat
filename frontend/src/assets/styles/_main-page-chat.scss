@@ -1,0 +1,84 @@
+@use 'variables' as *;
+
+.user-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.3rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    overflow-y: scroll;
+    .user {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        width: 90%;
+        border-radius: 2rem;
+        background-color: $paragraphs-background;
+        box-shadow: $unclicked-button;
+        &:active {
+            box-shadow: $clicked-button;
+        }
+    }
+
+    .user-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        font-weight: 500;
+        width: 60%;
+    }
+    .avatar {
+        width: 12rem;
+        height: 12rem;
+        border: 0.7rem outset;
+        overflow: hidden;
+        margin: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    }
+    .avatar-online {
+        border-color: $online;
+    }
+
+    .avatar-busy {
+        border-color: $busy;
+    }
+
+    .avatar-offline {
+        border-color: $offline;
+    }
+
+    .avatar-ai-user {
+        border-color: $frame2;
+    }
+}
+
+.add-button {
+    background-color: $frame;
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    border-radius: 50%;
+    box-shadow: $unclicked-button;
+    margin-top: auto;
+    &:active {
+        box-shadow: $clicked-button;
+    }
+}

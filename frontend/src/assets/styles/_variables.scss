@@ -1,0 +1,27 @@
+// ---------------------COLORS------------------------
+//Light Mode, Background
+$background-lm: #f9fcff;
+$text-col-lm: #2b2b2c;
+//Dark Mode
+$background-dm: #09194f;
+$text-col-dm: #eaebeb;
+//Button, Hover, Chat
+$button-chat-sent: #2452f5;
+$button-hover: #1a40ca;
+$button-chat-other-user: #dc4ae9;
+//Warning Colors
+$online: #26f034;
+$busy: #ffed21;
+$offline: #ff0000;
+//Colors?
+$frame2: #66a4ea;
+$frame: #a926f0;
+$paragraphs-background: rgba(210, 213, 221, 0.322);
+$borders-color: #ccc;
+// ---------------------SHADOWS------------------------
+$unclicked-button: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+$clicked-button: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+  rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+
+// Space - 4 REM top,6 REM bottom
