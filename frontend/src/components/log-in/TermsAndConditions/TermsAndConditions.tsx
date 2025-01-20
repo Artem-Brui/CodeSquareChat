@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import "@/assets/main.css";
 
 class TermsAndConditions extends Component {
@@ -116,6 +116,7 @@ class TermsAndConditions extends Component {
             </p>
           </div>
           <div className="confirmation-buttons">
+            {/* connect links to their path*/}
             <button>I Agree</button>
             <button>I Decline</button>
           </div>
