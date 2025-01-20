@@ -5,7 +5,7 @@ class FAQLink extends Component {
   render() {
     return (
       <div className="faq">
-        <a href="./faq.html">FAQ</a>
+        <a href="../FAQ/FAQPage.tsx">FAQ</a>
       </div>
     );
   }
