@@ -10,6 +10,9 @@
     "esModuleInterop": true,
     "typeRoots": ["./types"]
   },
-  "include": ["src/**/*"],
+  "include": [
+    "src/**/*",
+    "src/customTypes/custom.d.ts"
+  ],
   "exclude": ["src/types", "node_modules", "dist"]
 }

@@ -5,8 +5,40 @@ const userSchema = new Schema({
     type: String,
     require: true,
   },
-  email: String,
-  password: String,
+  realName: {
+    type: String,
+    require: true,
+  },
+  email: {
+    type: String,
+    require: true,
+  },
+  password: {
+    type: String,
+    require: true,
+  },
+  birthDate: {
+    type: String,
+    require: true,
+  },
+  isAdult: {
+    type: Boolean,
+    require: true,
+  },
+  isAcceptRules: {
+    type: Boolean,
+    require: true,
+  },
+  creatingDate: {
+    type: String,
+    default: new Date().toISOString(),
+    require: true,
+  },
+  updatingDate: {
+    type: String,
+    default: new Date().toISOString(),
+    require: true,
+  },
   },
   { collection: 'Users' });
 
