@@ -1,0 +1,39 @@
+.chat-categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  .chat-rooms,
+  .private-chats {
+    button {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      box-shadow: $unclicked-button;
+      border: $frame 0.2rem outset;
+      background-color: $paragraphs-background;
+      height: 8rem;
+      width: 18rem;
+      &:active {
+        box-shadow: $clicked-button;
+      }
+    }
+  }
+  .category-name {
+    display: flex;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: $frame;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+  }
+}
