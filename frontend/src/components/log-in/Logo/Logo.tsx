@@ -1,8 +1,7 @@
-import { Component } from "react";
 import "@/assets/main.css";
 
-class Logo extends Component {
-  render() {
+export default function Logo() {
+  {
     return (
       <div className="logo">
         <div className="h1-title-welcome">
@@ -18,4 +17,3 @@ class Logo extends Component {
   }
 }
 
-export default Logo;

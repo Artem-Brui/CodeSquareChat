@@ -1,8 +1,7 @@
-import { Component } from "react";
 import "@/assets/main.css";
 
-class TermsAndConditions extends Component {
-  render() {
+export default function TermsAndConditions() {
+  {
     return (
       <div className="container terms-conditions-container">
         <div className="h1-title terms-conditions-title">
@@ -125,5 +124,3 @@ class TermsAndConditions extends Component {
     );
   }
 }
-
-export default TermsAndConditions;

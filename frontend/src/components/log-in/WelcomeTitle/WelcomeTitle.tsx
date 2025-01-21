@@ -1,8 +1,7 @@
-import { Component } from "react";
 import "@/assets/main.css";
 
-class WelcomeTitle extends Component {
-  render() {
+export default function WelcomeTitle() {
+   {
     return (
       <div className="container welcome-title-container">
         <h2 className="h2-welcome-title">Welcome!</h2>
@@ -10,5 +9,3 @@ class WelcomeTitle extends Component {
     );
   }
 }
-
-export default WelcomeTitle;

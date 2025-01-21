@@ -1,8 +1,7 @@
-import { Component } from "react";
 import "@/assets/main.css";
 
-class LoginForm extends Component {
-  render() {
+export default function LoginForm() {
+  {
     return (
       <div className="login-form-full">
         <form className="login-form">
@@ -26,4 +25,3 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;

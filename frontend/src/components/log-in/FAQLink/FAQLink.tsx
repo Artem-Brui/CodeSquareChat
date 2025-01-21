@@ -1,8 +1,7 @@
-import { Component } from "react";
 import "@/assets/main.css";
 
-class FAQLink extends Component {
-  render() {
+export default function FAQLink() {
+  {
     return (
       <div className="faq">
         <a href="../FAQ/FAQPage.tsx">FAQ</a>
@@ -10,4 +9,3 @@ class FAQLink extends Component {
     );
   }
 }
-export default FAQLink;
