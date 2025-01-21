@@ -1,16 +1,18 @@
-// import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import FAQPage from "./components/log-in/FAQ/FAQPage";
 import TermsAndConditions from "./components/log-in/TermsAndConditions/TermsAndConditions";
 import WelcomePage from "./components/log-in/WelcomePage";
-// import React, { Component } from "react";
 
 function App() {
   return (
-    <div>
-      <FAQPage />
-      <TermsAndConditions />
-      <WelcomePage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/faq" element={<FAQPage />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/faq" element={<FAQPage />} />
+      </Routes>
+    </Router>
   );
 }
 
