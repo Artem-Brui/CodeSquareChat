@@ -15,6 +15,9 @@
 
 #root {
   width: 100rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -1189,6 +1192,7 @@ a:visited {
   align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1.5rem;
+  color: #2452f5;
   cursor: pointer;
 }
 .user-registration-container .checkbox-group label input[type=checkbox] {

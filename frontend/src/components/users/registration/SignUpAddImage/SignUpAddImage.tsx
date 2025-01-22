@@ -1,7 +1,7 @@
 import "@/assets/main.css";
 // import User from "@assets/images/placeholder-rooms.png";
 
-export default function SignUpAddImage(): JSX.Element {
+export default function SignUpAddImage() {
   return (
     <div className="signup-add-image">
       <div className="profile-picture-upload">

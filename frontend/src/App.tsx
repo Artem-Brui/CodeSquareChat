@@ -8,8 +8,9 @@ import ChatCategories from "./components/chat/ChatCategories/ChatCategories";
 import AddRoom from "./components/pages/AddRoom/AddRoom";
 import ChatTextBox from "./components/chat/ChatTextBox/ChatTextBox";
 import UserRegistrationFormPage from "./components/users/registration/UserRegistrationPage";
-import "@/assets/main.css";
 import UserProfilePage from "./components/users/Profile/UserProfilePage";
+
+import "@/assets/main.css";
 
 function App() {
   return (

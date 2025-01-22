@@ -1,6 +1,13 @@
+import { useState } from "react";
 import "@/assets/main.css";
 
 export default function UserProfileMenu() {
+  const [OpenMenu, setMenuOpen] = useState(false);
+
+  const ClickDropdown = () => {
+    setMenuOpen(!OpenMenu);
+  };
+
   return (
     <div className="user-profile-settings">
       <div className="user-profile-field">
@@ -17,15 +24,11 @@ export default function UserProfileMenu() {
                 <g
                   fill="none"
                   stroke="#fff"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                 >
-                  <path
-                    strokeDasharray="20"
-                    stroke-dashoffset="20"
-                    d="M3 21h18"
-                  >
+                  <path strokeDasharray="20" strokeDashoffset="20" d="M3 21h18">
                     <animate
                       fill="freeze"
                       attributeName="stroke-dashoffset"
@@ -35,7 +38,7 @@ export default function UserProfileMenu() {
                   </path>
                   <path
                     strokeDasharray="48"
-                    stroke-dashoffset="48"
+                    strokeDashoffset="48"
                     d="M7 17v-4l10 -10l4 4l-10 10h-4"
                   >
                     <animate
@@ -46,7 +49,7 @@ export default function UserProfileMenu() {
                       values="48;0"
                     />
                   </path>
-                  <path strokeDasharray="8" stroke-dashoffset="8" d="M14 6l4 4">
+                  <path strokeDasharray="8" strokeDashoffset="8" d="M14 6l4 4">
                     <animate
                       fill="freeze"
                       attributeName="stroke-dashoffset"
@@ -56,7 +59,7 @@ export default function UserProfileMenu() {
                     />
                   </path>
                 </g>
-                <path fill="#fff" fill-opacity="0" d="M14 6l4 4L21 7L17 3Z">
+                <path fill="#fff" fillOpacity="0" d="M14 6l4 4L21 7L17 3Z">
                   <animate
                     fill="freeze"
                     attributeName="fill-opacity"
@@ -87,15 +90,11 @@ export default function UserProfileMenu() {
                 <g
                   fill="none"
                   stroke="#fff"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                 >
-                  <path
-                    strokeDasharray="20"
-                    stroke-dashoffset="20"
-                    d="M3 21h18"
-                  >
+                  <path strokeDasharray="20" strokeDashoffset="20" d="M3 21h18">
                     <animate
                       fill="freeze"
                       attributeName="stroke-dashoffset"
@@ -105,7 +104,7 @@ export default function UserProfileMenu() {
                   </path>
                   <path
                     strokeDasharray="48"
-                    stroke-dashoffset="48"
+                    strokeDashoffset="48"
                     d="M7 17v-4l10 -10l4 4l-10 10h-4"
                   >
                     <animate
@@ -116,11 +115,7 @@ export default function UserProfileMenu() {
                       values="48;0"
                     />
                   </path>
-                  <path
-                   strokeDasharray="8"
-                    stroke-dashoffset="8"
-                    d="M14 6l4 4"
-                  >
+                  <path strokeDasharray="8" strokeDashoffset="8" d="M14 6l4 4">
                     <animate
                       fill="freeze"
                       attributeName="stroke-dashoffset"
@@ -130,7 +125,7 @@ export default function UserProfileMenu() {
                     />
                   </path>
                 </g>
-                <path fill="#fff" fill-opacity="0" d="M14 6l4 4L21 7L17 3Z">
+                <path fill="#fff" fillOpacity="0" d="M14 6l4 4L21 7L17 3Z">
                   <animate
                     fill="freeze"
                     attributeName="fill-opacity"
@@ -149,7 +144,7 @@ export default function UserProfileMenu() {
       </div>
       <div className="user-profile-field">
         <div className="user-settings-field">
-          <button id="user-status-menu">
+          <button id="user-status-menu" onClick={ClickDropdown}>
             <div className="svg-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -161,9 +156,9 @@ export default function UserProfileMenu() {
                 <path
                   fill="none"
                   stroke="#fff"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
                   d="M16.977 19.5A9 9 0 0 0 10 3.223M16.977 19.5V16m0 3.5H20.5M7 4.516a9 9 0 0 0 7 16.261M7 4.516V8m0-3.484H3.5"
                   color="#fff"
                 />
@@ -173,23 +168,25 @@ export default function UserProfileMenu() {
               <h2>Status</h2>
             </div>
           </button>
-          <div className="dropdown-menu">
-            <div className="dropdown-item">
-              <button className="status-indicator online">
-                <span>Online</span>
-              </button>
+          {OpenMenu && (
+            <div className="dropdown-menu">
+              <div className="dropdown-item">
+                <button className="status-indicator online">
+                  <span>Online</span>
+                </button>
+              </div>
+              <div className="dropdown-item">
+                <button className="status-indicator busy">
+                  <span>Busy</span>
+                </button>
+              </div>
+              <div className="dropdown-item">
+                <button className="status-indicator offline">
+                  <span>Offline</span>
+                </button>
+              </div>
             </div>
-            <div className="dropdown-item">
-              <button className="status-indicator busy">
-                <span>Busy</span>
-              </button>
-            </div>
-            <div className="dropdown-item">
-              <button className="status-indicator offline">
-                <span>Offline</span>
-              </button>
-            </div>
-          </div>
+          )}
         </div>
       </div>
       <div className="user-profile-field">

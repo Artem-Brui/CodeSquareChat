@@ -1,6 +1,11 @@
 import "@/assets/main.css";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
+  const navigate = useNavigate();
+  const handleSignUpLink = (): void => {
+    navigate("/user-registration-form-page");
+  };
   {
     return (
       <div className="login-form-full">
@@ -15,8 +20,11 @@ export default function LoginForm() {
           </a>
         </div>
         <div className="signup-button-div">
-          <button type="button">Sign Up</button>
-          <a href="#" className="signup-account">
+          <a href=""></a>
+          <button type="button" onClick={handleSignUpLink}>
+            Sign Up
+          </button>
+          <a href="/user-registration-form-page" className="signup-account">
             Don't have an Account?
           </a>
         </div>
@@ -24,4 +32,3 @@ export default function LoginForm() {
     );
   }
 }
-
