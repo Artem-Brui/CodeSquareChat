@@ -13,6 +13,10 @@
   border-radius: 0.8rem;
 }
 
+#root {
+  width: 100rem;
+}
+
 body {
   background-color: #f9fcff;
   display: flex;

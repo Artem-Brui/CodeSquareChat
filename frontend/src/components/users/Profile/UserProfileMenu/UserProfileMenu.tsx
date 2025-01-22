@@ -1,6 +1,6 @@
 import "@/assets/main.css";
 
-export default function UserProfileRegistration() {
+export default function UserProfileMenu() {
   return (
     <div className="user-profile-settings">
       <div className="user-profile-field">
@@ -22,7 +22,7 @@ export default function UserProfileRegistration() {
                   stroke-width="2"
                 >
                   <path
-                    stroke-dasharray="20"
+                    strokeDasharray="20"
                     stroke-dashoffset="20"
                     d="M3 21h18"
                   >
@@ -34,7 +34,7 @@ export default function UserProfileRegistration() {
                     />
                   </path>
                   <path
-                    stroke-dasharray="48"
+                    strokeDasharray="48"
                     stroke-dashoffset="48"
                     d="M7 17v-4l10 -10l4 4l-10 10h-4"
                   >
@@ -46,11 +46,7 @@ export default function UserProfileRegistration() {
                       values="48;0"
                     />
                   </path>
-                  <path
-                    stroke-dasharray="8"
-                    stroke-dashoffset="8"
-                    d="M14 6l4 4"
-                  >
+                  <path strokeDasharray="8" stroke-dashoffset="8" d="M14 6l4 4">
                     <animate
                       fill="freeze"
                       attributeName="stroke-dashoffset"
@@ -96,7 +92,7 @@ export default function UserProfileRegistration() {
                   stroke-width="2"
                 >
                   <path
-                    stroke-dasharray="20"
+                    strokeDasharray="20"
                     stroke-dashoffset="20"
                     d="M3 21h18"
                   >
@@ -108,7 +104,7 @@ export default function UserProfileRegistration() {
                     />
                   </path>
                   <path
-                    stroke-dasharray="48"
+                    strokeDasharray="48"
                     stroke-dashoffset="48"
                     d="M7 17v-4l10 -10l4 4l-10 10h-4"
                   >
@@ -121,7 +117,7 @@ export default function UserProfileRegistration() {
                     />
                   </path>
                   <path
-                    stroke-dasharray="8"
+                   strokeDasharray="8"
                     stroke-dashoffset="8"
                     d="M14 6l4 4"
                   >
