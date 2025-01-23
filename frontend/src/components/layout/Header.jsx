@@ -24,7 +24,7 @@ export default function Header() {
             </div>
           </Link>
           <div className="username-title">
-            <h1>Username</h1>
+            <h1>User</h1>
           </div>
           <Link to="/burger-menu">
             <div className="menu-icon">
