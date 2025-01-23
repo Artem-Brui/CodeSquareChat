@@ -24,7 +24,7 @@ export default function AddRoom() {
               />
             </div>
           </div>
-          <div className="room-name">Room Name</div>
+          <div className="room-name">Room Name 2</div>
           <div className="room-capacity">19/20</div>
         </div>
 
