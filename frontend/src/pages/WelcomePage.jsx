@@ -1,7 +1,7 @@
-import Logo from "../log-in/Logo";
-import WelcomeTitle from "../log-in/WelcomeTitle";
-import LoginForm from "../log-in/LoginForm";
-import FAQLink from "../log-in/FAQLink";
+import Logo from '../components/log-in/Logo';
+import WelcomeTitle from '../components/log-in/WelcomeTitle';
+import LoginForm from '../components/log-in/LoginForm';
+import FAQLink from '../components/log-in/FAQLink';
 
 export default function WelcomePage() {
   {

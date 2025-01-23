@@ -1,7 +1,6 @@
-
-import SignUpAddImage from "./SignUpAddImage";
-import SignUpUserInfoForm from "./SignUpUserInfoForm";
-import SignUpTitle from "./SignUpTitle";
+import SignUpTitle from '../components/users/registration/SignUpTitle';
+import SignUpAddImage from '../components/users/registration/SignUpAddImage';
+import SignUpUserInfoForm from '../components/users/registration/SignUpUserInfoForm';
 
 export default function UserRegistrationFormPage() {
   return (
