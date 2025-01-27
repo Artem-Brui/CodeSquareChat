@@ -1,10 +1,9 @@
-
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginForm() {
   const navigate = useNavigate();
   const handleSignUpLink = () => {
-    navigate("/user-registration-form-page");
+    navigate('/register');
   };
   {
     return (
