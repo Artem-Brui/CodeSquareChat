@@ -5,7 +5,7 @@ import WelcomePage from './pages/WelcomePage';
 // import BurgerMenu from './components/layout/BurgerMenu';
 // import Header from './components/layout/Header';
 // import ChatCategories from './components/chat/ChatCategories';
-// import AddRoom from './components/pages/AddRoom';
+import AddRoom from './pages/AddRoom';
 // import ChatTextBox from './components/chat/ChatTextBox';
 import UserRegistrationFormPage from './pages/UserRegistrationPage';
 // import UserProfilePage from './components/users/Profile/UserProfilePage';
@@ -20,12 +20,12 @@ function App() {
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/t&cs" element={<TermsAndConditions />} />
 
-        {/* <Route path="/chat-categories" element={<ChatCategories />} />
-        <Route path="/add-room" element={<AddRoom />} />
-        <Route path="/chat-text-box" element={<ChatTextBox />} />
+        {/* <Route path="/chat-categories" element={<ChatCategories />} />*/}
+        <Route path="/addroom" element={<AddRoom />} />
+        {/*<Route path="/chat-text-box" element={<ChatTextBox />} />*/}
        
-        <Route path="/user-profile-page" element={<UserProfilePage />} />
-        <Route path="/user-settings-page" element={<UserSettingsPage />} /> */}
+        {/*<Route path="/user-profile-page" element={<UserProfilePage />} />*/}
+        {/*<Route path="/user-settings-page" element={<UserSettingsPage />} /> */}
       </Routes>
     </Router>
   );
