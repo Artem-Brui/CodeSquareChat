@@ -15,18 +15,12 @@ export default function LoginForm() {
         </form>
         <div className="login-button-div">
           <button type="submit">Log In</button>
-          <a href="#" className="forgot-password">
-            Forgot Password?
-          </a>
         </div>
         <div className="signup-button-div">
           <a href=""></a>
           <button type="button" onClick={handleSignUpLink}>
             Sign Up
           </button>
-          <a href="/user-registration-form-page" className="signup-account">
-            Don't have an Account?
-          </a>
         </div>
       </div>
     );
