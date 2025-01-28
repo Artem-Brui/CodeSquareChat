@@ -9,7 +9,7 @@ export default function UserProfileImage() {
           alt="Profile Image"
         />
       </div>
-      <div className="add-image-button">
+      {/* <div className="add-image-button">
         <div className="plus-icon">
           <button>
             <svg
@@ -26,7 +26,7 @@ export default function UserProfileImage() {
             </svg>
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
