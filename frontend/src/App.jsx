@@ -3,8 +3,8 @@ import FAQPage from './pages/FAQPage';
 import TermsAndConditions from './pages/TermsAndConditions';
 import WelcomePage from './pages/WelcomePage';
 import MainPageChat from './pages/MainPageChat.jsx';
-import BurgerMenu from './components/layout/BurgerMenu';
-import Header from './components/layout/Header';
+// import BurgerMenu from './components/layout/BurgerMenu';
+// import Header from './components/layout/Header';
 // import ChatCategories from './components/chat/ChatCategories';
 // import AddRoom from './components/pages/AddRoom';
 // import ChatTextBox from './components/chat/ChatTextBox';
@@ -26,6 +26,7 @@ function App() {
                 <Route path="/faq" element={<FAQPage />} />
                 <Route path="/t&cs" element={<TermsAndConditions />} />
                 <Route path="/mainpagechat" element={<MainPageChat />} />
+                {/* <Route path="/burger" element={<BurgerMenu />} /> */}
 
                 {/* check validation of birthdate */}
                 <Route path="/signup" element={<SignUpUserInfoForm />} />
