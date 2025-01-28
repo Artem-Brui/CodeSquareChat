@@ -1,230 +1,244 @@
+import { Link } from "react-router-dom";
 
-export default function BurgerMenu () {
-    {
-        return (
-            <div className="burger-menu-mobile">
-                <div className="burger-button">
-                    <button className="burger-menu-buttons chats-button">
-                        <div className="svg-icon">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="5rem"
-                                height="5rem"
-                                viewBox="0 0 512 512"
-                            >
-                                <rect width="512" height="512" fill="none"/>
-                                <path
-                                    fill="#fff"
-                                    d="M448.205 392.507c30.519-27.2 47.8-63.455 47.8-101.078c0-39.984-18.718-77.378-52.707-105.3C410.218 158.963 366.432 144 320 144s-90.218 14.963-123.293 42.131C162.718 214.051 144 251.445 144 291.429s18.718 77.378 52.707 105.3c33.075 27.168 76.861 42.13 123.293 42.13c6.187 0 12.412-.273 18.585-.816l10.546 9.141A199.85 199.85 0 0 0 480 496h16v-34.057l-4.686-4.685a199.2 199.2 0 0 1-43.109-64.751M370.089 423l-21.161-18.341l-7.056.865A180 180 0 0 1 320 406.857c-79.4 0-144-51.781-144-115.428S240.6 176 320 176s144 51.781 144 115.429c0 31.71-15.82 61.314-44.546 83.358l-9.215 7.071l4.252 12.035a231.3 231.3 0 0 0 37.882 67.817A167.84 167.84 0 0 1 370.089 423"
-                                />
-                                <path
-                                    fill="#fff"
-                                    d="M60.185 317.476a220.5 220.5 0 0 0 34.808-63.023l4.22-11.975l-9.207-7.066C62.918 214.626 48 186.728 48 156.857C48 96.833 109.009 48 184 48c55.168 0 102.767 26.43 124.077 64.3c3.957-.192 7.931-.3 11.923-.3q12.027 0 23.834 1.167c-8.235-21.335-22.537-40.811-42.2-56.961C270.072 30.279 228.3 16 184 16S97.928 30.279 66.364 56.206C33.886 82.885 16 118.63 16 156.857c0 35.8 16.352 70.295 45.25 96.243a188.4 188.4 0 0 1-40.563 60.729L16 318.515V352h16a190.64 190.64 0 0 0 85.231-20.125a157.3 157.3 0 0 1-5.071-33.645a158.7 158.7 0 0 1-51.975 19.246"
-                                />
-                            </svg>
-                        </div>
-                        <div className="burger-button-name"><h2>Chats</h2></div>
-                    </button>
-                </div>
-                <div className="burger-button">
-                    <button className="burger-menu-buttons rooms-button">
-                        <div className="svg-icon">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="5rem"
-                                height="5rem"
-                                viewBox="0 0 20 20"
-                            >
-                                <rect width="20" height="20" fill="none"/>
-                                <path
-                                    fill="#fff"
-                                    d="M8.03 4.46c-.29 1.28.55 3.46 1.97 3.46c1.41 0 2.25-2.18 1.96-3.46c-.22-.98-1.08-1.63-1.96-1.63c-.89 0-1.74.65-1.97 1.63m-4.13.9c-.25 1.08.47 2.93 1.67 2.93s1.92-1.85 1.67-2.93c-.19-.83-.92-1.39-1.67-1.39s-1.48.56-1.67 1.39m8.86 0c-.25 1.08.47 2.93 1.66 2.93c1.2 0 1.92-1.85 1.67-2.93c-.19-.83-.92-1.39-1.67-1.39c-.74 0-1.47.56-1.66 1.39m-.59 11.43l1.25-4.3C14.2 10 12.71 8.47 10 8.47c-2.72 0-4.21 1.53-3.44 4.02l1.26 4.3C8.05 17.51 9 18 10 18c.98 0 1.94-.49 2.17-1.21m-6.1-7.63c-.49.67-.96 1.83-.42 3.59l1.12 3.79c-.34.2-.77.31-1.2.31c-.85 0-1.65-.41-1.85-1.03l-1.07-3.65c-.65-2.11.61-3.4 2.92-3.4c.27 0 .54.02.79.06c-.1.1-.2.22-.29.33m8.35-.39c2.31 0 3.58 1.29 2.92 3.4l-1.07 3.65c-.2.62-1 1.03-1.85 1.03c-.43 0-.86-.11-1.2-.31l1.11-3.77c.55-1.78.08-2.94-.42-3.61c-.08-.11-.18-.23-.28-.33c.25-.04.51-.06.79-.06"
-                                />
-                            </svg>
-                        </div>
-                        <div className="burger-button-name"><h2>Rooms</h2></div>
-                    </button>
-                </div>
-                <div className="burger-button">
-                    <button className="burger-menu-buttons visible-button">
-                        <div className="svg-icon visible-button">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="5rem"
-                                height="5rem"
-                                viewBox="0 0 16 16"
-                            >
-                                <rect width="16" height="16" fill="none"/>
-                                <path
-                                    fill="#fff"
-                                    d="M8 3C4.511 3 1.486 5.032 0 8c1.486 2.968 4.511 5 8 5s6.514-2.032 8-5c-1.486-2.968-4.511-5-8-5m3.945 2.652c.94.6 1.737 1.403 2.335 2.348a7.6 7.6 0 0 1-2.335 2.348a7.33 7.33 0 0 1-7.889 0A7.6 7.6 0 0 1 1.721 8a7.6 7.6 0 0 1 2.52-2.462a4 4 0 1 0 7.518 0q.093.056.185.114zM8 6.5a1.5 1.5 0 1 1-3.001-.001A1.5 1.5 0 0 1 8 6.5"
-                                />
-                            </svg>
-                        </div>
-                        <div className="svg-icon not-visible-icon">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="5rem"
-                                height="5rem"
-                                viewBox="0 0 24 24"
-                            >
-                                <rect width="24" height="24" fill="none"/>
-                                <path
-                                    fill="#fff"
-                                    d="M1 12s4.188-6 11-6c.947 0 1.839.121 2.678.322L8.36 12.64A4 4 0 0 1 8 11c0-.937.335-1.787.875-2.469c-2.392.812-4.214 2.385-5.254 3.469a15 15 0 0 0 2.98 2.398l-1.453 1.453C2.497 14.13 1 12 1 12m22 0s-4.188 6-11 6c-.946 0-1.836-.124-2.676-.323L5 22l-1.5-1.5l17-17L22 5l-3.147 3.147C21.501 9.869 23 12 23 12m-2.615.006a14.8 14.8 0 0 0-2.987-2.403L16 11a4 4 0 0 1-4 4l-.947.947c.31.031.624.053.947.053c3.978 0 6.943-2.478 8.385-3.994"
-                                />
-                            </svg>
-                        </div>
-                        <div className="burger-button-name"><h2>Visible</h2></div>
-                    </button>
-                </div>
-                <div className="burger-button">
-                    <button className="burger-menu-buttons dark-light-button">
-                        <div className="svg-icon">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="5rem"
-                                height="5rem"
-                                viewBox="0 0 24 24"
-                            >
-                                <rect width="24" height="24" fill="none"/>
-                                <defs>
-                                    <mask id="lineMdLightDark0">
-                                        <circle cx="7.5" cy="7.5" r="5.5" fill="#fff"/>
-                                        <circle cx="7.5" cy="7.5" r="5.5">
-                                            <animate
-                                                fill="freeze"
-                                                attributeName="cx"
-                                                dur="0.4s"
-                                                values="7.5;11"
-                                            />
-                                            <animate
-                                                fill="freeze"
-                                                attributeName="r"
-                                                dur="0.4s"
-                                                values="5.5;6.5"
-                                            />
-                                        </circle>
-                                    </mask>
-                                    <mask id="lineMdLightDark1">
-                                        <g fill="#fff">
-                                            <circle cx="12" cy="9" r="5.5">
-                                                <animate
-                                                    fill="freeze"
-                                                    attributeName="cy"
-                                                    begin="1s"
-                                                    dur="0.5s"
-                                                    values="9;15"
-                                                />
-                                            </circle>
-                                            <g fill-opacity="0">
-                                                <use
-                                                    href="#lineMdLightDark2"
-                                                    transform="rotate(-75 12 15)"
-                                                />
-                                                <use
-                                                    href="#lineMdLightDark2"
-                                                    transform="rotate(-25 12 15)"
-                                                />
-                                                <use
-                                                    href="#lineMdLightDark2"
-                                                    transform="rotate(25 12 15)"
-                                                />
-                                                <use
-                                                    href="#lineMdLightDark2"
-                                                    transform="rotate(75 12 15)"
-                                                />
-                                                <set
-                                                    fill="freeze"
-                                                    attributeName="fill-opacity"
-                                                    begin="1.5s"
-                                                    to="1"
-                                                />
-                                            </g>
-                                        </g>
-                                        <path d="M0 10h26v5h-26z"/>
-                                        <path
-                                            stroke="#fff"
-                                            stroke-dasharray="26"
-                                            stroke-dashoffset="26"
-                                            stroke-width="2"
-                                            d="M23 12h-22"
-                                        >
-                                            <animate
-                                                fill="freeze"
-                                                attributeName="stroke-dashoffset"
-                                                begin="0.5s"
-                                                dur="0.4s"
-                                                values="26;0"
-                                            />
-                                        </path>
-                                    </mask>
-                                    <symbol id="lineMdLightDark2">
-                                        <path d="M11 18h2L12 20z" opacity="0">
-                                            <animate
-                                                fill="freeze"
-                                                attributeName="d"
-                                                begin="1.5s"
-                                                dur="0.4s"
-                                                values="M11 18h2L12 20z;M10.5 21.5h3L12 24z"
-                                            />
-                                            <set
-                                                fill="freeze"
-                                                attributeName="opacity"
-                                                begin="1.5s"
-                                                to="1"
-                                            />
-                                        </path>
-                                    </symbol>
-                                </defs>
-                                <g fill="#fff">
-                                    <rect
-                                        width="13"
-                                        height="13"
-                                        x="1"
-                                        y="1"
-                                        mask="url(#lineMdLightDark0)"
-                                    />
-                                    <path
-                                        d="M-2 11h28v13h-28z"
-                                        mask="url(#lineMdLightDark1)"
-                                        transform="rotate(-45 12 12)"
-                                    />
-                                </g>
-                            </svg>
-                        </div>
-                        <div className="burger-button-name"><h2>Dark/Light</h2></div>
-                    </button>
-                </div>
-                <div className="burger-button">
-                    <button className="burger-menu-buttons log-out-button">
-                        <div className="svg-icon">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="5rem"
-                                height="5rem"
-                                viewBox="0 0 24 24"
-                            >
-                                <rect width="24" height="24" fill="none"/>
-                                <g
-                                    fill="none"
-                                    stroke="#fff"
-                                    stroke-linecap="round"
-                                    stroke-width="1.5"
-                                >
-                                    <path
-                                        stroke-linejoin="round"
-                                        d="M10 12h10m0 0l-3-3m3 3l-3 3"
-                                    />
-                                    <path d="M4 12a8 8 0 0 1 8-8m0 16a7.99 7.99 0 0 1-6.245-3"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <div className="burger-button-name"><h2>Log Out</h2></div>
-                    </button>
-                </div>
+export default function BurgerMenu() {
+  {
+    return (
+      <div className="burger-menu-mobile">
+        <div className="burger-button">
+          <Link to="/dashboard">
+            <button className="burger-menu-buttons chats-button">
+              <div className="svg-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="5rem"
+                  height="5rem"
+                  viewBox="0 0 512 512"
+                >
+                  <rect width="512" height="512" fill="none" />
+                  <path
+                    fill="#fff"
+                    d="M448.205 392.507c30.519-27.2 47.8-63.455 47.8-101.078c0-39.984-18.718-77.378-52.707-105.3C410.218 158.963 366.432 144 320 144s-90.218 14.963-123.293 42.131C162.718 214.051 144 251.445 144 291.429s18.718 77.378 52.707 105.3c33.075 27.168 76.861 42.13 123.293 42.13c6.187 0 12.412-.273 18.585-.816l10.546 9.141A199.85 199.85 0 0 0 480 496h16v-34.057l-4.686-4.685a199.2 199.2 0 0 1-43.109-64.751M370.089 423l-21.161-18.341l-7.056.865A180 180 0 0 1 320 406.857c-79.4 0-144-51.781-144-115.428S240.6 176 320 176s144 51.781 144 115.429c0 31.71-15.82 61.314-44.546 83.358l-9.215 7.071l4.252 12.035a231.3 231.3 0 0 0 37.882 67.817A167.84 167.84 0 0 1 370.089 423"
+                  />
+                  <path
+                    fill="#fff"
+                    d="M60.185 317.476a220.5 220.5 0 0 0 34.808-63.023l4.22-11.975l-9.207-7.066C62.918 214.626 48 186.728 48 156.857C48 96.833 109.009 48 184 48c55.168 0 102.767 26.43 124.077 64.3c3.957-.192 7.931-.3 11.923-.3q12.027 0 23.834 1.167c-8.235-21.335-22.537-40.811-42.2-56.961C270.072 30.279 228.3 16 184 16S97.928 30.279 66.364 56.206C33.886 82.885 16 118.63 16 156.857c0 35.8 16.352 70.295 45.25 96.243a188.4 188.4 0 0 1-40.563 60.729L16 318.515V352h16a190.64 190.64 0 0 0 85.231-20.125a157.3 157.3 0 0 1-5.071-33.645a158.7 158.7 0 0 1-51.975 19.246"
+                  />
+                </svg>
+              </div>
+              <div className="burger-button-name">
+                <h2>Chats</h2>
+              </div>
+            </button>
+          </Link>
+        </div>
+        <div className="burger-button">
+          <Link to="/dashboard">
+            <button className="burger-menu-buttons rooms-button">
+              <div className="svg-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="5rem"
+                  height="5rem"
+                  viewBox="0 0 20 20"
+                >
+                  <rect width="20" height="20" fill="none" />
+                  <path
+                    fill="#fff"
+                    d="M8.03 4.46c-.29 1.28.55 3.46 1.97 3.46c1.41 0 2.25-2.18 1.96-3.46c-.22-.98-1.08-1.63-1.96-1.63c-.89 0-1.74.65-1.97 1.63m-4.13.9c-.25 1.08.47 2.93 1.67 2.93s1.92-1.85 1.67-2.93c-.19-.83-.92-1.39-1.67-1.39s-1.48.56-1.67 1.39m8.86 0c-.25 1.08.47 2.93 1.66 2.93c1.2 0 1.92-1.85 1.67-2.93c-.19-.83-.92-1.39-1.67-1.39c-.74 0-1.47.56-1.66 1.39m-.59 11.43l1.25-4.3C14.2 10 12.71 8.47 10 8.47c-2.72 0-4.21 1.53-3.44 4.02l1.26 4.3C8.05 17.51 9 18 10 18c.98 0 1.94-.49 2.17-1.21m-6.1-7.63c-.49.67-.96 1.83-.42 3.59l1.12 3.79c-.34.2-.77.31-1.2.31c-.85 0-1.65-.41-1.85-1.03l-1.07-3.65c-.65-2.11.61-3.4 2.92-3.4c.27 0 .54.02.79.06c-.1.1-.2.22-.29.33m8.35-.39c2.31 0 3.58 1.29 2.92 3.4l-1.07 3.65c-.2.62-1 1.03-1.85 1.03c-.43 0-.86-.11-1.2-.31l1.11-3.77c.55-1.78.08-2.94-.42-3.61c-.08-.11-.18-.23-.28-.33c.25-.04.51-.06.79-.06"
+                  />
+                </svg>
+              </div>
+              <div className="burger-button-name">
+                <h2>Rooms</h2>
+              </div>
+            </button>
+          </Link>
+        </div>
+        <div className="burger-button">
+          <button className="burger-menu-buttons visible-button">
+            <div className="svg-icon visible-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="5rem"
+                height="5rem"
+                viewBox="0 0 16 16"
+              >
+                <rect width="16" height="16" fill="none" />
+                <path
+                  fill="#fff"
+                  d="M8 3C4.511 3 1.486 5.032 0 8c1.486 2.968 4.511 5 8 5s6.514-2.032 8-5c-1.486-2.968-4.511-5-8-5m3.945 2.652c.94.6 1.737 1.403 2.335 2.348a7.6 7.6 0 0 1-2.335 2.348a7.33 7.33 0 0 1-7.889 0A7.6 7.6 0 0 1 1.721 8a7.6 7.6 0 0 1 2.52-2.462a4 4 0 1 0 7.518 0q.093.056.185.114zM8 6.5a1.5 1.5 0 1 1-3.001-.001A1.5 1.5 0 0 1 8 6.5"
+                />
+              </svg>
             </div>
-        );
-    }
+            <div className="svg-icon not-visible-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="5rem"
+                height="5rem"
+                viewBox="0 0 24 24"
+              >
+                <rect width="24" height="24" fill="none" />
+                <path
+                  fill="#fff"
+                  d="M1 12s4.188-6 11-6c.947 0 1.839.121 2.678.322L8.36 12.64A4 4 0 0 1 8 11c0-.937.335-1.787.875-2.469c-2.392.812-4.214 2.385-5.254 3.469a15 15 0 0 0 2.98 2.398l-1.453 1.453C2.497 14.13 1 12 1 12m22 0s-4.188 6-11 6c-.946 0-1.836-.124-2.676-.323L5 22l-1.5-1.5l17-17L22 5l-3.147 3.147C21.501 9.869 23 12 23 12m-2.615.006a14.8 14.8 0 0 0-2.987-2.403L16 11a4 4 0 0 1-4 4l-.947.947c.31.031.624.053.947.053c3.978 0 6.943-2.478 8.385-3.994"
+                />
+              </svg>
+            </div>
+            <div className="burger-button-name">
+              <h2>Visible</h2>
+            </div>
+          </button>
+        </div>
+        <div className="burger-button">
+          <button className="burger-menu-buttons dark-light-button">
+            <div className="svg-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="5rem"
+                height="5rem"
+                viewBox="0 0 24 24"
+              >
+                <rect width="24" height="24" fill="none" />
+                <defs>
+                  <mask id="lineMdLightDark0">
+                    <circle cx="7.5" cy="7.5" r="5.5" fill="#fff" />
+                    <circle cx="7.5" cy="7.5" r="5.5">
+                      <animate
+                        fill="freeze"
+                        attributeName="cx"
+                        dur="0.4s"
+                        values="7.5;11"
+                      />
+                      <animate
+                        fill="freeze"
+                        attributeName="r"
+                        dur="0.4s"
+                        values="5.5;6.5"
+                      />
+                    </circle>
+                  </mask>
+                  <mask id="lineMdLightDark1">
+                    <g fill="#fff">
+                      <circle cx="12" cy="9" r="5.5">
+                        <animate
+                          fill="freeze"
+                          attributeName="cy"
+                          begin="1s"
+                          dur="0.5s"
+                          values="9;15"
+                        />
+                      </circle>
+                      <g fillOpacity="0">
+                        <use
+                          href="#lineMdLightDark2"
+                          transform="rotate(-75 12 15)"
+                        />
+                        <use
+                          href="#lineMdLightDark2"
+                          transform="rotate(-25 12 15)"
+                        />
+                        <use
+                          href="#lineMdLightDark2"
+                          transform="rotate(25 12 15)"
+                        />
+                        <use
+                          href="#lineMdLightDark2"
+                          transform="rotate(75 12 15)"
+                        />
+                        <set
+                          fill="freeze"
+                          attributeName="fill-opacity"
+                          begin="1.5s"
+                          to="1"
+                        />
+                      </g>
+                    </g>
+                    <path d="M0 10h26v5h-26z" />
+                    <path
+                      stroke="#fff"
+                      strokeDasharray="26"
+                      strokeDashoffset="26"
+                      strokeWidth="2"
+                      d="M23 12h-22"
+                    >
+                      <animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        begin="0.5s"
+                        dur="0.4s"
+                        values="26;0"
+                      />
+                    </path>
+                  </mask>
+                  <symbol id="lineMdLightDark2">
+                    <path d="M11 18h2L12 20z" opacity="0">
+                      <animate
+                        fill="freeze"
+                        attributeName="d"
+                        begin="1.5s"
+                        dur="0.4s"
+                        values="M11 18h2L12 20z;M10.5 21.5h3L12 24z"
+                      />
+                      <set
+                        fill="freeze"
+                        attributeName="opacity"
+                        begin="1.5s"
+                        to="1"
+                      />
+                    </path>
+                  </symbol>
+                </defs>
+                <g fill="#fff">
+                  <rect
+                    width="13"
+                    height="13"
+                    x="1"
+                    y="1"
+                    mask="url(#lineMdLightDark0)"
+                  />
+                  <path
+                    d="M-2 11h28v13h-28z"
+                    mask="url(#lineMdLightDark1)"
+                    transform="rotate(-45 12 12)"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div className="burger-button-name">
+              <h2>Dark/Light</h2>
+            </div>
+          </button>
+        </div>
+        <div className="burger-button">
+          <button className="burger-menu-buttons log-out-button">
+            <div className="svg-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="5rem"
+                height="5rem"
+                viewBox="0 0 24 24"
+              >
+                <rect width="24" height="24" fill="none" />
+                <g
+                  fill="none"
+                  stroke="#fff"
+                  strokeLinecap="round"
+                  strokeWidth="1.5"
+                >
+                  <path
+                    strokeLinejoin="round"
+                    d="M10 12h10m0 0l-3-3m3 3l-3 3"
+                  />
+                  <path d="M4 12a8 8 0 0 1 8-8m0 16a7.99 7.99 0 0 1-6.245-3" />
+                </g>
+              </svg>
+            </div>
+            <div className="burger-button-name">
+              <h2>Log Out</h2>
+            </div>
+          </button>
+        </div>
+      </div>
+    );
+  }
 }
-
