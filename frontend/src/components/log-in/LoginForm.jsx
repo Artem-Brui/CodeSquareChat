@@ -6,7 +6,7 @@ export default function LoginForm() {
     navigate('/register');
   };
     const handleLogInLink = () => {
-        navigate('/mainpagechat');
+        navigate('/dashboard');
     };
   {
     return (

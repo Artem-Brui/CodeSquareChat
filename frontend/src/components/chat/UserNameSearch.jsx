@@ -2,8 +2,8 @@ import { useNavigate } from 'react-router-dom';
 
 export default function UserNameSearch() {
     const navigate = useNavigate();
-    const handleSignUpLink = () => {
-        navigate('/mainpagechat');
+    const handleLogInLink = () => {
+        navigate('/dashboard');
     };
 
     return (
@@ -11,25 +11,25 @@ export default function UserNameSearch() {
             <div className="user-list">
                 <div className="user">
                     <div className="avatar avatar-online">
-                        <img src="../images/smile.jpg" alt="avatar"/>
+                        <img src="../../assets/images/smile.jpg" alt="avatar"/>
                     </div>
                     <div className="user-name">Name / Username</div>
                 </div>
                 <div className="user">
                     <div className="avatar avatar-busy">
-                        <img src="../images/smile.jpg" alt="avatar"/>
+                        <img src="../../assets/images/smile.jpg" alt="avatar"/>
                     </div>
                     <div className="user-name">Name / Username</div>
                 </div>
                 <div className="user">
                     <div className="avatar avatar-offline">
-                        <img src="../images/smile.jpg" alt="avatar"/>
+                        <img src="../../assets/images/smile.jpg" alt="avatar"/>
                     </div>
                     <div className="user-name">Name / Username</div>
                 </div>
                 <div className="user">
                     <div className="avatar avatar-ai-user">
-                        <img src="../images/smile.jpg" alt="avatar"/>
+                        <img src="../../assets/images/smile.jpg" alt="avatar"/>
                     </div>
                     <div className="user-name">AI / Virtual-User</div>
                 </div>
