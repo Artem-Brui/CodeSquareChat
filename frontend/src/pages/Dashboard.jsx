@@ -4,7 +4,7 @@ import RoomsList from "./RoomsList";
 
 export default function Dashboard( { rooms } ) {
   return (
-    <div className="dashboard">
+    <div className="container dashboard">
       <Header />
       <ChatCategories />
       <RoomsList list={rooms} />

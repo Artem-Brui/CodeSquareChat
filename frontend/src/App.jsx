@@ -7,7 +7,7 @@ import MainPageChat from './pages/MainPageChat.jsx';
 // import Header from './components/layout/Header';
 import ChatCategories from './components/chat/ChatCategories';
 import AddRoom from './pages/RoomsList';
-// import ChatTextBox from './components/chat/ChatTextBox';
+import ChatTextBox from './components/chat/ChatTextBox';
 import UserRegistrationFormPage from './pages/UserRegistrationPage';
 // import UserProfilePage from './components/users/Profile/UserProfilePage';
 // import UserSettingsPage from './components/users/UserSettings/UserSettingsPage';
@@ -16,29 +16,7 @@ import SignUpUserInfoForm from "./components/users/registration/SignUpUserInfoFo
 import Dashboard from "./pages/Dashboard";
 import RoomPage from "./pages/RoomPage";
 import BurgerMenu from "./components/layout/BurgerMenu";
-
-const roomsList = [
-  {
-    id: 1,
-    name: "Room Name 1",
-    capacity: "13/20",
-  },
-  {
-    id: 2,
-    name: "Room Name 2",
-    capacity: "19/20",
-  },
-  {
-    id: 3,
-    name: "Room Name 3",
-    capacity: "8/20",
-  },
-  {
-    id: 4,
-    name: "Room Name 4",
-    capacity: "15/20",
-  },
-];
+import { roomsList } from './services/database.js';
 
 function App() {
   return (
@@ -51,6 +29,7 @@ function App() {
         <Route path="/menu" element={<BurgerMenu />} />
         <Route path="/add-room" element={<AddRoom />} />
         <Route path="/chat-categories" element={<ChatCategories />} />
+        <Route path="/chat-text-box" element={<ChatTextBox />} />
         <Route path="/dashboard" element={<Dashboard rooms={roomsList} />} />
         {roomsList.map((room) => (
           <Route

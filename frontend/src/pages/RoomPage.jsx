@@ -1,10 +1,16 @@
-import ChatCategories from "../components/chat/ChatCategories";
+import ChatField from "../components/chat/ChatField";
+import ChatTextBox from "../components/chat/ChatTextBox";
 import Header from "../components/layout/Header";
 
-export default function RoomPage() {
+
+export default function RoomPage({ room }) {
+  console.log(room);
+  
   return (
-    <div className="">
+    <div className="room-page container" id="room-page">
       <Header />
+      <ChatField />
+      <ChatTextBox />
     </ div>
   )
 }
