@@ -5,19 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc058822-f417-4a51-bd66-99eb80de90ac" name="Changes" comment="Merge Gerardo changes">
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/chat/UserNameSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/chat/UserNameSearch.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/log-in/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/log-in/LoginForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fn-components" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,26 +54,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.add-user.html.executor": "Debug",
-    "JavaScript Debug.chat-rooms.html.executor": "Run",
-    "JavaScript Debug.room-settings.html.executor": "Run",
-    "Node.js.App.jsx.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "fn-chatmain",
-    "last_opened_file_path": "/home/dci-student/Schreibtisch/Final/frontend/src/components/chat",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/opt/webstorm/WebStorm-243.22562.222/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.add-user.html.executor&quot;: &quot;Debug&quot;,
+    &quot;JavaScript Debug.chat-rooms.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.room-settings.html.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.App.jsx.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fn-chatmain&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dci-student/Schreibtisch/Final/frontend/src/components/chat&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/opt/webstorm/WebStorm-243.22562.222/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/src/components/chat" />
@@ -80,7 +85,7 @@
       <recent name="$PROJECT_DIR$/frontend/src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.chat-rooms.html">
     <configuration name="add-user.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Final/frontend/mobile-pages/add-user.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -118,7 +123,7 @@
       <workItem from="1738013497097" duration="153000" />
       <workItem from="1738051819554" duration="3861000" />
       <workItem from="1738055691281" duration="9230000" />
-      <workItem from="1738067418171" duration="777000" />
+      <workItem from="1738067418171" duration="1762000" />
     </task>
     <task id="LOCAL-00001" summary="Merge Kathrin changes">
       <option name="closed" value="true" />
