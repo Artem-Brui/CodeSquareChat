@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default function UserInfo() {
   return (
     <div className="user-info">
-      <Link to="/user-profile-page">
+      <Link to="/user-profile">
         <div className="user-icon">
           <div className="svg-icon">
             <svg
