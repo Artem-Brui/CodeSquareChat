@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import FAQPage from "./pages/FAQPage";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import WelcomePage from "./pages/WelcomePage";
+import MainPageChat from "./pages/MainPageChat.jsx";
+
 // import BurgerMenu from './components/layout/BurgerMenu';
 // import Header from './components/layout/Header';
 // import ChatCategories from './components/chat/ChatCategories';
@@ -12,7 +14,6 @@ import UserRegistrationFormPage from "./pages/UserRegistrationPage";
 // import UserSettingsPage from './components/users/UserSettings/UserSettingsPage';
 
 import SignUpUserInfoForm from "./components/users/registration/SignUpUserInfoForm";
-import MainPageChat from "./pages/MainPageChat.jsx";
 
 function App() {
   return (

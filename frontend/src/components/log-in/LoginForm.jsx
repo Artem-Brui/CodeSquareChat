@@ -5,6 +5,9 @@ export default function LoginForm() {
   const handleSignUpLink = () => {
     navigate('/register');
   };
+    const handleLogInLink = () => {
+        navigate('/mainpagechat');
+    };
   {
     return (
       <div className="login-form-full">
@@ -13,7 +16,8 @@ export default function LoginForm() {
           <input type="password" placeholder="Password" required />
         </form>
         <div className="login-button-div">
-          <button type="submit">Log In</button>
+          <button type="submit" onClick={handleLogInLink}>
+              Log In</button>
 
         </div>
         <div className="signup-button-div">
