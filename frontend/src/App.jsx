@@ -4,8 +4,6 @@ import TermsAndConditions from './pages/TermsAndConditions';
 import WelcomePage from './pages/WelcomePage';
 import MainPageChat from './pages/MainPageChat.jsx';
 // import BurgerMenu from './components/layout/BurgerMenu';
-// import Header from './components/layout/Header';
-// import ChatCategories from './components/chat/ChatCategories';
 // import AddRoom from './components/pages/AddRoom';
 // import ChatTextBox from './components/chat/ChatTextBox';
 import UserRegistrationFormPage from './pages/UserRegistrationPage';
