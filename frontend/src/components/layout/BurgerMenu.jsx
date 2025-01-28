@@ -241,33 +241,35 @@ export default function BurgerMenu() {
                     </button>
                 </div>
                 <div className="burger-button">
-                    <button className="burger-menu-buttons log-out-button">
-                        <div className="svg-icon">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="5rem"
-                                height="5rem"
-                                viewBox="0 0 24 24"
-                            >
-                                <rect width="24" height="24" fill="none" />
-                                <g
-                                    fill="none"
-                                    stroke="#fff"
-                                    strokeLinecap="round"
-                                    strokeWidth="1.5"
+                    <Link to="/">
+                        <button className="burger-menu-buttons log-out-button">
+                            <div className="svg-icon">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="5rem"
+                                    height="5rem"
+                                    viewBox="0 0 24 24"
                                 >
-                                    <path
-                                        strokeLinejoin="round"
-                                        d="M10 12h10m0 0l-3-3m3 3l-3 3"
-                                    />
-                                    <path d="M4 12a8 8 0 0 1 8-8m0 16a7.99 7.99 0 0 1-6.245-3" />
-                                </g>
-                            </svg>
-                        </div>
-                        <div className="burger-button-name">
-                            <h2>Log Out</h2>
-                        </div>
-                    </button>
+                                    <rect width="24" height="24" fill="none" />
+                                    <g
+                                        fill="none"
+                                        stroke="#fff"
+                                        strokeLinecap="round"
+                                        strokeWidth="1.5"
+                                    >
+                                        <path
+                                            strokeLinejoin="round"
+                                            d="M10 12h10m0 0l-3-3m3 3l-3 3"
+                                        />
+                                        <path d="M4 12a8 8 0 0 1 8-8m0 16a7.99 7.99 0 0 1-6.245-3" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div className="burger-button-name">
+                                <h2>Log Out</h2>
+                            </div>
+                        </button>
+                    </Link>
                 </div>
             </div>
         );
