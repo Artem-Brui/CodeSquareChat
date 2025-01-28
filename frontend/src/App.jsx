@@ -12,6 +12,7 @@ import UserRegistrationFormPage from "./pages/UserRegistrationPage";
 // import UserSettingsPage from './components/users/UserSettings/UserSettingsPage';
 
 import SignUpUserInfoForm from "./components/users/registration/SignUpUserInfoForm";
+import MainPageChat from "./pages/MainPageChat.jsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/register" element={<UserRegistrationFormPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/t&cs" element={<TermsAndConditions />} />
+        <Route path="/mainpagechat" element={<MainPageChat />} />
 
         {/* check validation of birthdate */}
         <Route path="/signup" element={<SignUpUserInfoForm />} />
