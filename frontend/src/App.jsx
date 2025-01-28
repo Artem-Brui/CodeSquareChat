@@ -8,7 +8,7 @@ import AddRoom from './pages/RoomsList';
 import ChatTextBox from './components/chat/ChatTextBox';
 import UserRegistrationFormPage from './pages/UserRegistrationPage';
 import UserProfilePage from './pages/UserProfilePage';
-// import UserSettingsPage from './components/users/UserSettings/UserSettingsPage';
+import UserSettingsPage from './components/users/UserSettings/UserSettingsPage';
 // import BurgerMenu from './components/layout/BurgerMenu';
 // import Header from './components/layout/Header';
 // import ChatTextBox from './components/chat/ChatTextBox';
@@ -33,7 +33,7 @@ function App() {
         <Route path="/chat-text-box" element={<ChatTextBox />} />
         <Route path="/main-chat" element={<MainPageChat />} />
         <Route path="/user-profile" element={<UserProfilePage />} />
-
+        <Route path="/user-settings" element={<UserSettingsPage />} />
         <Route path="/dashboard" element={<Dashboard rooms={roomsList} />} />
         {roomsList.map((room) => (
           <Route
@@ -48,7 +48,7 @@ function App() {
 
         {/* <Route path="/chat-text-box" element={<ChatTextBox />} />
        
-        <Route path="/user-settings-page" element={<UserSettingsPage />} /> */}
+        */}
       </Routes>
     </Router>
   );
