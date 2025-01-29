@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import api from '../../../../config/api';
 
 export default function SignUpUserInfoForm() {
     const [condition, setConditionChecked] = useState(false);
@@ -13,31 +14,8 @@ export default function SignUpUserInfoForm() {
         password: '',
     });
     const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
     const navigate = useNavigate();
-
-    const handleLogInLink = (e) => {
-        e.preventDefault();
-        if (!submitDisabled) {
-            navigate('/dashboard');
-        }
-    };
-
-    // Thsi will chekc if all field are valid
-    useEffect(() => {
-        const { username, displayName, email, password } = formValues;
-        if (
-            condition &&
-            isOlderThan18 &&
-            username &&
-            displayName &&
-            email &&
-            password.length >= 10
-        ) {
-            setSubmitDisabled(false);
-        } else {
-            setSubmitDisabled(true);
-        }
-    }, [condition, isOlderThan18, formValues]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -74,8 +52,42 @@ export default function SignUpUserInfoForm() {
         }
     };
 
+    useEffect(() => {
+        const { username, displayName, email, password } = formValues;
+        if (
+            condition &&
+            isOlderThan18 &&
+            username &&
+            displayName &&
+            email &&
+            password.length >= 10
+        ) {
+            setSubmitDisabled(false);
+        } else {
+            setSubmitDisabled(true);
+        }
+    }, [condition, isOlderThan18, formValues]);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await api.post('/users/signup', {
+                ...formValues,
+                birthDate: birthdate,
+            }); // Backend-API für Registrierung
+            setSuccessMessage('Registration successful! Redirecting...');
+            setTimeout(() => {
+                navigate('/dashboard'); // Weiterleitung
+            }, 2000);
+        } catch (error) {
+            setErrorMessage(
+                error.response?.data?.message || 'Registration failed! Please try again.'
+            );
+        }
+    };
+
     return (
-        <form className="registration-form">
+        <form className="registration-form" onSubmit={handleSubmit}>
             <div className="form-group">
                 <input
                     type="text"
@@ -133,9 +145,7 @@ export default function SignUpUserInfoForm() {
                     onChange={handleBirthdateChange}
                     required
                 />
-                {errorMessage && (
-                    <p className="error-message">{errorMessage}</p>
-                )}
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
             </div>
 
             <div className="checkbox-group">
@@ -158,11 +168,11 @@ export default function SignUpUserInfoForm() {
                 <button
                     type="submit"
                     className="submit-button"
-                    onClick={handleLogInLink}
                     disabled={submitDisabled}
                 >
-                    Sign in
+                    Sign Up
                 </button>
+                {successMessage && <p className="success-message">{successMessage}</p>}
             </div>
         </form>
     );
