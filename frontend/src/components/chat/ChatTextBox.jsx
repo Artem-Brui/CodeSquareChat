@@ -1,15 +1,39 @@
+import { useState } from "react";
 
 export default function ChatTextBox() {
+  const [messageInputValue, setMessageInputValue] = useState('')
+
+  const handleSendMessage = () => {
+    console.log(messageInputValue);
+    
+    setMessageInputValue('');
+  }
+
+  const handleChangeInput = (event) => {
+    setMessageInputValue(event.target.value);
+  }
+
+
     {
         return (
             <div className="textbox">
-                <div className="chat-textbox">
-                    <input type="text" placeholder="Write Something :)"/>
+            <div className="chat-textbox">
+              
+              <input
+                type="text"
+                name="username"
+                placeholder="Write Something :)"
+                className="input-field regis"
+                value={messageInputValue}
+                onChange={handleChangeInput}
+              />
                 </div>
 
                 <div className="send-text-btn">
                     <button>
-                        <div className="svg-icon">
+                <div
+                  className="svg-icon"
+                  onClick={handleSendMessage}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="5rem"
