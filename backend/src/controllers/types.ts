@@ -1,0 +1,19 @@
+import { Locals, Request, response, Response } from "express";
+import { ParsedQs } from "qs";
+
+export type RequestCallback = (
+  req: Request<{}, any, any, ParsedQs, Record<string, any>>,
+  res: Response<{}, Locals>
+) => Promise<any>;
+
+export type UserType = {
+  name: string;
+  realName: string;
+  email: string;
+  password: string;
+  birthDate: string;
+  isAdult: boolean;
+  isAcceptRules: boolean;
+  creatingDate: string;
+  updatingDate: string;
+};

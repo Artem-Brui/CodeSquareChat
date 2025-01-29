@@ -2,12 +2,11 @@ import express from 'express';
 import { getUsers } from '../controllers/Users_GET.js';
 import { signUpUser } from '../controllers/Users_SignUp.js';
 import { logInUser } from '../controllers/Users_LogIn.js';
+import { getRooms } from '../controllers/Rooms_GET.js';
 
-const usersRouter = express.Router();
+const roomsRouter = express.Router();
 
-usersRouter.get('/', getUsers);
-usersRouter.post('/signup', signUpUser);
-usersRouter.post('/login', logInUser);
+roomsRouter.get('/', getRooms);
 
 
-export default usersRouter;
+export default roomsRouter;
