@@ -4,8 +4,7 @@ import Header from "../components/layout/Header";
 
 
 export default function RoomPage({ room }) {
-  console.log(room);
-  
+
   return (
     <div className="room-page container" id="room-page">
       <Header />
