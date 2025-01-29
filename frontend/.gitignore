@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Remove idea folfder from WebStorm program
+
+.idea/
