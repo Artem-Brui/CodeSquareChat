@@ -28,7 +28,6 @@ export default function LoginForm() {
             const token = response.data.token
             localStorage.setItem("authToken", token)
 
-
             setTimeout(() => {
                 setIsLoading(false)
                 navigate("/dashboard")
@@ -43,7 +42,10 @@ export default function LoginForm() {
     return (
         <div className="login-form-full">
             {isLoading ? (
-                <LoadingSpinner />
+                <div className="loading-container">
+                    <LoadingSpinner />
+                    <p className="logging-in-message">Logging in...</p>
+                </div>
             ) : (
                 <form className="login-form" onSubmit={handleLogin}>
                     <input
@@ -78,4 +80,3 @@ export default function LoginForm() {
         </div>
     )
 }
-

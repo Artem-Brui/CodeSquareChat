@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="01ba8bb5-8cb7-46d6-b9b9-253fd1624d86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/mobile-styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/mobile-styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/mobile-pages/loading-spinner.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/log-in/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/log-in/LoginForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/users/registration/SignUpUserInfoForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/users/registration/SignUpUserInfoForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/scss/_loading-spinner.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/scss/_loading-spinner.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
