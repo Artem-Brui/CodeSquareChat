@@ -2,6 +2,8 @@
 
 # CSC - Code Sqare Chat
 
+Has no a Loogin in fucniton
+
 ```
 ### Installed Softwares:
 
