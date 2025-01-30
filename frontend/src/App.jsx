@@ -22,6 +22,13 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [roomsList, setRoomsList] = useState([]);
+  const [messageId, setMessageId] = useState('');
+
+  const updatePage = (UpdatedRoom) => {
+    const lastMessage = UpdatedRoom.messages;
+    const newId = lastMessage._id;
+    setMessageId(UpdatedRoom);
+  }
 
   useEffect(() => {
     const getRooms = async () => {
@@ -32,7 +39,7 @@ function App() {
     };
 
     getRooms();
-  }, []);
+  }, [messageId]);
 
   return (
     <Router>
@@ -53,7 +60,7 @@ function App() {
           <Route
             key={room.id}
             path={`/rooms/${room.id}`}
-            element={<RoomPage room={room} />}
+            element={<RoomPage room={room} rerender={updatePage} />}
           />
         ))}
 

@@ -4,19 +4,13 @@ import ChatTextBox from "../components/chat/ChatTextBox";
 import Header from "../components/layout/Header";
 
 
-export default function RoomPage({ room }) {
-
-  const [newRoom, setNewRoom] = useState(room)
-
-  const updatePage = (UpdatedRoom) => {
-    setNewRoom(UpdatedRoom);
-  }
+export default function RoomPage({ room, rerender }) {
 
   return (
     <div className="room-page container" id="room-page">
       <Header />
-      <ChatField messages={newRoom.messages} />
-      <ChatTextBox room={newRoom} pageRerender={updatePage} />
+      <ChatField messages={room.messages} />
+      <ChatTextBox room={room} rerender={rerender} />
     </ div>
   )
 }
