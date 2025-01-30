@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function ChatTextBox({ room, pageRerender }) {
+export default function ChatTextBox({ room, rerender }) {
   const [messageInputValue, setMessageInputValue] = useState("");
 
   const sendMessage = async (message) => {
@@ -33,9 +33,9 @@ export default function ChatTextBox({ room, pageRerender }) {
 
     setTimeout(() => {
       if (updatedRoom) {
-        pageRerender(updatedRoom);
+        rerender(updatedRoom);
       } else {
-        pageRerender((prevMessages) => {
+        rerender((prevMessages) => {
           return {
             ...updatedRoom,
             messages: [
