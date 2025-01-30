@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function UserProfileMenu() {
-  const [OpenMenu, setMenuOpen] = useState(true);
+  const [OpenMenu, setMenuOpen] = useState(false);
 
   const ClickDropdown = () => {
     setMenuOpen(!OpenMenu);
