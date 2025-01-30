@@ -52,20 +52,20 @@ export default function SignUpUserInfoForm() {
         }
     };
 
-    const validateForm = () => {
+    useEffect(() => {
         const { username, displayName, email, password } = formValues;
-        return (
+        if (
             condition &&
             isOlderThan18 &&
             username &&
             displayName &&
             email &&
             password.length >= 10
-        );
-    };
-
-    useEffect(() => {
-        setSubmitDisabled(!validateForm());
+        ) {
+            setSubmitDisabled(false);
+        } else {
+            setSubmitDisabled(true);
+        }
     }, [condition, isOlderThan18, formValues]);
 
     const handleSubmit = async (e) => {
@@ -74,10 +74,10 @@ export default function SignUpUserInfoForm() {
             const response = await api.post('/users/signup', {
                 ...formValues,
                 birthDate: birthdate,
-            });
+            }); // Backend-API für Registrierung
             setSuccessMessage('Registration successful! Redirecting...');
             setTimeout(() => {
-                navigate('/dashboard');
+                navigate('/dashboard'); // Weiterleitung
             }, 2000);
         } catch (error) {
             setErrorMessage(
@@ -157,7 +157,7 @@ export default function SignUpUserInfoForm() {
                         onChange={() => setConditionChecked(!condition)}
                     />
                     <div>
-                        <a href="/terms-and-conditions">
+                        <a href="/t&cs">
                             General <u>Terms and Conditions (GTC)</u>
                         </a>
                     </div>
