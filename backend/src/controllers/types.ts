@@ -17,3 +17,7 @@ export type UserType = {
   creatingDate: string;
   updatingDate: string;
 };
+
+export type RoomParams = {
+  id: string;
+}
