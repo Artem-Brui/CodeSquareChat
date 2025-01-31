@@ -10,7 +10,7 @@ export const signUpUser: RequestCallback = async (req, res) => {
     });
   }
 
-  const { name, realName, email, password, birthDate, isAdult, isAcceptRules } =
+  const { userName, displayName, email, password, birthDate, isAcceptRules } =
     req.body;
 
   const isUserExist = (await User.findOne({ email: email })) !== null;
@@ -25,12 +25,11 @@ export const signUpUser: RequestCallback = async (req, res) => {
       const hashedPassword = await bcrypt.hash(password, 10);
 
       const newUser = await User.create({
-        name,
-        realName,
+        userName,
+        displayName,
         email,
         password: hashedPassword,
         birthDate,
-        isAdult,
         isAcceptRules,
       });
 

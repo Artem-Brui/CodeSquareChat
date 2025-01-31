@@ -11,8 +11,13 @@ const app = express();
 await doConnectBase();
 
 
-app.use(cors());
 app.use(express.json());
+
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true
+}));
+
 
 app.use('/users', usersRouter);
 app.use('/rooms', roomsRouter);

@@ -7,7 +7,7 @@ export const signUpUser = async (req, res) => {
             response: "Request body not found..",
         });
     }
-    const { name, realName, email, password, birthDate, isAdult, isAcceptRules } = req.body;
+    const { userName, displayName, email, password, birthDate, isAcceptRules } = req.body;
     const isUserExist = (await User.findOne({ email: email })) !== null;
     if (isUserExist) {
         res.status(500).json({
@@ -19,12 +19,11 @@ export const signUpUser = async (req, res) => {
         try {
             const hashedPassword = await bcrypt.hash(password, 10);
             const newUser = await User.create({
-                name,
-                realName,
+                userName,
+                displayName,
                 email,
                 password: hashedPassword,
                 birthDate,
-                isAdult,
                 isAcceptRules,
             });
             res.status(200).json({

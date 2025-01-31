@@ -1,13 +1,10 @@
 import User from "../models/User.js";
 import errorHandler from "./errorHandler.js";
+import isTokenVerif from "./loginTokenVerify.js";
 import { RequestCallback } from "./types.js";
 
 export const getUsers: RequestCallback = async (req, res) => {
-  try {
-    const response = await User.find({});
+  const { token } = req.body;
 
-    res.status(200).json(response);
-  } catch (error) {
-    errorHandler(res, error);
-  }
+  res.status(200).json(isTokenVerif(token));
 };

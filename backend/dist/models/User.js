@@ -1,10 +1,10 @@
 import { Schema, model } from "mongoose";
 const userSchema = new Schema({
-    name: {
+    userName: {
         type: String,
         require: true,
     },
-    realName: {
+    displayName: {
         type: String,
         require: true,
     },
@@ -18,10 +18,6 @@ const userSchema = new Schema({
     },
     birthDate: {
         type: String,
-        require: true,
-    },
-    isAdult: {
-        type: Boolean,
         require: true,
     },
     isAcceptRules: {
