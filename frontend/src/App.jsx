@@ -9,10 +9,6 @@ import ChatTextBox from "./components/chat/ChatTextBox";
 import UserRegistrationFormPage from "./pages/UserRegistrationPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import UserSettingsPage from "./components/users/UserSettings/UserSettingsPage";
-// import BurgerMenu from './components/layout/BurgerMenu';
-// import Header from './components/layout/Header';
-// import ChatTextBox from './components/chat/ChatTextBox';
-
 import SignUpUserInfoForm from "./components/users/registration/SignUpUserInfoForm";
 import Dashboard from "./pages/Dashboard";
 import RoomPage from "./pages/RoomPage";
