@@ -5,14 +5,18 @@ import Context from "./service";
 const ContextProvider = ({ children }) => {
 
   const [userData, setUserData] = useState({});
+  const [isTokenVerifed, setIsTokenVerifed] = useState(false);
 
   const updateUserData = (data) => setUserData(data);
-
+  const updateTokenVerify = (data) => setIsTokenVerifed(data);
+  
   return (
     <Context.Provider
       value={{
         userData,
-        updateUserData
+        updateUserData,
+        isTokenVerifed,
+        updateTokenVerify
       }}
     >
       {children}

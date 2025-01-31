@@ -1,22 +1,21 @@
 import { useContext } from "react";
 import Context from "../context/service";
 
-
 export default function useUserData() {
   const context = useContext(Context);
 
   if (!context) {
-    throw new Error('Context not found...')
+    throw new Error("Context not found...");
   }
 
-  const {
-    userData,
-    updateUserData
-  } = context;
+  const { userData, updateUserData, isTokenVerifed, updateTokenVerify } =
+    context;
 
   const userDataContext = {
     userData,
-    updateUserData
+    updateUserData,
+    isTokenVerifed,
+    updateTokenVerify
   };
 
   if (!context) {

@@ -4,6 +4,7 @@ import errorHandler from "./errorHandler.js";
 import { RequestCallback, UserType } from "./types.js";
 import bcrypt from "bcrypt";
 import "dotenv/config";
+import isTokenVerif from "./isTokenVerif.js";
 
 const createToken = (id: string, lifeTime: number) => {
   const secretJWT = process.env.AUTH_TOKEN_SECRET || "";
@@ -41,15 +42,23 @@ export const logInUser: RequestCallback = async (req, res) => {
         const cookieLifeTime = 24 * 60 * 60;
         const token = createToken(_id, cookieLifeTime);
 
+        console.log(token);
+
+        await User.findByIdAndUpdate({ _id: _id }, { token: token });
+
         res.cookie("token", token, {
           httpOnly: true,
           maxAge: cookieLifeTime * 1000,
         });
 
         res.status(200).json({
-          userName,
-          displayName,
-          birthDate,
+          userData: {
+            userName,
+            displayName,
+            birthDate,
+            _id,
+          },
+          isTokenVerif: isTokenVerif(token),
         });
       } else {
         errorHandler(res, "_id is not a valid string");

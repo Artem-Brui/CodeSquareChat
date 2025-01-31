@@ -20,6 +20,10 @@ const userSchema = new Schema({
         type: String,
         require: true,
     },
+    token: {
+        type: String,
+        require: false,
+    },
     isAcceptRules: {
         type: Boolean,
         require: true,

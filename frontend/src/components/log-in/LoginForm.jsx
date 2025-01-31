@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getUserIdFromCookie } from "../../services/getUserId";
 import useUserData from "../../customHooks/useUserData";
 
 
@@ -11,7 +10,7 @@ export default function LoginForm() {
   });
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const { updateUserData } = useUserData()
+  const { updateUserData, updateTokenVerify } = useUserData()
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -36,11 +35,16 @@ export default function LoginForm() {
           credentials: "include",
         }
       );
-      const userData = await loginResponse.json();
+      const response = await loginResponse.json();
 
-      updateUserData(userData);
+      const { userData, isTokenVerif } = response;
 
-      navigate("/dashboard");
+      if (response.userData) {
+        updateUserData(userData);
+        updateTokenVerify(isTokenVerif);
+        navigate("/dashboard");
+      }
+      
     } catch (error) {
       setErrorMessage(
         error.response?.data?.message || "Login failed! Please try again."
