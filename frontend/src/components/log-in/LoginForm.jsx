@@ -36,7 +36,6 @@ export default function LoginForm() {
         }
       );
       const response = await loginResponse.json();
-
       const { userData, isTokenVerif } = response;
 
       if (response.userData) {

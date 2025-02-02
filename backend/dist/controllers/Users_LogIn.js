@@ -33,7 +33,6 @@ export const logInUser = async (req, res) => {
             else if (_id) {
                 const cookieLifeTime = 24 * 60 * 60;
                 const token = createToken(_id, cookieLifeTime);
-                console.log(token);
                 await User.findByIdAndUpdate({ _id: _id }, { token: token });
                 res.cookie("token", token, {
                     httpOnly: true,

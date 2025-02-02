@@ -12,30 +12,9 @@ import UserSettingsPage from "./components/users/UserSettings/UserSettingsPage";
 import Dashboard from "./pages/Dashboard";
 import RoomPage from "./pages/RoomPage";
 import BurgerMenu from "./components/layout/BurgerMenu";
-// import { roomsList } from './services/database.js';
-import { useEffect, useState } from "react";
 import ProtectedRoute from "./Router/ProtectedRouter";
-import useUserData from "./customHooks/useUserData";
 
 function App() {
-  const [roomsList, setRoomsList] = useState([]);
-  const [messageId, setMessageId] = useState("");
-
-  const {isTokenVerif} = useUserData();
-  console.log(isTokenVerif);
-
-  const updatePage = (newId) => setMessageId(newId);
-
-  useEffect(() => {
-    const getRooms = async () => {
-      const RoomsBDResponse = await fetch("http://localhost:5007/rooms");
-      const roomsData = await RoomsBDResponse.json();
-
-      setRoomsList(await roomsData);
-    };
-
-    getRooms();
-  }, [messageId]);
 
   return (
     <Router>
@@ -53,14 +32,8 @@ function App() {
           <Route path="/main-chat" element={<MainPageChat />} />
           <Route path="/user-profile" element={<UserProfilePage />} />
           <Route path="/user-settings" element={<UserSettingsPage />} />
-          <Route path="/dashboard" element={<Dashboard rooms={roomsList} />} />
-          {roomsList.map((room) => (
-            <Route
-              key={room.id}
-              path={`/rooms/${room.id}`}
-              element={<RoomPage room={room} rerender={updatePage} />}
-            />
-          ))}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/rooms/:roomId" element={<RoomPage />} />
         </Route>
 
         {/* <Route path="/signup" element={<SignUpUserInfoForm />} />
