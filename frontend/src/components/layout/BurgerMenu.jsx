@@ -7,8 +7,6 @@ export default function BurgerMenu() {
 
   const userId = localStorage.getItem("userId");
 
-  console.log(userId);
-
   const logOut = async () => {
     try {
       const loginResponse = await fetch(
