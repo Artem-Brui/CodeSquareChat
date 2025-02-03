@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01ba8bb5-8cb7-46d6-b9b9-253fd1624d86" name="Changes" comment="" />
+    <list default="true" id="01ba8bb5-8cb7-46d6-b9b9-253fd1624d86" name="Changes" comment="changed Readmesds">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/layout/BurgerMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/layout/BurgerMenu.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,6 +78,15 @@
       <workItem from="1738226034265" duration="1779000" />
       <workItem from="1738227825290" duration="1753000" />
     </task>
+    <task id="LOCAL-00001" summary="changed Readmesds">
+      <option name="closed" value="true" />
+      <created>1738589719517</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1738589719517</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,6 +94,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed Readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed Readme" />
+    <MESSAGE value="changed Readmesds" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed Readmesds" />
   </component>
 </project>
