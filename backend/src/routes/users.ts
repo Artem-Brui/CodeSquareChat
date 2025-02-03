@@ -5,7 +5,7 @@ import { logInUser } from "../controllers/Users_LogIn.js";
 
 const usersRouter = express.Router();
 
-usersRouter.get("/:id", TokenVerifGET);
+usersRouter.get("/:id/token", TokenVerifGET);
 usersRouter.post("/signup", signUpUser);
 usersRouter.post("/login", logInUser);
 

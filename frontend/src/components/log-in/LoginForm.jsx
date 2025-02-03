@@ -41,6 +41,8 @@ export default function LoginForm() {
       if (response.userData) {
         updateUserData(userData);
         updateTokenVerify(isTokenVerif);
+
+        localStorage.setItem('userId', userData._id)
         navigate("/dashboard");
       }
       
