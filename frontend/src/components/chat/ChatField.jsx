@@ -1,4 +1,5 @@
 import UserProfileImage from "../users/Profile/UserProfileImage";
+import Message from "./Message";
 
 export default function ChatField({ messages }) {
 
@@ -10,9 +11,7 @@ export default function ChatField({ messages }) {
             return (
               <li key={message._id} className="messages-item">
                 <UserProfileImage />
-                <p>
-                  {message.message}
-                </p>
+                <Message message={message} />
               </li>
             );
           })}

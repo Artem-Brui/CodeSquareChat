@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import Context from "./service";
 import darkModeSwitcher from "./darkModeSwitcher";
 
-const currentMode = localStorage.getItem('colorMode').length ? localStorage.getItem('colorMode') : 'light';
+const currentMode = localStorage.getItem('colorMode') !== null ? localStorage.getItem('colorMode') : 'light';
 
 const ContextProvider = ({ children }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
   const [userData, setUserData] = useState({});
   const [isTokenVerifed, setIsTokenVerifed] = useState(null);
 
@@ -12,17 +14,6 @@ const ContextProvider = ({ children }) => {
   const [lastMessageId, setLastMessageId] = useState('');
 
   const [colorMode, setColorMode] = useState(currentMode);
-
-  useEffect(() => {
-    async function getRooms() {
-      const RoomsBDResponse = await fetch("http://localhost:5007/rooms");
-      const roomsList = await RoomsBDResponse.json();
-
-      setRoomsList(roomsList);
-    }
-
-    getRooms();
-  }, [lastMessageId]);
 
   const updateUserData = (data) => setUserData(data);
   const updateTokenVerify = (boolean) => setIsTokenVerifed(boolean);
@@ -36,27 +27,51 @@ const ContextProvider = ({ children }) => {
     setColorMode(newMode);
   } 
 
+  useEffect(() => {
+    const getRooms = async () => {
+    try {
+      const response = await fetch("http://localhost:5007/rooms");
+      if (!response.ok) {
+        throw new Error();
+      }
+      const rooms = await response.json();
+
+      
+      setRoomsList(rooms);
+      setIsLoading(false)
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  getRooms();
+  }, [lastMessageId]);
+
   darkModeSwitcher(colorMode);
 
-  return (
-    <Context.Provider
-      value={{
-        userData,
-        updateUserData,
 
-        isTokenVerifed,
-        updateTokenVerify,
-
-        roomsList,
-        updateRoomsList,
-        updateLastMessageId,
-
-        updateColorMode,
-      }}
-    >
-      {children}
-    </Context.Provider>
-  );
+  if (!isLoading) {
+  
+      return (
+        <Context.Provider
+          value={{
+            userData,
+            updateUserData,
+    
+            isTokenVerifed,
+            updateTokenVerify,
+    
+            roomsList,
+            updateRoomsList,
+            updateLastMessageId,
+    
+            updateColorMode,
+          }}
+        >
+          {children}
+        </Context.Provider>
+      );
+    }
 };
 
 export default ContextProvider;

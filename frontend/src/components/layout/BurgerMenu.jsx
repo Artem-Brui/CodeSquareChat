@@ -174,7 +174,7 @@ export default function BurgerMenu() {
       </div>
 
       <div className="burger-button">
-        <Link to="/user-settings">
+        <Link to="/user-profile">
           <button className="burger-menu-buttons log-out-button">
             <div className="svg-icon">
               <svg
