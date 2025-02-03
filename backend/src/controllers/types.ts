@@ -1,4 +1,4 @@
-import { Locals, Request, response, Response } from "express";
+import { Locals, Request, Response } from "express";
 import { ParsedQs } from "qs";
 
 export type RequestCallback = (
@@ -23,3 +23,7 @@ export type RoomParams = {
   _id?: string;
   id: string;
 }
+
+export type TokenVerifParams = {
+  id: string;
+};

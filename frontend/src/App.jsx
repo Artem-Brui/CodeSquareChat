@@ -35,9 +35,6 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/rooms/:roomId" element={<RoomPage />} />
         </Route>
-
-        {/* <Route path="/signup" element={<SignUpUserInfoForm />} />
-        <Route path="/chat-text-box" element={<ChatTextBox />} /> */}
       </Routes>
     </Router>
   );

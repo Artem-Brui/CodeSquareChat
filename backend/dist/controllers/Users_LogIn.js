@@ -31,13 +31,13 @@ export const logInUser = async (req, res) => {
                 });
             }
             else if (_id) {
-                const cookieLifeTime = 24 * 60 * 60;
-                const token = createToken(_id, cookieLifeTime);
+                const tokenLifeTime = 24 * 60 * 60;
+                const token = createToken(_id, tokenLifeTime);
                 await User.findByIdAndUpdate({ _id: _id }, { token: token });
-                res.cookie("token", token, {
-                    httpOnly: true,
-                    maxAge: cookieLifeTime * 1000,
-                });
+                // res.cookie("token", token, {
+                //   httpOnly: true,
+                //   maxAge: cookieLifeTime * 1000,
+                // });
                 res.status(200).json({
                     userData: {
                         userName,

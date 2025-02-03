@@ -1,7 +1,37 @@
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import useUserData from '../../customHooks/useUserData';
 
 export default function BurgerMenu() {
-  {
+  const { updateTokenVerify } = useUserData();
+  const navigate = useNavigate();
+
+  const userId = localStorage.getItem("userId");
+
+  console.log(userId);
+
+  const logOut = async () => {
+    try {
+      const loginResponse = await fetch(
+        `http://localhost:5007/users/${userId}/logout`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
+
+      updateTokenVerify(null);
+
+      navigate("/");
+      
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  
+
     return (
       <div className="burger-menu-mobile">
         <div className="burger-button">
@@ -259,7 +289,6 @@ export default function BurgerMenu() {
         </div>
 
         <div className="burger-button">
-          <Link to="/">
             <button className="burger-menu-buttons log-out-button">
               <div className="svg-icon">
                 <svg
@@ -283,13 +312,11 @@ export default function BurgerMenu() {
                   </g>
                 </svg>
               </div>
-              <div className="burger-button-name">
+              <div onClick={logOut} className="burger-button-name">
                 <h2>Log Out</h2>
               </div>
             </button>
-          </Link>
         </div>
       </div>
     );
-  }
 }
