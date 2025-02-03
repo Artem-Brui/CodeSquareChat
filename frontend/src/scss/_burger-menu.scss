@@ -7,6 +7,7 @@
     align-items: center;
     margin: 1rem;
     width: 100%;
+    padding-top: 70px;
     .burger-button {
         margin: 1rem 2rem;
         width: 80%;
@@ -14,6 +15,7 @@
         &:active {
             box-shadow: $clicked-button;
         }
+
         .burger-menu-buttons {
             flex-direction: row;
             display: flex;
@@ -21,6 +23,7 @@
             align-items: center;
             padding: 1rem;
             width: 100%;
+            cursor: pointer;
             .burger-button-name {
                 margin: 0 2rem;
                 h2 {

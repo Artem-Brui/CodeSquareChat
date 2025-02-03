@@ -8,14 +8,15 @@ export default function useUserData() {
     throw new Error("Context not found...");
   }
 
-  const { userData, updateUserData, isTokenVerifed, updateTokenVerify } =
+  const { userData, updateUserData, isTokenVerifed, updateTokenVerify, updateColorMode } =
     context;
 
   const userDataContext = {
     userData,
     updateUserData,
     isTokenVerifed,
-    updateTokenVerify
+    updateTokenVerify,
+    updateColorMode,
   };
 
   if (!context) {

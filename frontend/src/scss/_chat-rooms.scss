@@ -1,9 +1,15 @@
 @use 'variables' as *;
 
 .rooms {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5.5rem;
+    width: 100%;
+    max-width: 600px;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
     margin-top: 4rem;
     cursor: auto;
     .room-green {
@@ -19,6 +25,7 @@
         border: $frame2 0.5rem solid;
     }
     .room {
+        width: 200px;
         background-color: $background-lm;
         border-radius: 0.625rem;
         padding: 1rem;

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useUserData from "../../customHooks/useUserData";
 
-
 export default function LoginForm() {
   const [formValues, setFormValues] = useState({
     email: "",
@@ -10,7 +9,7 @@ export default function LoginForm() {
   });
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const { updateUserData, updateTokenVerify } = useUserData()
+  const { updateUserData, updateTokenVerify } = useUserData();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,17 +23,14 @@ export default function LoginForm() {
     e.preventDefault();
 
     try {
-      const loginResponse = await fetch(
-        "http://localhost:5007/users/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formValues),
-          credentials: "include",
-        }
-      );
+      const loginResponse = await fetch("http://localhost:5007/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+        credentials: "include",
+      });
       const response = await loginResponse.json();
       const { userData, isTokenVerif } = response;
 
@@ -42,10 +38,9 @@ export default function LoginForm() {
         updateUserData(userData);
         updateTokenVerify(isTokenVerif);
 
-        localStorage.setItem('userId', userData._id)
+        localStorage.setItem("userId", userData._id);
         navigate("/dashboard");
       }
-      
     } catch (error) {
       setErrorMessage(
         error.response?.data?.message || "Login failed! Please try again."
@@ -77,17 +72,17 @@ export default function LoginForm() {
             Log In
           </button>
         </div>
+        <div className="signup-button-div">
+          <button
+            type="button"
+            className="signup-button"
+            onClick={() => navigate("/register")}
+          >
+            Sign Up
+          </button>
+        </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
       </form>
-      <div className="signup-button-div">
-        <button
-          type="button"
-          className="signup-button"
-          onClick={() => navigate("/register")}
-        >
-          Sign Up
-        </button>
-      </div>
     </div>
   );
 }

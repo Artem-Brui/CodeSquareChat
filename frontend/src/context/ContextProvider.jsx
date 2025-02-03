@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import Context from "./service";
+import darkModeSwitcher from "./darkModeSwitcher";
+
+const currentMode = localStorage.getItem('colorMode').length ? localStorage.getItem('colorMode') : 'light';
 
 const ContextProvider = ({ children }) => {
   const [userData, setUserData] = useState({});
   const [isTokenVerifed, setIsTokenVerifed] = useState(null);
 
   const [roomsList, setRoomsList] = useState([]);
-  const [lastMessageId, setLastMessageId] = useState("");
+  const [lastMessageId, setLastMessageId] = useState('');
+
+  const [colorMode, setColorMode] = useState(currentMode);
 
   useEffect(() => {
     async function getRooms() {
@@ -25,6 +30,14 @@ const ContextProvider = ({ children }) => {
   const updateRoomsList = (list) => setRoomsList(list);
   const updateLastMessageId = (idString) => setLastMessageId(idString);
 
+  const updateColorMode = () => {
+    const newMode = colorMode === 'light' ? 'dark' : 'light';
+
+    setColorMode(newMode);
+  } 
+
+  darkModeSwitcher(colorMode);
+
   return (
     <Context.Provider
       value={{
@@ -37,6 +50,8 @@ const ContextProvider = ({ children }) => {
         roomsList,
         updateRoomsList,
         updateLastMessageId,
+
+        updateColorMode,
       }}
     >
       {children}
