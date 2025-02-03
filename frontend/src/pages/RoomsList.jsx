@@ -1,6 +1,10 @@
 import { Router, Route, Routes, Link } from "react-router-dom";
+import useRoomsList from "../customHooks/useRoomsList";
 
-export default function RoomsList({ list }) {
+export default function RoomsList() {
+  const { roomsList } = useRoomsList();
+
+
   const getBorderColor = (id) => {
     if (id % 4 === 0) return "blue";
     if (id % 4 === 1) return "green";
@@ -10,7 +14,7 @@ export default function RoomsList({ list }) {
 
   return (
     <div className="rooms">
-      {list.map((room) => {
+      {roomsList.map((room) => {
         const { id, name, capacity } = room;
         const borderColor = getBorderColor(id);
         const roomClassName = `room room-${borderColor}`;

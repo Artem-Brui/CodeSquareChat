@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import 'dotenv/config';
 import usersRouter from './routes/users.js';
 import doConnectBase from './database/DBconnection.js';
@@ -11,8 +12,14 @@ const app = express();
 await doConnectBase();
 
 
-app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
+
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true
+}));
+
 
 app.use('/users', usersRouter);
 app.use('/rooms', roomsRouter);

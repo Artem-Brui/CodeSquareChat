@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import useRoomsList from "../../customHooks/useRoomsList";
 
-export default function ChatTextBox({ room, rerender }) {
+export default function ChatTextBox({ room }) {
   const [messageInputValue, setMessageInputValue] = useState("");
+  const { updateLastMessageId} = useRoomsList();
 
   const sendMessage = async (message) => {
     try {
@@ -20,8 +22,9 @@ export default function ChatTextBox({ room, rerender }) {
         throw new Error("Error");
       }
 
-      const updatedRoom = await response.json();
-      return updatedRoom;
+      const lastMessageId = await response.json();
+      
+      return lastMessageId;
     } catch (error) {
       console.error("Error", error);
       return null;
@@ -29,24 +32,11 @@ export default function ChatTextBox({ room, rerender }) {
   };
 
   const handleSendMessage = async () => {
-    const updatedRoom = await sendMessage(messageInputValue);
+    const lastMessageId = await sendMessage(messageInputValue);
 
     setTimeout(() => {
-      if (updatedRoom) {
-        rerender(updatedRoom);
-      } else {
-        rerender((prevMessages) => {
-          return {
-            ...updatedRoom,
-            messages: [
-              ...prevMessages,
-              {
-                owner: "id",
-                message: messageInputValue,
-              },
-            ],
-          };
-        });
+      if (lastMessageId) {
+        updateLastMessageId(lastMessageId);
       }
     }, 0);
 

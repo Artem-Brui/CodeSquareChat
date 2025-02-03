@@ -2,6 +2,9 @@ import { Schema, model } from "mongoose";
 
 const roomSchema = new Schema(
   {
+    _id: {
+      type: String,
+    },
     id: {
       type: String,
       require: true,
@@ -16,6 +19,9 @@ const roomSchema = new Schema(
     },
     messages: [
       {
+        _id: {
+          type: String,
+        },
         owner: {
           type: String,
           require: true,

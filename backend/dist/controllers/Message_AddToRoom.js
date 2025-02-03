@@ -1,19 +1,25 @@
 import Room from "../models/Room.js";
+import { ObjectId } from 'mongodb';
 import errorHandler from "./errorHandler.js";
 export const addMessageToRoom = async (req, res) => {
     const { id } = req.params;
+    const newDBObjectId = new ObjectId();
     const newMessage = {
+        _id: newDBObjectId,
         owner: "id",
         message: req.body.message
     };
     try {
         const room = await Room.findOne({ id: id });
         if (room) {
-            const roomMessages = room.messages;
-            const updatedMessages = [...roomMessages, newMessage];
+            const updatedMessages = [...room.messages, newMessage];
             await Room.findOneAndUpdate({ id: id }, { messages: updatedMessages });
+            const secondRequestRoom = await Room.findOne({ id: id });
+            const secondRequestMessages = secondRequestRoom?.messages;
+            secondRequestMessages
+                ? res.status(200).json(secondRequestMessages[secondRequestMessages?.length - 1]._id)
+                : res.status(404).json('Message not found');
         }
-        res.status(200).json(await Room.findOne({ id: id }));
     }
     catch (error) {
         errorHandler(res, error);

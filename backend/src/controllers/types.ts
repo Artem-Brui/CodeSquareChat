@@ -1,4 +1,4 @@
-import { Locals, Request, response, Response } from "express";
+import { Locals, Request, Response } from "express";
 import { ParsedQs } from "qs";
 
 export type RequestCallback = (
@@ -7,8 +7,9 @@ export type RequestCallback = (
 ) => Promise<any>;
 
 export type UserType = {
-  name: string;
-  realName: string;
+  _id?: string;
+  userName: string;
+  displayName: string;
   email: string;
   password: string;
   birthDate: string;
@@ -19,5 +20,10 @@ export type UserType = {
 };
 
 export type RoomParams = {
+  _id?: string;
   id: string;
 }
+
+export type TokenVerifParams = {
+  id: string;
+};
