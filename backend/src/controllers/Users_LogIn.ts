@@ -4,52 +4,62 @@ import errorHandler from "./errorHandler.js";
 import { RequestCallback, UserType } from "./types.js";
 import bcrypt from "bcrypt";
 import "dotenv/config";
+import isTokenVerif from "./isTokenVerif.js";
 
-const createToken = (id: string) => {
+const createToken = (id: string, lifeTime: number) => {
   const secretJWT = process.env.AUTH_TOKEN_SECRET || "";
 
-  return jwt.sign({ id }, secretJWT);
+  return jwt.sign({ id }, secretJWT, { expiresIn: lifeTime });
 };
 
 export const logInUser: RequestCallback = async (req, res) => {
   if (!req.body) {
-    res.status(500).json({
-      response: "Request body not found..",
-    });
+    errorHandler(res, "Request body not found..");
   }
 
-  const { _id, email, password } = req.body;
+  const { email, password: inputPassword } = req.body;
 
   const user: UserType | null = (await User.findOne({ email: email })) || null;
 
   if (user === null) {
-    res.status(500).json({
-      response: "User doesn't exist in the database...",
-      isUserExist: false,
-    });
+    errorHandler(res, "User doesn't exist in the database...");
   } else {
     try {
-      const isVerifedPassword = await bcrypt.compare(password, user.password);
+      const { password, _id, userName, displayName, birthDate } = user;
+
+      if (typeof password !== "string") {
+        return errorHandler(res, "Password is not a valid string");
+      }
+
+      const isVerifedPassword = await bcrypt.compare(inputPassword, password);
 
       if (!isVerifedPassword) {
         res.status(500).json({
           response: "Wrong password",
           isPasswordRight: false,
         });
-      } else {
-        const token = createToken(_id);
+      } else if (_id) {
+        const tokenLifeTime = 24 * 60 * 60;
+        const token = createToken(_id, tokenLifeTime);
 
-        res.cookie("token", token, {
-          httpOnly: true,
-          maxAge: 24 * 60 * 60 * 1000,
-        });
+        await User.findByIdAndUpdate({ _id: _id }, { token: token });
+
+        // res.cookie("token", token, {
+        //   httpOnly: true,
+        //   maxAge: cookieLifeTime * 1000,
+        // });
 
         res.status(200).json({
-          responseMessage: "Logged In successfully!",
-          user: { id: _id, email },
-          logedIn: true,
-          token: token
+          userData: {
+            userName,
+            displayName,
+            birthDate,
+            _id,
+          },
+          isTokenVerif: isTokenVerif(token),
         });
+      } else {
+        errorHandler(res, "_id is not a valid string");
       }
     } catch (error) {
       errorHandler(res, error);
