@@ -13,10 +13,6 @@ const roomSchema = new Schema(
       type: String,
       require: true,
     },
-    capacity: {
-      type: String,
-      require: false,
-    },
     messages: [
       {
         _id: {
@@ -27,6 +23,10 @@ const roomSchema = new Schema(
           require: true,
         },
         message: {
+          type: String,
+          require: true,
+        },
+        creatingDate: {
           type: String,
           require: true,
         },

@@ -1,8 +1,10 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
+import useUserData from "../customHooks/useUserData";
 
 const ProtectedRoute = () => {
   const [isTokenVerifed, setIsTokenVerifed] = useState(null);
+  const { updateUserData } = useUserData();
 
   const userId = localStorage.getItem("userId");
 
@@ -16,7 +18,10 @@ const ProtectedRoute = () => {
             );
             const responseData = await tokenBDResponse.json();
 
-            setIsTokenVerifed(responseData);
+            const { tokenVerif, userName, userDisplayName } = responseData;
+
+            updateUserData({userName, userDisplayName})
+            setIsTokenVerifed(tokenVerif);
           } catch (error) {
             console.error(error);
           }

@@ -5,11 +5,20 @@ import 'dotenv/config';
 import usersRouter from './routes/users.js';
 import doConnectBase from './database/DBconnection.js';
 import roomsRouter from './routes/rooms.js';
+import { createServer } from 'node:http';
+import { Server } from 'socket.io';
+import webSocketServer from './webSocket/socketServer.js';
 
 const port = process.env.PORT || 5007;
 
 const app = express();
-await doConnectBase();
+const server = createServer(app);
+const webSocket = new Server(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+});
 
 
 app.use(express.json());
@@ -20,10 +29,13 @@ app.use(cors({
   credentials: true
 }));
 
+await doConnectBase();
 
 app.use('/users', usersRouter);
-app.use('/rooms', roomsRouter);
+// app.use('/rooms', roomsRouter);
 
-const server = app.listen(port, () => {
+webSocketServer(webSocket);
+
+server.listen(port, () => {
   console.log(`app is listening in port ${port}...`);
 })

@@ -12,7 +12,7 @@ export default function RoomPage() {
 
   return (
     <div className="room-page container" id="room-page">
-      <Header />
+      <Header room={room} />
       <ChatField messages={room.messages} />
       <ChatTextBox room={room} />
     </div>

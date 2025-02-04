@@ -39,6 +39,13 @@
 
 }
 
+.message-data {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
 .message-body {
   background-color: #b552ea;
   padding: 10px;
@@ -49,4 +56,9 @@
 .message-owner {
   font-weight: 800;
   font-size: 1.6rem;
+}
+
+.message-created {
+  font-size: 1.1rem;
+  padding-bottom: 1px;
 }
