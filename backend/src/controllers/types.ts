@@ -7,8 +7,9 @@ export type RequestCallback = (
 ) => Promise<any>;
 
 export type UserType = {
-  name: string;
-  realName: string;
+  _id?: string;
+  userName: string;
+  displayName: string;
   email: string;
   password: string;
   birthDate: string;
@@ -19,6 +20,7 @@ export type UserType = {
 };
 
 export type RoomParams = {
+  _id?: string;
   id: string;
 }
 

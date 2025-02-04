@@ -1,11 +1,11 @@
 import { Schema, model } from "mongoose";
 
 const userSchema = new Schema({
-  name: {
+  userName: {
     type: String,
     require: true,
   },
-  realName: {
+  displayName: {
     type: String,
     require: true,
   },
@@ -21,9 +21,9 @@ const userSchema = new Schema({
     type: String,
     require: true,
   },
-  isAdult: {
-    type: Boolean,
-    require: true,
+  token: {
+    type: String,
+    require: false,
   },
   isAcceptRules: {
     type: Boolean,
