@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
-import useUserData from '../../customHooks/useUserData';
+import { Link } from "react-router-dom";
+import useUserData from "../../customHooks/useUserData";
+import Heading from "../layout/Heading";
 
 export default function UserInfo({ room }) {
   const { userData } = useUserData();
+  const name = userData.userDisplayName
 
-  const headerText = room ? `Room:  ${room.name}` : userData.userDisplayName;
-  
   return (
     <div className="user-info">
       <Link to="/user-profile">
@@ -25,10 +25,14 @@ export default function UserInfo({ room }) {
             </svg>
           </div>
         </div>
+        
+        <div className="username-title">
+          <h2>{name}</h2>
+        </div>
       </Link>
-      <div className="username-title">
-        <h1>{headerText}</h1>
-      </div>
+
+      <Heading room={room} />
+
       <Link to="/menu">
         <div className="menu-icon">
           <div className="svg-icon">
