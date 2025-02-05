@@ -14,10 +14,10 @@ export default function RoomsList() {
   return (
     <div className="rooms">
       {roomsList.map((room) => {
-        const { id, name, capacity } = room;
+        const { id, name, messages } = room;
         const borderColor = getBorderColor(id);
         const roomClassName = `room room-${borderColor}`;
-        const messageName = capacity === '1' ? 'message' : 'messages'
+        const messageName = messages.length === '1' ? 'message' : 'messages'
 
         return (
           <div key={id} className={roomClassName}>
@@ -31,7 +31,7 @@ export default function RoomsList() {
                 </div>
               </div>
               <div className="room-name">{name}</div>
-              <div className="room-capacity">{capacity} {messageName}</div>
+              <div className="room-capacity">{messages.length} {messageName}</div>
             </Link>
           </div>
         );

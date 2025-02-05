@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
+import useUserData from '../../customHooks/useUserData';
 
-export default function UserInfo() {
+export default function UserInfo({ room }) {
+  const { userData } = useUserData();
+
+  const headerText = room ? `Room:  ${room.name}` : userData.userDisplayName;
+  
   return (
     <div className="user-info">
       <Link to="/user-profile">
@@ -22,7 +27,7 @@ export default function UserInfo() {
         </div>
       </Link>
       <div className="username-title">
-        <h1>User</h1>
+        <h1>{headerText}</h1>
       </div>
       <Link to="/menu">
         <div className="menu-icon">

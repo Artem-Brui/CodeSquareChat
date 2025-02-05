@@ -1,50 +1,40 @@
 import { useState } from "react";
 import useRoomsList from "../../customHooks/useRoomsList";
 import useUserData from "../../customHooks/useUserData";
+import { io } from "socket.io-client";
+import { SERVER_HOST } from "../../services/Hosts";
 
 export default function ChatTextBox({ room }) {
   const [messageInputValue, setMessageInputValue] = useState("");
-  const { updateLastMessageId} = useRoomsList();
+  const { updateLastMessageId } = useRoomsList();
   const { userData } = useUserData();
 
-  const userId = userData._id ? userData._id : localStorage.getItem('userId');
+  const socket = io(SERVER_HOST);
+
+  const userId = userData._id ? userData._id : localStorage.getItem("userId");
 
   const sendMessage = async (message) => {
-    try {
-      const response = await fetch(`http://localhost:5007/rooms/${room.id}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          owner: userId,
-          message: message,
-        }),
-      });
+    const newMessageData = {
+      roomId: room.id,
+      message,
+      owner: userId,
+    };
 
-      if (!response.ok) {
-        throw new Error("Error");
-      }
-
-      const lastMessageId = await response.json();
-      
-      return lastMessageId;
-    } catch (error) {
-      console.error("Error", error);
-      return null;
-    }
+    socket.emit("addNewMessage", newMessageData);
   };
 
   const handleSendMessage = async () => {
-    const lastMessageId = await sendMessage(messageInputValue);
+    if (messageInputValue.length) {
+      const lastMessageId = await sendMessage(messageInputValue);
 
-    setTimeout(() => {
-      if (lastMessageId) {
-        updateLastMessageId(lastMessageId);
-      }
-    }, 0);
+      setTimeout(() => {
+        if (lastMessageId) {
+          updateLastMessageId(lastMessageId);
+        }
+      }, 0);
 
-    setMessageInputValue("");
+      setMessageInputValue("");
+    }
   };
 
   const handleChangeInput = (event) => {
