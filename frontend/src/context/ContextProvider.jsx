@@ -12,7 +12,7 @@ const ContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const [userData, setUserData] = useState({});
-  const [isTokenVerifed, setIsTokenVerifed] = useState(null);
+  const [isTokenVerifed, setIsTokenVerifed] = useState(false);
 
   const [roomsList, setRoomsList] = useState([]);
   const [lastMessageId, setLastMessageId] = useState("");

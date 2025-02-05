@@ -87,3 +87,20 @@
         }
     }
 }
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: -0.075rem 0.075rem 0 color.mix(#fff, $frame, 94%),
+      0.05rem 0.05rem 0 color.mix(#fff, $frame, 40%),
+      0.01rem 0.01rem 0 color.mix($frame2, $frame, 62%),
+      0.15rem 0.15rem color.mix($frame2, $frame, 64%);
+  h1 {
+      font-size: 3rem;
+      color: $frame;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+}
