@@ -26,7 +26,9 @@ export default function webSocketServer(server: serverType) {
         const newDBObjectId = new ObjectId();
 
         const user = await User.findOne({ _id: ownerId });
-        const date = new Date().toISOString();
+
+        const date = new Date().toLocaleString('ru-RU');
+        
 
         const newMessage = {
           _id: newDBObjectId,

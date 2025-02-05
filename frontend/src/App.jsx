@@ -13,8 +13,42 @@ import Dashboard from "./pages/Dashboard";
 import RoomPage from "./pages/RoomPage";
 import BurgerMenu from "./components/layout/BurgerMenu";
 import ProtectedRoute from "./Router/ProtectedRouter";
+import { useEffect, useState } from "react";
+import useUserData from "./customHooks/useUserData";
 
 function App() {
+  const { updateUserData, updateTokenVerify } = useUserData();
+  const [loading, setLoading] = useState(true);
+
+  const userId = localStorage.getItem("userId");
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      if (userId) {
+        try {
+          const tokenBDResponse = await fetch(
+            `http://localhost:5007/users/${userId}/token`
+          );
+          const responseData = await tokenBDResponse.json();
+
+          const { tokenVerif, userName, userDisplayName } = responseData;
+
+          updateUserData({ userName, userDisplayName });
+          updateTokenVerify(tokenVerif);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      setLoading(false);
+    };
+
+    checkAuth();
+  }, []);
+
+  if (loading) {
+    return null;
+  }
 
   return (
     <Router>
