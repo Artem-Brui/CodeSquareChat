@@ -1,20 +1,20 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import api from '../../../../config/api';
 
 export default function SignUpUserInfoForm() {
   const [condition, setConditionChecked] = useState(false);
   const [submitDisabled, setSubmitDisabled] = useState(true);
-  const [birthdate, setBirthdate] = useState("");
+  const [birthdate, setBirthdate] = useState('');
   const [isOlderThan18, setIsOlderThan18] = useState(false);
   const [formValues, setFormValues] = useState({
-    userName: "",
-    displayName: "",
-    email: "",
-    password: "",
+    userName: '',
+    displayName: '',
+    email: '',
+    password: '',
   });
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -43,22 +43,16 @@ export default function SignUpUserInfoForm() {
     }
     if (age >= 18 && age <= 100) {
       setIsOlderThan18(true);
-      setErrorMessage("");
+      setErrorMessage('');
     } else {
       setIsOlderThan18(false);
-      setErrorMessage("You must be between 18 and 100 years old.");
+      setErrorMessage('You must be between 18 and 100 years old.');
     }
   };
 
   useEffect(() => {
     const { userName, displayName, email, password } = formValues;
-    if (
-      condition &&
-      userName &&
-      displayName &&
-      email &&
-      password
-    ) {
+    if (condition && userName && displayName && email && password) {
       setSubmitDisabled(false);
     } else {
       setSubmitDisabled(true);
@@ -68,26 +62,26 @@ export default function SignUpUserInfoForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch("http://localhost:5007/users/signup", {
-        method: "POST",
+      await fetch('http://localhost:5007/users/signup', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           ...formValues,
           birthDate: birthdate,
         }),
-        credentials: "include",
+        credentials: 'include',
       });
 
       // setSuccessMessage("Registration successful! Redirecting...");
       setTimeout(() => {
-        navigate("/");
+        navigate('/');
       }, 2000);
     } catch (error) {
       setErrorMessage(
         error.response?.data?.message ||
-          "Registration failed! Please try again."
+          'Registration failed! Please try again.'
       );
     }
   };
@@ -163,7 +157,7 @@ export default function SignUpUserInfoForm() {
             onChange={() => setConditionChecked(!condition)}
           />
           <div>
-            <a href="/terms-and-conditions">
+            <a href="/t&cs">
               General <u>Terms and Conditions (GTC)</u>
             </a>
           </div>
