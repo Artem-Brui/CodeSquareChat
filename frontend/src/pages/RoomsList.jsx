@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
-import useRoomsList from "../customHooks/useRoomsList";
+import { Link } from 'react-router-dom';
+import useRoomsList from '../customHooks/useRoomsList';
 
 export default function RoomsList() {
   const { roomsList } = useRoomsList();
 
   const getBorderColor = (id) => {
-    if (id % 4 === 0) return "blue";
-    if (id % 4 === 1) return "green";
-    if (id % 4 === 2) return "yellow";
-    if (id % 4 === 3) return "red";
+    if (id % 4 === 0) return 'blue';
+    if (id % 4 === 1) return 'green';
+    if (id % 4 === 2) return 'yellow';
+    if (id % 4 === 3) return 'red';
   };
 
   return (
@@ -17,7 +17,7 @@ export default function RoomsList() {
         const { id, name, messages } = room;
         const borderColor = getBorderColor(id);
         const roomClassName = `room room-${borderColor}`;
-        const messageName = messages.length === '1' ? 'message' : 'messages'
+        const messageName = messages.length === '1' ? 'message' : 'messages';
 
         return (
           <div key={id} className={roomClassName}>
@@ -31,7 +31,9 @@ export default function RoomsList() {
                 </div>
               </div>
               <div className="room-name">{name}</div>
-              <div className="room-capacity">{messages.length} {messageName}</div>
+              <div className="room-capacity">
+                {messages.length} {messageName}
+              </div>
             </Link>
           </div>
         );

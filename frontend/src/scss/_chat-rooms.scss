@@ -1,88 +1,88 @@
 @use 'variables' as *;
 
 .rooms {
-    width: 100%;
-    max-width: 600px;
-    // display: grid;
-    // grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  max-width: 600px;
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 4rem;
+  cursor: auto;
+  .room-green {
+    border: $online 0.5rem solid;
+  }
+  .room-red {
+    border: $offline 0.5rem solid;
+  }
+  .room-yellow {
+    border: $busy 0.5rem solid;
+  }
+  .room-blue {
+    border: $frame2 0.5rem solid;
+  }
+  .room {
+    width: 200px;
+    background-color: $background-lm;
+    border-radius: 0.625rem;
+    padding: 1rem;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 4rem;
-    cursor: auto;
-    .room-green {
-        border: $online 0.5rem solid;
+    box-shadow: $unclicked-button;
+    &:active {
+      box-shadow: $clicked-button;
     }
-    .room-red {
-        border: $offline 0.5rem solid;
-    }
-    .room-yellow {
-        border: $busy 0.5rem solid;
-    }
-    .room-blue {
-        border: $frame2 0.5rem solid;
-    }
-    .room {
-        width: 200px;
-        background-color: $background-lm;
-        border-radius: 0.625rem;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-shadow: $unclicked-button;
-        &:active {
-            box-shadow: $clicked-button;
-        }
 
-        .room-link {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .room-image {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            .room-placeholder img {
-                width: 12rem;
-                height: 8rem;
-                object-fit: cover;
-                border-radius: 0.5rem;
-            }
-        }
-        .room-name {
-            margin-top: 1rem;
-            font-size: 1.9rem;
-            font-weight: bold;
-            color: $text-col-lm;
-            text-align: center;
-        }
-        .room-capacity {
-            font-size: 1.4rem;
-            color: $text-col-lm;
-            text-align: right;
-            width: 100%;
-            margin-top: 0.5rem;
-        }
+    .room-link {
+      display: flex;
+      flex-direction: column;
     }
+
+    .room-image {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .room-placeholder img {
+        width: 12rem;
+        height: 8rem;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+    }
+    .room-name {
+      margin-top: 1rem;
+      font-size: 1.9rem;
+      font-weight: bold;
+      color: $text-col-lm;
+      text-align: center;
+    }
+    .room-capacity {
+      font-size: 1.4rem;
+      color: $text-col-lm;
+      text-align: right;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
 }
 .create-room-button {
-    background-color: $frame;
-    width: 5rem;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    margin-top: 12rem;
-    cursor: pointer;
-    box-shadow: $unclicked-button;
+  background-color: $frame;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-top: 12rem;
+  cursor: pointer;
+  box-shadow: $unclicked-button;
 
-    &:active {
-        box-shadow: $clicked-button;
-    }
+  &:active {
+    box-shadow: $clicked-button;
+  }
 }
