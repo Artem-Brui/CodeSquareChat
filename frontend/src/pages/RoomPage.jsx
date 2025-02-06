@@ -3,6 +3,7 @@ import ChatTextBox from "../components/chat/ChatTextBox";
 import Header from "../components/layout/Header";
 import { useParams } from "react-router-dom";
 import useRoomsList from "../customHooks/useRoomsList";
+import SearchBar from "../components/header/SearchBar";
 
 export default function RoomPage() {
   const { roomsList } = useRoomsList();
@@ -13,6 +14,7 @@ export default function RoomPage() {
   return (
     <div className="room-page container" id="room-page">
       <Header room={room} />
+      <SearchBar />
       <ChatField messages={room.messages} />
       <ChatTextBox room={room} />
     </div>

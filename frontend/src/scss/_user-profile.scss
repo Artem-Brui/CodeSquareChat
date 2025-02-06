@@ -6,47 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    .user-profile-img {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 1rem;
-    }
-    .user-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        width: 15rem;
-        height: 15rem;
-        border: 0.7rem $frame outset;
-        img {
-            width: 90%;
-            height: 90%;
-        }
-    }
-    .add-button {
-        background-color: transparent;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 1rem 0;
-        .svg-icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: $frame;
-            width: 7rem;
-            height: 5rem;
-            border-radius: 50%;
-            box-shadow: $unclicked-button;
 
-            &:active {
-                box-shadow: $clicked-button;
-            }
-        }
-    }
     .user-profile-settings {
         display: flex;
         flex-direction: column;

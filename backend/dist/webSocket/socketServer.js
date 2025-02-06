@@ -18,6 +18,7 @@ export default function webSocketServer(server) {
                 const date = new Date().toLocaleString('ru-RU');
                 const newMessage = {
                     _id: newDBObjectId,
+                    ownerId,
                     owner: user?.displayName,
                     message: message,
                     creatingDate: date,

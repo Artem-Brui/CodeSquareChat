@@ -32,10 +32,14 @@ export default function webSocketServer(server: serverType) {
 
         const newMessage = {
           _id: newDBObjectId,
+          ownerId,
           owner: user?.displayName,
           message: message,
           creatingDate: date,
         };
+
+        
+        
 
         const room = await Room.findOne({id:roomId});
 
@@ -43,7 +47,7 @@ export default function webSocketServer(server: serverType) {
           const updatedMessages = [...room.messages, newMessage];
     
           await Room.findOneAndUpdate({ id: roomId }, { messages: updatedMessages });
-    
+          
           const secondRequestRooms = await Room.find();
 
           if (secondRequestRooms) {

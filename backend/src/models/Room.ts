@@ -22,6 +22,10 @@ const roomSchema = new Schema(
           type: String,
           require: true,
         },
+        ownerId: {
+          type: String,
+          require: true,
+        },
         message: {
           type: String,
           require: true,

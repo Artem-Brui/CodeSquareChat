@@ -17,7 +17,7 @@ app.use(cors({
 }));
 const webSocket = new Server(server, {
     cors: {
-        origin: "*",
+        origin: process.env.CLIENT_URL,
         methods: ["GET", "POST"]
     }
 });

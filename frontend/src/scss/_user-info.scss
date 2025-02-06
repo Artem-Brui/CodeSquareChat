@@ -1,0 +1,70 @@
+@use "variables" as *;
+@use "sass:color";
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
+  .username-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    color: $frame;
+    text-shadow: -0.075rem 0.075rem 0 color.mix(#fff, $frame, 94%),
+      0.05rem 0.05rem 0 color.mix(#fff, $frame, 40%),
+      0.1rem 0.1rem 0 color.mix($frame2, $frame, 62%),
+      0.15rem 0.15rem color.mix($frame2, $frame, 64%);
+  }
+
+  .svg-icon {
+    box-shadow: $unclicked-button;
+    padding: 1rem;
+    border-radius: 50%;
+    &:active {
+      box-shadow: $clicked-button;
+    }
+  }
+}
+
+.user-profile-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.user-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
+  border: 0.7rem $frame outset;
+  img {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+.header {
+  .user-info {
+    cursor: pointer;
+  }
+  .user-image {
+    width: 9rem;
+    height: 9rem;
+  }
+}
+
+.message-container {
+  .user-image {
+    width: 5rem;
+    height: 5rem;
+    border: 0.4rem $frame outset;
+  }
+}

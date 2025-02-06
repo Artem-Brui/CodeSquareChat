@@ -11,19 +11,17 @@ const currentMode =
 
 const ContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [rerender, setRerender] = useState(true);
 
   const [userData, setUserData] = useState({});
   const [isTokenVerifed, setIsTokenVerifed] = useState(false);
-
   const [roomsList, setRoomsList] = useState([]);
-
   const [colorMode, setColorMode] = useState(currentMode);
+  const [lastPage, setLastPage] = useState('');
 
   const updateUserData = (data) => setUserData(data);
   const updateTokenVerify = (boolean) => setIsTokenVerifed(boolean);
-  const updateRerender = (prev) => setRerender(!prev);
   const updateRoomsList = (list) => setRoomsList(list);
+  const updateLastPage = (path) => setLastPage(path);
 
   const updateColorMode = () => {
     const newMode = colorMode === "light" ? "dark" : "light";
@@ -45,11 +43,12 @@ const ContextProvider = ({ children }) => {
 
       return () => {
         socket.off("rooms");
+        socket.disconnect();
       };
     };
 
     getRooms();
-  }, [rerender]);
+  }, []);
 
   darkModeSwitcher(colorMode);
 
@@ -65,11 +64,10 @@ const ContextProvider = ({ children }) => {
 
           roomsList,
           updateRoomsList,
-
-          rerender,
-          updateRerender,
           
           updateColorMode,
+          lastPage,
+          updateLastPage,
         }}
       >
         {children}

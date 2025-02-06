@@ -3,12 +3,10 @@ import useRoomsList from "../../customHooks/useRoomsList";
 import useUserData from "../../customHooks/useUserData";
 import { io } from "socket.io-client";
 import { SERVER_HOST } from "../../services/Hosts";
-import useRerender from "../../customHooks/useRerender";
 
 export default function ChatTextBox({ room }) {
   const [messageInputValue, setMessageInputValue] = useState("");
   const { userData } = useUserData();
-  const { rerender, updateRerender } = useRerender();
 
   const socket = io(SERVER_HOST);
 
@@ -21,13 +19,7 @@ export default function ChatTextBox({ room }) {
       owner: userId,
     };
 
-    socket.emit("addNewMessage", newMessageData, (response) => {
-      if (response.status !== "ok") {
-        console.error(response.error);
-      } else {
-        updateRerender(rerender);
-      }
-    });
+    socket.emit("addNewMessage", newMessageData);
   };
 
   const handleSendMessage = async () => {
@@ -47,7 +39,7 @@ export default function ChatTextBox({ room }) {
       <div className="chat-textbox">
         <input
           type="text"
-          name="username"
+          name="message"
           placeholder="Write Something :)"
           className="input-field regis"
           value={messageInputValue}
