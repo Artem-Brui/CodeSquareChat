@@ -92,7 +92,7 @@ export default function SignUpUserInfoForm() {
         <input
           type="text"
           name="userName"
-          placeholder="name"
+          placeholder="Name"
           className="input-field regis"
           value={formValues.userName}
           onChange={handleInputChange}
@@ -128,7 +128,7 @@ export default function SignUpUserInfoForm() {
         <input
           type="password"
           name="password"
-          placeholder="Password (10+ letters & numbers)"
+          placeholder="Password"
           className="input-field regis"
           value={formValues.password}
           onChange={handleInputChange}
@@ -157,7 +157,7 @@ export default function SignUpUserInfoForm() {
             onChange={() => setConditionChecked(!condition)}
           />
           <div>
-            <a href="/t&cs">
+            <a href="/terms-and-conditions">
               General <u>Terms and Conditions (GTC)</u>
             </a>
           </div>
