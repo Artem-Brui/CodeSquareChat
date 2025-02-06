@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Context from "./service";
 import darkModeSwitcher from "./darkModeSwitcher";
 import io from "socket.io-client";
+import { SERVER_HOST } from "../services/Hosts";
 
 const currentMode =
   localStorage.getItem("colorMode") !== null
@@ -10,20 +11,19 @@ const currentMode =
 
 const ContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [rerender, setRerender] = useState(true);
 
   const [userData, setUserData] = useState({});
   const [isTokenVerifed, setIsTokenVerifed] = useState(false);
 
   const [roomsList, setRoomsList] = useState([]);
-  const [lastMessageId, setLastMessageId] = useState("");
 
   const [colorMode, setColorMode] = useState(currentMode);
 
   const updateUserData = (data) => setUserData(data);
   const updateTokenVerify = (boolean) => setIsTokenVerifed(boolean);
-
+  const updateRerender = (prev) => setRerender(!prev);
   const updateRoomsList = (list) => setRoomsList(list);
-  const updateLastMessageId = (idString) => setLastMessageId(idString);
 
   const updateColorMode = () => {
     const newMode = colorMode === "light" ? "dark" : "light";
@@ -34,7 +34,7 @@ const ContextProvider = ({ children }) => {
   useEffect(() => {
     const getRooms = async () => {
       try {
-        const socket = io("http://localhost:5007");
+        const socket = io(SERVER_HOST);
         socket.on("rooms", (rooms) => {
           setRoomsList(rooms);
           setIsLoading(false);
@@ -42,10 +42,14 @@ const ContextProvider = ({ children }) => {
       } catch (error) {
         console.error(error);
       }
+
+      return () => {
+        socket.off("rooms");
+      };
     };
 
     getRooms();
-  }, [lastMessageId]);
+  }, [rerender]);
 
   darkModeSwitcher(colorMode);
 
@@ -61,8 +65,10 @@ const ContextProvider = ({ children }) => {
 
           roomsList,
           updateRoomsList,
-          updateLastMessageId,
 
+          rerender,
+          updateRerender,
+          
           updateColorMode,
         }}
       >

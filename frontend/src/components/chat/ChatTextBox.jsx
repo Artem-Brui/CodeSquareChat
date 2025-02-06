@@ -3,11 +3,12 @@ import useRoomsList from "../../customHooks/useRoomsList";
 import useUserData from "../../customHooks/useUserData";
 import { io } from "socket.io-client";
 import { SERVER_HOST } from "../../services/Hosts";
+import useRerender from "../../customHooks/useRerender";
 
 export default function ChatTextBox({ room }) {
   const [messageInputValue, setMessageInputValue] = useState("");
-  const { updateLastMessageId } = useRoomsList();
   const { userData } = useUserData();
+  const { rerender, updateRerender } = useRerender();
 
   const socket = io(SERVER_HOST);
 
@@ -20,18 +21,18 @@ export default function ChatTextBox({ room }) {
       owner: userId,
     };
 
-    socket.emit("addNewMessage", newMessageData);
+    socket.emit("addNewMessage", newMessageData, (response) => {
+      if (response.status !== "ok") {
+        console.error(response.error);
+      } else {
+        updateRerender(rerender);
+      }
+    });
   };
 
   const handleSendMessage = async () => {
     if (messageInputValue.length) {
-      const lastMessageId = await sendMessage(messageInputValue);
-
-      setTimeout(() => {
-        if (lastMessageId) {
-          updateLastMessageId(lastMessageId);
-        }
-      }, 0);
+      await sendMessage(messageInputValue);
 
       setMessageInputValue("");
     }

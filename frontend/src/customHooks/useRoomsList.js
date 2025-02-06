@@ -8,13 +8,12 @@ export default function useRoomsList() {
     throw new Error("Context not found...");
   }
 
-  const { roomsList, updateRoomsList, updateLastMessageId } =
+  const { roomsList, updateRoomsList } =
     context;
 
   const roomsListContext = {
     roomsList,
     updateRoomsList,
-    updateLastMessageId,
   };
 
   if (!context) {
