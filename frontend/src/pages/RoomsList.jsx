@@ -25,7 +25,7 @@ export default function RoomsList() {
               <div className="room-image">
                 <div className="room-placeholder">
                   <img
-                    src="../src/assets/images/placeholder-rooms.png"
+                    src={`../src/assets/images/rooms/${room.name.toLowerCase()}.jpg`}
                     alt="Room Image"
                   />
                 </div>
