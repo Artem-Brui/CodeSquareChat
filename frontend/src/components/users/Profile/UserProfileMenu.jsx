@@ -1,17 +1,20 @@
 import { useState } from 'react';
+import EditInput from './EditInput';
 
 export default function UserProfileMenu() {
-  const [OpenMenu, setMenuOpen] = useState(false);
+  const [OpenMenuName, setOpenMenuName] = useState(false);
+  const [OpenMenuDisplayName, setOpenMenuDisplayName] = useState(false);
 
-  const ClickDropdown = () => {
-    setMenuOpen(!OpenMenu);
-  };
+  const ClickDropdownName = () => setOpenMenuName(!OpenMenuName);
+  const ClickDropdownDisplayName = () => setOpenMenuDisplayName(!OpenMenuDisplayName);
 
   return (
     <div className="user-profile-settings">
+
+
       <div className="user-profile-field">
         <div className="user-settings-field">
-          <button>
+          <button id="user-name-menu" onClick={ClickDropdownName}>
             <div className="svg-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -73,11 +76,14 @@ export default function UserProfileMenu() {
               <h2>Username</h2>
             </div>
           </button>
+          {OpenMenuName && (<EditInput />)}
         </div>
       </div>
+
+
       <div className="user-profile-field">
         <div className="user-settings-field">
-          <button>
+          <button id="user-dispName-menu" onClick={ClickDropdownDisplayName}>
             <div className="svg-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -139,9 +145,12 @@ export default function UserProfileMenu() {
               <h2>Display Name</h2>
             </div>
           </button>
+          {OpenMenuDisplayName && (<EditInput />)}
         </div>
       </div>
-      <div className="user-profile-field">
+
+      
+      {/* <div className="user-profile-field">
         <div className="user-settings-field">
           <button id="user-status-menu" onClick={ClickDropdown}>
             <div className="svg-icon">
@@ -187,7 +196,9 @@ export default function UserProfileMenu() {
             </div>
           )}
         </div>
-      </div>
+      </div> */}
+
+      
       <div className="user-profile-field">
         <div className="user-settings-field">
           <button>

@@ -29,11 +29,6 @@ const userSchema = new Schema({
     type: String,
     require: true,
   },
-  status: {
-    type: String,
-    default: 'offline',
-    require: true,
-  },
   creatingDate: {
     type: String,
     default: new Date().toISOString(),

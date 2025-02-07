@@ -9,7 +9,7 @@ export default function LoginForm() {
   });
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const { updateUserData, updateTokenVerify } = useUserData();
+  const { updateUserData, updateTokenVerify, updateOnlineStatus } = useUserData();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -37,6 +37,7 @@ export default function LoginForm() {
       if (response.userData) {
         updateUserData(userData);
         updateTokenVerify(isTokenVerif);
+        updateOnlineStatus('online');
 
         localStorage.setItem("userId", userData._id);
         navigate("/dashboard");

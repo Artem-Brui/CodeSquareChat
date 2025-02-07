@@ -26,7 +26,7 @@ export default function ChatField({ messages }) {
                 className={`messages-item ${messagePositionClassName}`}
               >
                 <Message message={message} />
-                <UserProfileImage avatarId={message.avatarId || '0'}/>
+                <UserProfileImage id={message.avatarId || '0'}/>
               </li>
             ) : (
               <li

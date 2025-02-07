@@ -1,22 +1,27 @@
-import useUserData from "../../../customHooks/useUserData";
+import { useContext } from "react";
+import Context from "../../../context/service";
 
 
 export default function UserProfileImage({ id }) {
-  const { userData } = useUserData();
+  const context = useContext(Context);
+  const { userData } = context;
 
+  
   let avatar = userData.avatarId;
 
   if (id) {
     avatar = id;
   }
+
+  const imagePath = `url(${`../src/assets/images/avatars/avatar-${avatar}.svg`})`;
   
   return (
     <div className="user-profile-img">
-      <div className="user-image">
-        <img
+      <div className="user-image" style={{ backgroundImage: imagePath }}>
+        {/* <img
           src={`../src/assets/images/avatars/avatar-${avatar}.svg`}
           alt="Profile Image"
-        />
+        /> */}
       </div>
     </div>
   );
