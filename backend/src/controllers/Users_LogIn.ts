@@ -25,7 +25,7 @@ export const logInUser: RequestCallback = async (req, res) => {
     errorHandler(res, "User doesn't exist in the database...");
   } else {
     try {
-      const { password, _id, userName, displayName, birthDate } = user;
+      const { password, _id, userName, displayName, birthDate, avatarId } = user;
 
       if (typeof password !== "string") {
         return errorHandler(res, "Password is not a valid string");
@@ -44,16 +44,12 @@ export const logInUser: RequestCallback = async (req, res) => {
 
         await User.findByIdAndUpdate({ _id: _id }, { token: token });
 
-        // res.cookie("token", token, {
-        //   httpOnly: true,
-        //   maxAge: cookieLifeTime * 1000,
-        // });
-
         res.status(200).json({
           userData: {
             userName,
             displayName,
             birthDate,
+            avatarId,
             _id,
           },
           isTokenVerif: isTokenVerif(token),

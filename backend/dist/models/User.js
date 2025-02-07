@@ -24,8 +24,13 @@ const userSchema = new Schema({
         type: String,
         require: false,
     },
-    isAcceptRules: {
-        type: Boolean,
+    avatarId: {
+        type: String,
+        require: true,
+    },
+    status: {
+        type: String,
+        default: 'offline',
         require: true,
     },
     creatingDate: {

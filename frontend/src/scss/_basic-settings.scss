@@ -46,6 +46,10 @@ a:visited {
   color: inherit;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .dark {
   background-color: $background-dm;
   color: $text-col-dm;

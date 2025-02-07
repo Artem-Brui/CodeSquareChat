@@ -1,35 +1,49 @@
-
+import { useContext, useRef, useState } from "react";
+import UserProfileImage from "../Profile/UserProfileImage";
+import Context from "../../../context/service";
 
 export default function SignUpAddImage() {
+  const avatarListElement = useRef();
+
+  const context = useContext(Context);
+  const { updateAvatarId } = context;
+
+
+  const avatarList = [];
+
+  for (let i = 1; i <= 30; i++) {
+    avatarList.push(i);
+  }
+
+
+  
+  const handleAvatarClick = (e) => {
+    updateAvatarId(e.currentTarget.dataset.avatar);
+
+    const avatarsCollection = avatarListElement.current.getElementsByClassName('user-image');
+
+    for (const el of avatarsCollection) {
+      el.classList.remove('marked');
+    }
+    
+    e.target.closest('.user-image').classList.add('marked');
+  };
+
   return (
-    <div className="signup-add-image">
-      <div className="profile-picture-upload">
-        <div className="picture-placeholder">
-          {/* Placeholder text for the image formats */}
-          <img
-            src="src/assets/images/placeholder-rooms.png"
-            alt="image placeholder"
-          />
-        </div>
-      </div>
-      <div className="add-image-button">
-        <div className="add-button">
-          <div className="svg-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="4rem"
-              height="4rem"
-              viewBox="0 0 32 32"
+    <div className="signup-add-avatar">
+      <ul className="user-avatar-list" ref={avatarListElement}>
+        {avatarList.map((avatarId) => {
+          return (
+            <li
+              data-avatar={avatarId}
+              key={avatarId}
+              onClick={handleAvatarClick}
             >
-              <rect width="32" height="32" fill="none" />
-              <path
-                fill="#fff"
-                d="M16 3C8.832 3 3 8.832 3 16s5.832 13 13 13s13-5.832 13-13S23.168 3 16 3m0 2c6.087 0 11 4.913 11 11s-4.913 11-11 11S5 22.087 5 16S9.913 5 16 5m-1 5v5h-5v2h5v5h2v-5h5v-2h-5v-5z"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
+              <UserProfileImage id={avatarId} />
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

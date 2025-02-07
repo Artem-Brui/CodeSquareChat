@@ -10,7 +10,7 @@ export const signUpUser: RequestCallback = async (req, res) => {
     });
   }
 
-  const { userName, displayName, email, password, birthDate, isAcceptRules } =
+  const { userName, displayName, email, password, birthDate, avatarId } =
     req.body;
 
   const isUserExist = (await User.findOne({ email: email })) !== null;
@@ -30,7 +30,7 @@ export const signUpUser: RequestCallback = async (req, res) => {
         email,
         password: hashedPassword,
         birthDate,
-        isAcceptRules,
+        avatarId,
       });
 
       res.status(200).json({

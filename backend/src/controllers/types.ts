@@ -13,8 +13,7 @@ export type UserType = {
   email: string;
   password: string;
   birthDate: string;
-  isAdult: boolean;
-  isAcceptRules: boolean;
+  avatarId: boolean;
   creatingDate: string;
   updatingDate: string;
 };

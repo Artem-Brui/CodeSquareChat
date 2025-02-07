@@ -19,7 +19,7 @@ export const logInUser = async (req, res) => {
     }
     else {
         try {
-            const { password, _id, userName, displayName, birthDate } = user;
+            const { password, _id, userName, displayName, birthDate, avatarId } = user;
             if (typeof password !== "string") {
                 return errorHandler(res, "Password is not a valid string");
             }
@@ -34,15 +34,12 @@ export const logInUser = async (req, res) => {
                 const tokenLifeTime = 24 * 60 * 60;
                 const token = createToken(_id, tokenLifeTime);
                 await User.findByIdAndUpdate({ _id: _id }, { token: token });
-                // res.cookie("token", token, {
-                //   httpOnly: true,
-                //   maxAge: cookieLifeTime * 1000,
-                // });
                 res.status(200).json({
                     userData: {
                         userName,
                         displayName,
                         birthDate,
+                        avatarId,
                         _id,
                     },
                     isTokenVerif: isTokenVerif(token),

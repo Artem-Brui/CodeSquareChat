@@ -33,6 +33,7 @@ export default function webSocketServer(server: serverType) {
         const newMessage = {
           _id: newDBObjectId,
           ownerId,
+          avatarId: user?.avatarId,
           owner: user?.displayName,
           message: message,
           creatingDate: date,

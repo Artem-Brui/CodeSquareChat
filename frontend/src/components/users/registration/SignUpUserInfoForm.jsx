@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import api from '../../../../config/api';
+import useTheme from '../../../customHooks/useTheme';
+import Context from '../../../context/service';
 
 export default function SignUpUserInfoForm() {
   const [condition, setConditionChecked] = useState(false);
   const [submitDisabled, setSubmitDisabled] = useState(true);
+  const [isOlderThan18, setIsOlderThan18] = useState(false)
   const [birthdate, setBirthdate] = useState('');
-  const [isOlderThan18, setIsOlderThan18] = useState(false);
   const [formValues, setFormValues] = useState({
     userName: '',
     displayName: '',
@@ -15,7 +16,12 @@ export default function SignUpUserInfoForm() {
   });
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+
+  const context = useContext(Context);
+  const { colorMode, avatarId } = context;
+
   const navigate = useNavigate();
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -52,29 +58,31 @@ export default function SignUpUserInfoForm() {
 
   useEffect(() => {
     const { userName, displayName, email, password } = formValues;
-    if (condition && userName && displayName && email && password) {
+    if (condition && userName && displayName && email && password && avatarId !== '0') {
       setSubmitDisabled(false);
     } else {
       setSubmitDisabled(true);
     }
-  }, [condition, formValues]);
+  }, [condition, formValues, avatarId]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const response = {
+        ...formValues,
+        birthDate: birthdate,
+        avatarId,
+      };
+      
       await fetch('http://localhost:5007/users/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formValues,
-          birthDate: birthdate,
-        }),
+        body: JSON.stringify(response),
         credentials: 'include',
       });
 
-      // setSuccessMessage("Registration successful! Redirecting...");
       setTimeout(() => {
         navigate('/');
       }, 2000);
@@ -157,7 +165,7 @@ export default function SignUpUserInfoForm() {
             onChange={() => setConditionChecked(!condition)}
           />
           <div>
-            <a href="/t&cs">
+            <a href="/t&cs" className={colorMode}>
               General <u>Terms and Conditions (GTC)</u>
             </a>
           </div>

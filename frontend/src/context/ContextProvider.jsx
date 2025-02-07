@@ -17,11 +17,13 @@ const ContextProvider = ({ children }) => {
   const [roomsList, setRoomsList] = useState([]);
   const [colorMode, setColorMode] = useState(currentMode);
   const [lastPage, setLastPage] = useState('');
+  const [avatarId, setAvatarId] = useState('0');
 
   const updateUserData = (data) => setUserData(data);
   const updateTokenVerify = (boolean) => setIsTokenVerifed(boolean);
   const updateRoomsList = (list) => setRoomsList(list);
   const updateLastPage = (path) => setLastPage(path);
+  const updateAvatarId = (idString) => setAvatarId(idString);
 
   const updateColorMode = () => {
     const newMode = colorMode === "light" ? "dark" : "light";
@@ -65,9 +67,14 @@ const ContextProvider = ({ children }) => {
           roomsList,
           updateRoomsList,
           
+          colorMode,
           updateColorMode,
+
           lastPage,
           updateLastPage,
+
+          updateAvatarId,
+          avatarId,
         }}
       >
         {children}

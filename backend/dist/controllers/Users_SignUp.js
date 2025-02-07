@@ -7,7 +7,7 @@ export const signUpUser = async (req, res) => {
             response: "Request body not found..",
         });
     }
-    const { userName, displayName, email, password, birthDate, isAcceptRules } = req.body;
+    const { userName, displayName, email, password, birthDate, avatarId } = req.body;
     const isUserExist = (await User.findOne({ email: email })) !== null;
     if (isUserExist) {
         res.status(500).json({
@@ -24,7 +24,7 @@ export const signUpUser = async (req, res) => {
                 email,
                 password: hashedPassword,
                 birthDate,
-                isAcceptRules,
+                avatarId,
             });
             res.status(200).json({
                 response: "User was added to the base!",

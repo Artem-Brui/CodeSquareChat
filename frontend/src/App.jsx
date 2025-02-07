@@ -31,9 +31,10 @@ function App() {
           );
           const responseData = await tokenBDResponse.json();
 
-          const { tokenVerif, userName, userDisplayName } = responseData;
+          const { tokenVerif, userName, userDisplayName, avatarId } = responseData;
+          
 
-          updateUserData({ userName, userDisplayName });
+          updateUserData({ userName, userDisplayName, avatarId });
           updateTokenVerify(tokenVerif);
         } catch (error) {
           console.error(error);

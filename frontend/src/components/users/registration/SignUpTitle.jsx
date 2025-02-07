@@ -1,5 +1,8 @@
+import useTheme from "../../../customHooks/useTheme";
 
 
 export default function SignUpTitle() {
-  return <h1 className="create-h1">Create your user profile</h1>;
+  const { colorMode } = useTheme();
+  
+  return <h1 className={`create-h1 ${colorMode}`}>Choose an avatar and create your profile</h1>;
 }
