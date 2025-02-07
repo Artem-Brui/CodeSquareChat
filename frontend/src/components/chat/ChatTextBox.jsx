@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useRoomsList from "../../customHooks/useRoomsList";
 import useUserData from "../../customHooks/useUserData";
 import { io } from "socket.io-client";
@@ -12,6 +12,20 @@ export default function ChatTextBox({ room }) {
 
   const userId = userData._id ? userData._id : localStorage.getItem("userId");
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter') {
+        handleSendMessage();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  })
+
   const sendMessage = async (message) => {
     const newMessageData = {
       roomId: room.id,
@@ -22,7 +36,7 @@ export default function ChatTextBox({ room }) {
     socket.emit("addNewMessage", newMessageData);
   };
 
-  const handleSendMessage = async () => {
+  async function handleSendMessage() {
     if (messageInputValue.length) {
       await sendMessage(messageInputValue);
 
@@ -48,7 +62,6 @@ export default function ChatTextBox({ room }) {
       </div>
 
       <div className="send-text-btn">
-        <button>
           <div className="svg-icon" onClick={handleSendMessage}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +76,6 @@ export default function ChatTextBox({ room }) {
               />
             </svg>
           </div>
-        </button>
       </div>
     </div>
   );
