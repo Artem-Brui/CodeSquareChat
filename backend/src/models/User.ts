@@ -5,7 +5,7 @@ const userSchema = new Schema({
     type: String,
     require: true,
   },
-  displayName: {
+  userDisplayName: {
     type: String,
     require: true,
   },

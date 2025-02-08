@@ -7,15 +7,15 @@ import SearchBar from "../components/header/SearchBar";
 
 export default function RoomPage() {
   const { roomsList } = useRoomsList();
-  const { roomId } = useParams();
-
-  const room = roomsList.find((room) => room.id === roomId);
-
+  const { name } = useParams();
+  
+  const room = roomsList.find((room) => room.name === name);
+  
   return (
     <div className="room-page container" id="room-page">
       <Header room={room} />
       <SearchBar />
-      <ChatField messages={room.messages} />
+      <ChatField room={room} />
       <ChatTextBox room={room} />
     </div>
   );

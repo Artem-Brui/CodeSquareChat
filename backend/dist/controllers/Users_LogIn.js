@@ -19,7 +19,7 @@ export const logInUser = async (req, res) => {
     }
     else {
         try {
-            const { password, _id, userName, displayName, birthDate, avatarId } = user;
+            const { password, _id, userName, userDisplayName, birthDate, avatarId } = user;
             if (typeof password !== "string") {
                 return errorHandler(res, "Password is not a valid string");
             }
@@ -37,7 +37,7 @@ export const logInUser = async (req, res) => {
                 res.status(200).json({
                     userData: {
                         userName,
-                        displayName,
+                        userDisplayName,
                         birthDate,
                         avatarId,
                         _id,

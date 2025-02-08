@@ -16,8 +16,8 @@ const ContextProvider = ({ children }) => {
   const [isTokenVerifed, setIsTokenVerifed] = useState(false);
   const [roomsList, setRoomsList] = useState([]);
   const [colorMode, setColorMode] = useState(currentMode);
-  const [lastPage, setLastPage] = useState('');
-  const [avatarId, setAvatarId] = useState('0');
+  const [lastPage, setLastPage] = useState("");
+  const [avatarId, setAvatarId] = useState("0");
 
   const updateUserData = (data) => setUserData(data);
   const updateTokenVerify = (boolean) => setIsTokenVerifed(boolean);
@@ -50,7 +50,7 @@ const ContextProvider = ({ children }) => {
     };
 
     getRooms();
-  }, []);
+  }, [userData]);
 
   darkModeSwitcher(colorMode);
 
@@ -66,7 +66,7 @@ const ContextProvider = ({ children }) => {
 
           roomsList,
           updateRoomsList,
-          
+
           colorMode,
           updateColorMode,
 

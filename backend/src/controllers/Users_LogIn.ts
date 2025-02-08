@@ -25,7 +25,7 @@ export const logInUser: RequestCallback = async (req, res) => {
     errorHandler(res, "User doesn't exist in the database...");
   } else {
     try {
-      const { password, _id, userName, displayName, birthDate, avatarId } = user;
+      const { password, _id, userName, userDisplayName, birthDate, avatarId } = user;
 
       if (typeof password !== "string") {
         return errorHandler(res, "Password is not a valid string");
@@ -47,7 +47,7 @@ export const logInUser: RequestCallback = async (req, res) => {
         res.status(200).json({
           userData: {
             userName,
-            displayName,
+            userDisplayName,
             birthDate,
             avatarId,
             _id,

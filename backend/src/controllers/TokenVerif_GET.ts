@@ -16,13 +16,12 @@ export const TokenVerifGET = async (
   try {
     const user = await User.findOne({ _id: id });
     if (user && typeof user.token === "string") {
-      const { token, userName, displayName, avatarId, _id, onlineStatus } = user;
+      const { token, userName, userDisplayName, avatarId, _id } = user;
       const response = {
         tokenVerif: isTokenVerif(token),
         userName,
-        userDisplayName: displayName,
+        userDisplayName,
         avatarId,
-        onlineStatus,
         _id,
       };
 

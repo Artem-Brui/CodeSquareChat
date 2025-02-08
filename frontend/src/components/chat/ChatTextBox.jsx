@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import useRoomsList from "../../customHooks/useRoomsList";
 import useUserData from "../../customHooks/useUserData";
 import { io } from "socket.io-client";
 import { SERVER_HOST } from "../../services/Hosts";
@@ -28,7 +27,7 @@ export default function ChatTextBox({ room }) {
 
   const sendMessage = async (message) => {
     const newMessageData = {
-      roomId: room.id,
+      roomId: room._id,
       message,
       owner: userId,
     };

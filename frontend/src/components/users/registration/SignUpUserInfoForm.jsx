@@ -10,7 +10,7 @@ export default function SignUpUserInfoForm() {
   const [birthdate, setBirthdate] = useState('');
   const [formValues, setFormValues] = useState({
     userName: '',
-    displayName: '',
+    userDisplayName: '',
     email: '',
     password: '',
   });
@@ -57,8 +57,8 @@ export default function SignUpUserInfoForm() {
   };
 
   useEffect(() => {
-    const { userName, displayName, email, password } = formValues;
-    if (condition && userName && displayName && email && password && avatarId !== '0') {
+    const { userName, userDisplayName, email, password } = formValues;
+    if (condition && userName && userDisplayName && email && password && avatarId !== '0') {
       setSubmitDisabled(false);
     } else {
       setSubmitDisabled(true);
@@ -111,10 +111,10 @@ export default function SignUpUserInfoForm() {
       <div className="form-group">
         <input
           type="text"
-          name="displayName"
+          name="userDisplayName"
           placeholder="Display Name"
           className="input-field regis"
-          value={formValues.displayName}
+          value={formValues.userDisplayName}
           onChange={handleInputChange}
           required
         />

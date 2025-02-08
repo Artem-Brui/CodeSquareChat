@@ -18,10 +18,6 @@ export default function UserProfileImage({ id }) {
   return (
     <div className="user-profile-img">
       <div className="user-image" style={{ backgroundImage: imagePath }}>
-        {/* <img
-          src={`../src/assets/images/avatars/avatar-${avatar}.svg`}
-          alt="Profile Image"
-        /> */}
       </div>
     </div>
   );

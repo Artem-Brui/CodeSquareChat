@@ -2,9 +2,11 @@ import { useEffect, useRef } from "react";
 import UserProfileImage from "../users/Profile/UserProfileImage";
 import Message from "./Message";
 
-export default function ChatField({ messages }) {
+export default function ChatField({ room }) {
   const chatRef = useRef(null);
 
+  const { messages } = room;
+  
   useEffect(() => {
     if (chatRef.current) {
       chatRef.current.scrollTop = chatRef.current.scrollHeight;
@@ -17,7 +19,8 @@ export default function ChatField({ messages }) {
         <ul className="messages-list">
           {messages.map((message) => {
             const isOwnMessage =
-              localStorage.getItem("userId") === message.ownerId;
+              localStorage.getItem("userId") === message.owner._id;
+            
             const messagePositionClassName = isOwnMessage ? "right" : "left";
 
             return isOwnMessage ? (
@@ -26,14 +29,14 @@ export default function ChatField({ messages }) {
                 className={`messages-item ${messagePositionClassName}`}
               >
                 <Message message={message} />
-                <UserProfileImage id={message.avatarId || '0'}/>
+                <UserProfileImage id={message.owner.avatarId || '0'}/>
               </li>
             ) : (
               <li
                 key={message._id}
                 className={`messages-item ${messagePositionClassName}`}
               >
-                <UserProfileImage id={message.avatarId || '0'} />
+                <UserProfileImage id={message.owner.avatarId || '0'} />
                 <Message message={message} />
               </li>
             );

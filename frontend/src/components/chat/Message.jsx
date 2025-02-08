@@ -14,13 +14,15 @@ export default function Message({ message }) {
 
   }
 
+  const { owner, message: text } = message;
+
   return (
     <div className="message-body">
       <div className="message-data">
-        <p className="message-owner">{message.owner}</p>
+        <p className="message-owner">{owner.userDisplayName}</p>
         <p className="message-created">{wasCreated}</p>
       </div>
-      <p className="message-text">{message.message}</p>
+      <p className="message-text">{text}</p>
     </div>
   );
 }

@@ -1,96 +1,146 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 .user-profile-menu {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-    .user-profile-settings {
+  .username-title {
+    font-size: 3rem;
+  }
+
+  .user-profile-settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    margin: 2rem 0;
+    .user-profile-field {
+      width: 100%;
+    }
+    .user-settings-field {
+      width: 100%;
+      margin: 1rem 0;
+      
+
+      .user-settings-input-container {
+        width: 100%;
+        height: 6rem;
+        margin-top: 1.5rem;
         display: flex;
-        flex-direction: column;
+        gap: 1rem;
+
+        .success {
+          &::before {
+            content: '';
+            display: block;
+            width: 5rem;
+            height: 5rem;
+            background-image: url('src/assets/images/done.png');
+            background-size: 100%;
+            position: absolute;
+            top: 0.6rem;
+            left: -7rem;
+            z-index: 23;
+          }
+        }
+
+        .user-settings-input {
+          height: 100%;
+          flex: 1;
+          font-family: "Quicksand", serif;
+          font-size: 2.5rem;
+          font-weight: 500;
+          padding-inline: 1.5rem;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+            rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+            rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+
+        .user-settings-button {
+          width: 15%;
+          text-align: center;
+          font-family: "Quicksand", serif;
+          font-size: 2.5rem;
+          font-weight: 700;
+          display: inline;
+          text-transform: uppercase;
+          text-align: center;
+          background-color: #57a651;
+          position: relative;
+        }
+      }
+
+      button {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
         justify-content: start;
         align-items: center;
-        width: 100%;
-        margin: 2rem 0;
-        .user-profile-field {
-            width: 100%;
-        }
-        .user-settings-field {
-            width: 100%;
-            margin: 1rem 0;
-
-            button {
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: start;
-                align-items: center;
-                padding: 1rem 0.2rem;
-                box-shadow: $unclicked-button;
-                &:active {
-                    box-shadow: $clicked-button;
-                }
-            }
-            .user-profile-settings-title {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                h2 {
-                    font-size: 3rem;
-                    font-weight: 700;
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
-
-            .svg-icon {
-                background-color: $frame;
-                margin: 0 1rem;
-                padding: 1rem;
-            }
-        }
-    }
-    .dropdown-menu {
+        padding: 1rem 0.2rem;
+        box-shadow: $unclicked-button;
+      }
+      .user-profile-settings-title {
         display: flex;
-        position: relative;
-        top: 100%;
-        left: 0;
-        border-radius: 0.5rem;
-        z-index: 10;
-        .dropdown-item {
-            display: flex;
-            align-items: center;
-            padding: 0.5rem 0;
-            width: 100%;
-            margin: 1rem 0.4rem;
-
-            .status-indicator {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: 100%;
-                padding: 1rem 0.5rem;
-                margin: 0.5rem 0;
-                font-size: 1.7rem;
-                color: $text-col-lm;
-                text-shadow: 1px 1px 10px rgb(255, 255, 255),
-                    0 0 1rem rgb(255, 255, 255), 0 0 1rem rgb(255, 255, 255);
-                span {
-                    font-weight: 900;
-                }
-                &.online {
-                    background-color: $online;
-                }
-                &.busy {
-                    background-color: $busy;
-                }
-                &.offline {
-                    background-color: $offline;
-                }
-            }
+        justify-content: center;
+        align-items: center;
+        h2 {
+          font-size: 3rem;
+          font-weight: 700;
+          justify-content: center;
+          align-items: center;
         }
+      }
+
+      .svg-icon {
+        background-color: $frame;
+        margin: 0 1rem;
+        padding: 1rem;
+      }
     }
+  }
+  .dropdown-menu {
+    display: flex;
+    position: relative;
+    top: 100%;
+    left: 0;
+    border-radius: 0.5rem;
+    z-index: 10;
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0;
+      width: 100%;
+      margin: 1rem 0.4rem;
+
+      .status-indicator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 1rem 0.5rem;
+        margin: 0.5rem 0;
+        font-size: 1.7rem;
+        color: $text-col-lm;
+        text-shadow: 1px 1px 10px rgb(255, 255, 255),
+          0 0 1rem rgb(255, 255, 255), 0 0 1rem rgb(255, 255, 255);
+        span {
+          font-weight: 900;
+        }
+        &.online {
+          background-color: $online;
+        }
+        &.busy {
+          background-color: $busy;
+        }
+        &.offline {
+          background-color: $offline;
+        }
+      }
+    }
+  }
 }

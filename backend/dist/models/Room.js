@@ -1,43 +1,32 @@
+import { ObjectId } from "mongodb";
 import { Schema, model } from "mongoose";
-const roomSchema = new Schema({
+const messageSchema = new Schema({
     _id: {
-        type: String,
+        type: ObjectId,
     },
-    id: {
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        require: true,
+    },
+    message: {
         type: String,
         require: true,
+    },
+    creatingDate: {
+        type: String,
+        require: true,
+    },
+});
+const roomSchema = new Schema({
+    _id: {
+        type: ObjectId,
     },
     name: {
         type: String,
         require: true,
     },
-    messages: [
-        {
-            _id: {
-                type: String,
-            },
-            owner: {
-                type: String,
-                require: true,
-            },
-            ownerId: {
-                type: String,
-                require: true,
-            },
-            avatarId: {
-                type: String,
-                require: true,
-            },
-            message: {
-                type: String,
-                require: true,
-            },
-            creatingDate: {
-                type: String,
-                require: true,
-            },
-        },
-    ],
+    messages: [messageSchema],
 }, { collection: "Rooms" });
 const Room = model("Room", roomSchema);
 export default Room;

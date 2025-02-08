@@ -8,17 +8,6 @@
   flex-direction: column;
   margin-bottom: 2rem;
 
-  .username-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-align: center;
-    color: $frame;
-    text-shadow: -0.075rem 0.075rem 0 color.mix(#fff, $frame, 94%),
-      0.05rem 0.05rem 0 color.mix(#fff, $frame, 40%),
-      0.1rem 0.1rem 0 color.mix($frame2, $frame, 62%),
-      0.15rem 0.15rem color.mix($frame2, $frame, 64%);
-  }
-
   .svg-icon {
     box-shadow: $unclicked-button;
     padding: 1rem;
@@ -27,6 +16,17 @@
       box-shadow: $clicked-button;
     }
   }
+}
+
+.username-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  color: $frame;
+  text-shadow: -0.075rem 0.075rem 0 color.mix(#fff, $frame, 94%),
+    0.05rem 0.05rem 0 color.mix(#fff, $frame, 40%),
+    0.1rem 0.1rem 0 color.mix($frame2, $frame, 62%),
+    0.15rem 0.15rem color.mix($frame2, $frame, 64%);
 }
 
 .user-profile-img {

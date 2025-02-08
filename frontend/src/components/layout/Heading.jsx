@@ -1,14 +1,11 @@
 import { useLocation } from "react-router-dom";
-import useUserData from "../../customHooks/useUserData";
+import { capitaliser } from "../../services/service";
 
 
 export default function Heading({ room }) {
-  const capitalizer = (string) => {
-    return string.split('')[0].toUpperCase() + string.split('').slice(1).join('');
-  }
-
+  
   const currentLocation = useLocation().pathname.slice(1);
-  const headerText = room ? `Room:  ${room.name}` : capitalizer(currentLocation);
+  const headerText = room ? `Room:  ${capitaliser(room.name)}` : capitaliser(currentLocation);
 
     return (
       <div className="heading">

@@ -1,4 +1,4 @@
-type UserType = {
+export type UserType = {
   name: String;
   realName: String;
   email: String;
@@ -9,7 +9,3 @@ type UserType = {
   creatingDate: String;
   updatingDate: String;
 };
-
-export {
-  UserType,
-}

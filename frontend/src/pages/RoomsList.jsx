@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import useRoomsList from '../customHooks/useRoomsList';
+import { capitaliser } from '../services/service';
 
 export default function RoomsList() {
   const { roomsList } = useRoomsList();
@@ -11,26 +12,27 @@ export default function RoomsList() {
     if (id % 4 === 3) return 'red';
   };
 
+
   return (
     <div className="rooms">
-      {roomsList.map((room) => {
-        const { id, name, messages } = room;
-        const borderColor = getBorderColor(id);
+      {roomsList.map((room, index) => {
+        const { _id, name, messages } = room;
+        const borderColor = getBorderColor(index);
         const roomClassName = `room room-${borderColor}`;
         const messageName = messages.length === '1' ? 'message' : 'messages';
 
         return (
-          <div key={id} className={roomClassName}>
-            <Link to={`/rooms/${id}`} className="room-link">
+          <div key={_id} className={roomClassName}>
+            <Link to={`/rooms/${name}`} className="room-link">
               <div className="room-image">
                 <div className="room-placeholder">
                   <img
-                    src={`../src/assets/images/rooms/${room.name.toLowerCase()}.jpg`}
+                    src={`../src/assets/images/rooms/${name}.jpg`}
                     alt="Room Image"
                   />
                 </div>
               </div>
-              <div className="room-name">{name}</div>
+              <div className="room-name">{capitaliser(name)}</div>
               <div className="room-capacity">
                 {messages.length} {messageName}
               </div>

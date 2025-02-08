@@ -9,7 +9,7 @@ export type RequestCallback = (
 export type UserType = {
   _id?: string;
   userName: string;
-  displayName: string;
+  userDisplayName: string;
   email: string;
   password: string;
   birthDate: string;

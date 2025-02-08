@@ -31,10 +31,9 @@ function App() {
           );
           const responseData = await tokenBDResponse.json();
 
-          const { tokenVerif, userName, userDisplayName, avatarId, onlineStatus } = responseData;
-          
+          const { _id, tokenVerif, userName, userDisplayName, avatarId } = responseData;
 
-          updateUserData({ userName, userDisplayName, avatarId, onlineStatus });
+          updateUserData({ _id, userName, userDisplayName, avatarId });
           updateTokenVerify(tokenVerif);
         } catch (error) {
           console.error(error);
@@ -68,7 +67,7 @@ function App() {
           <Route path="/user-profile" element={<UserProfilePage />} />
           <Route path="/user-settings" element={<UserSettingsPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/rooms/:roomId" element={<RoomPage />} />
+          <Route path="/rooms/:name" element={<RoomPage />} />
         </Route>
       </Routes>
     </Router>

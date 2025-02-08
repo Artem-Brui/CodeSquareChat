@@ -1,10 +1,16 @@
 import Room from "../models/Room.js";
 import { ObjectId } from "mongodb";
-import User from "../models/User.js";
-export default function webSocketServer(server) {
+export default async function webSocketServer(server) {
     server.on("connection", async (socket) => {
         try {
-            const rooms = await Room.find();
+            const rooms = await Room.find()
+                .populate([
+                {
+                    path: "messages.owner",
+                    select: "userDisplayName avatarId",
+                },
+            ])
+                .lean();
             socket.emit("rooms", rooms);
         }
         catch (error) {
@@ -12,23 +18,25 @@ export default function webSocketServer(server) {
         }
         socket.on("addNewMessage", async (messageData) => {
             try {
-                const { roomId, message, owner: ownerId } = messageData;
+                const { roomId, message, owner } = messageData;
                 const newDBObjectId = new ObjectId();
-                const user = await User.findOne({ _id: ownerId });
-                const date = new Date().toLocaleString('ru-RU');
+                const date = new Date().toLocaleString("ru-RU");
                 const newMessage = {
                     _id: newDBObjectId,
-                    ownerId,
-                    avatarId: user?.avatarId,
-                    owner: user?.displayName,
+                    owner,
                     message: message,
                     creatingDate: date,
                 };
-                const room = await Room.findOne({ id: roomId });
+                const room = await Room.findOneAndUpdate({ _id: roomId }, { $push: { messages: newMessage } }, { new: true });
                 if (room) {
-                    const updatedMessages = [...room.messages, newMessage];
-                    await Room.findOneAndUpdate({ id: roomId }, { messages: updatedMessages });
-                    const secondRequestRooms = await Room.find();
+                    const secondRequestRooms = await Room.find()
+                        .populate([
+                        {
+                            path: "messages.owner",
+                            select: "userDisplayName avatarId"
+                        },
+                    ])
+                        .lean();
                     if (secondRequestRooms) {
                         server.emit("rooms", secondRequestRooms);
                     }
@@ -36,6 +44,22 @@ export default function webSocketServer(server) {
             }
             catch (error) {
                 console.error(error);
+            }
+        });
+        socket.on("updateRooms", async () => {
+            try {
+                const rooms = await Room.find()
+                    .populate([
+                    {
+                        path: "messages.owner",
+                        select: "userDisplayName avatarId",
+                    },
+                ])
+                    .lean();
+                server.emit("rooms", rooms);
+            }
+            catch (error) {
+                console.error("Ошибка при обновлении комнат:", error);
             }
         });
     });

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import EditInput from './EditInput';
+import useUserData from '../../../customHooks/useUserData';
 
 export default function UserProfileMenu() {
+  const { userData } = useUserData();
   const [OpenMenuName, setOpenMenuName] = useState(false);
   const [OpenMenuDisplayName, setOpenMenuDisplayName] = useState(false);
 
@@ -76,7 +78,7 @@ export default function UserProfileMenu() {
               <h2>Username</h2>
             </div>
           </button>
-          {OpenMenuName && (<EditInput />)}
+          {OpenMenuName && (<EditInput dataKey={'userName'} user={userData} />)}
         </div>
       </div>
 
@@ -145,7 +147,7 @@ export default function UserProfileMenu() {
               <h2>Display Name</h2>
             </div>
           </button>
-          {OpenMenuDisplayName && (<EditInput />)}
+          {OpenMenuDisplayName && (<EditInput dataKey={'userDisplayName'} user={userData} />)}
         </div>
       </div>
 
