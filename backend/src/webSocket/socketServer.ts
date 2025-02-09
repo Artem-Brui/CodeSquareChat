@@ -1,8 +1,6 @@
 import { DefaultEventsMap, Server } from "socket.io";
 import Room from "../models/Room.js";
 import { ObjectId } from "mongodb";
-import User from "../models/User.js";
-import { log } from "console";
 
 type serverType = Server<
   DefaultEventsMap,

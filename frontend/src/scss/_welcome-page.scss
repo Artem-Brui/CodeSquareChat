@@ -62,7 +62,7 @@
     font-size: 5rem;
     font-weight: bolder;
     color: $frame;
-    margin: 0.5rem 0;
+    margin-block: 0 6rem;
     text-shadow: -0.075rem 0.075rem 0 color.mix(#fff, $frame, 94%),
         0.05rem 0.5rem 0 color.mix(#fff, $frame, 60%),
         0.1rem 0.1rem 0 color.mix(#fff, $frame, 62%),
@@ -87,6 +87,10 @@
     outline: none;
     border-bottom: 0.038rem solid #ccc;
     padding: 1rem;
+
+    &:last-of-type {
+      margin-bottom: 3rem;
+    }
 }
 
 .signup-button-div,
@@ -96,7 +100,6 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 1.5rem 0;
     button {
         width: 80%;
         color: $text-col-lm;
@@ -126,4 +129,26 @@
     a {
         font-size: 1.5rem;
     }
+}
+
+@media (max-width: 400px) {
+  .h2-welcome-title {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .login-form input {
+    font-size: 2rem;
+
+    &:last-of-type {
+      margin-bottom: 2rem;
+    }
+}
+
+.signup-button-div,
+.login-button-div {
+  button {
+    font-size: 2rem;
+  }
+}
 }

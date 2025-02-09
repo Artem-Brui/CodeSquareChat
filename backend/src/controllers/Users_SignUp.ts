@@ -2,6 +2,7 @@ import User from "../models/User.js";
 import errorHandler from "./errorHandler.js";
 import { RequestCallback } from "./types.js";
 import bcrypt from "bcrypt";
+import { ObjectId } from "mongodb";
 
 export const signUpUser: RequestCallback = async (req, res) => {
   if (!req.body) {
@@ -23,8 +24,10 @@ export const signUpUser: RequestCallback = async (req, res) => {
   } else {
     try {
       const hashedPassword = await bcrypt.hash(password, 10);
+      const newDBObjectId = new ObjectId();
 
       const newUser = await User.create({
+        _id: newDBObjectId,
         userName,
         userDisplayName,
         email,
@@ -33,10 +36,13 @@ export const signUpUser: RequestCallback = async (req, res) => {
         avatarId,
       });
 
-      res.status(200).json({
-        response: "User was added to the base!",
-        user: newUser,
-      });
+      if (newUser) {
+        res.status(200).json({
+          status: true,
+          userId: newUser._id.toString(),
+          message: "User was added to the base!",
+        });
+      }
     } catch (error) {
       errorHandler(res, error);
     }

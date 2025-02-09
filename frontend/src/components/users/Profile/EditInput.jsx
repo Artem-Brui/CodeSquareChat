@@ -2,7 +2,6 @@ import { useState } from "react";
 import { SERVER_HOST } from "../../../services/Hosts";
 import useUserData from "../../../customHooks/useUserData";
 import { io } from "socket.io-client";
-import useRoomsList from "../../../customHooks/useRoomsList";
 
 export default function EditInput({ user, dataKey }) {
   const [dataToChange, setDataToChange] = useState(user[dataKey]);

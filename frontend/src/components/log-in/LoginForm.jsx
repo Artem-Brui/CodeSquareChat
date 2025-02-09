@@ -34,13 +34,15 @@ export default function LoginForm() {
       const response = await loginResponse.json();
       const { userData, isTokenVerif } = response;
 
-      if (response.userData) {
+      if (response.isTokenVerif) {
         updateUserData(userData);
         updateTokenVerify(isTokenVerif);
         updateOnlineStatus('online');
+        localStorage.setItem('userId', userData._id);
 
-        localStorage.setItem("userId", userData._id);
-        navigate("/dashboard");
+        console.log(userData._id);
+
+        navigate("/");
       }
     } catch (error) {
       setErrorMessage(

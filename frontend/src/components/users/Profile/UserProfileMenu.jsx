@@ -1,14 +1,24 @@
 import { useState } from 'react';
 import EditInput from './EditInput';
 import useUserData from '../../../customHooks/useUserData';
+import DeleteAccount from './DeleteAccount';
 
 export default function UserProfileMenu() {
   const { userData } = useUserData();
   const [OpenMenuName, setOpenMenuName] = useState(false);
   const [OpenMenuDisplayName, setOpenMenuDisplayName] = useState(false);
+  const [OpenDeleteAcc, setOpenDeleteAcc] = useState(false);
 
   const ClickDropdownName = () => setOpenMenuName(!OpenMenuName);
   const ClickDropdownDisplayName = () => setOpenMenuDisplayName(!OpenMenuDisplayName);
+  const handleDeleteButton = (boolean = true) => {
+    if (!boolean) {
+      setOpenDeleteAcc(false)
+    } else {
+
+      setOpenDeleteAcc(!false);
+    }
+  } 
 
   return (
     <div className="user-profile-settings">
@@ -203,7 +213,7 @@ export default function UserProfileMenu() {
       
       <div className="user-profile-field">
         <div className="user-settings-field">
-          <button>
+          <button onClick={handleDeleteButton}>
             <div className="svg-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -224,6 +234,7 @@ export default function UserProfileMenu() {
           </button>
         </div>
       </div>
+      {OpenDeleteAcc && (<DeleteAccount callBack={handleDeleteButton}  user={userData} />)}
     </div>
   );
 }

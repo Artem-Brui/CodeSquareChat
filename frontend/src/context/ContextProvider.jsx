@@ -16,13 +16,16 @@ const ContextProvider = ({ children }) => {
   const [isTokenVerifed, setIsTokenVerifed] = useState(false);
   const [roomsList, setRoomsList] = useState([]);
   const [colorMode, setColorMode] = useState(currentMode);
-  const [lastPage, setLastPage] = useState("");
+  const [lastPage, setLastPage] = useState(localStorage.getItem('lastPage'));
   const [avatarId, setAvatarId] = useState("0");
 
   const updateUserData = (data) => setUserData(data);
   const updateTokenVerify = (boolean) => setIsTokenVerifed(boolean);
   const updateRoomsList = (list) => setRoomsList(list);
-  const updateLastPage = (path) => setLastPage(path);
+  const updateLastPage = (path) => {
+    localStorage.setItem('lastPage', path)
+    setLastPage(path);
+  } 
   const updateAvatarId = (idString) => setAvatarId(idString);
 
   const updateColorMode = () => {

@@ -31,7 +31,10 @@
         width: 100%;
         cursor: pointer;
         .burger-button-name {
-          margin: 0 2rem;
+          width: 100%;
+          text-align: start;
+          margin-left: 2rem;
+
           h2 {
             font-size: 3rem;
             font-weight: 700;
@@ -55,5 +58,28 @@
     display: flex;
     justify-content: end;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 400px) {
+  .burger-menu {
+    svg {
+      width: 3.3rem;
+      height: 3.3rem;
+    }
+
+    .burger-menu-mobile {
+      .burger-button {
+        .burger-menu-buttons {
+          .burger-button-name {
+            text-align: center;
+            margin: 0;
+            h2 {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
   }
 }

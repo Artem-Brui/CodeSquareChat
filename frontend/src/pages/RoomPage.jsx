@@ -10,13 +10,19 @@ export default function RoomPage() {
   const { name } = useParams();
   
   const room = roomsList.find((room) => room.name === name);
+  const fullMessages = [...room.messages];
+
+  const updatedRoom = {
+    ...room,
+    messages: fullMessages.filter(mes => mes.owner !== null),
+  }
   
   return (
     <div className="room-page container" id="room-page">
-      <Header room={room} />
+      <Header room={updatedRoom} />
       <SearchBar />
-      <ChatField room={room} />
-      <ChatTextBox room={room} />
+      <ChatField room={updatedRoom} />
+      <ChatTextBox room={updatedRoom} />
     </div>
   );
 }

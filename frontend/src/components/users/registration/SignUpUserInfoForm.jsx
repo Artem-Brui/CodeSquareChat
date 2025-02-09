@@ -68,24 +68,31 @@ export default function SignUpUserInfoForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = {
+      const reqBody = {
         ...formValues,
         birthDate: birthdate,
         avatarId,
       };
       
-      await fetch('http://localhost:5007/users/signup', {
+      const DBresponse = await fetch('http://localhost:5007/users/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(response),
+        body: JSON.stringify(reqBody),
         credentials: 'include',
       });
 
-      setTimeout(() => {
-        navigate('/');
-      }, 2000);
+      const responseData = await DBresponse.json();
+
+      if (responseData.status) {
+        localStorage.setItem('userId', responseData.userId);
+        
+        setTimeout(() => {
+          navigate('/');
+        }, 0);
+      }
+
     } catch (error) {
       setErrorMessage(
         error.response?.data?.message ||

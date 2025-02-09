@@ -12,10 +12,22 @@ export default function RoomsList() {
     if (id % 4 === 3) return 'red';
   };
 
+  const updatedRoomsList = roomsList.map((room) => {
+    const fullMessages = [...room.messages];
+
+    console.log(room);
+
+    const updatedRoom = {
+      ...room,
+      messages: fullMessages.filter(mes => mes.owner !== null),
+    }
+    return updatedRoom;
+  });
+
 
   return (
     <div className="rooms">
-      {roomsList.map((room, index) => {
+      {updatedRoomsList.map((room, index) => {
         const { _id, name, messages } = room;
         const borderColor = getBorderColor(index);
         const roomClassName = `room room-${borderColor}`;
