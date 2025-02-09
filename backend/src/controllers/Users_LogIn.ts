@@ -22,7 +22,7 @@ export const logInUser: RequestCallback = async (req, res) => {
   const user: UserType | null = (await User.findOne({ email: email })) || null;
 
   if (user === null) {
-    errorHandler(res, "User doesn't exist in the database...");
+    errorHandler(res, "Login failed. Please Sign Up.");
   } else {
     try {
       const { password, _id, userName, userDisplayName, birthDate, avatarId } = user;

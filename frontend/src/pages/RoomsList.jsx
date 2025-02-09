@@ -15,8 +15,6 @@ export default function RoomsList() {
   const updatedRoomsList = roomsList.map((room) => {
     const fullMessages = [...room.messages];
 
-    console.log(room);
-
     const updatedRoom = {
       ...room,
       messages: fullMessages.filter(mes => mes.owner !== null),

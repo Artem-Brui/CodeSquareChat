@@ -9,7 +9,8 @@ export default function LoginForm() {
   });
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const { updateUserData, updateTokenVerify, updateOnlineStatus } = useUserData();
+  const { updateUserData, updateTokenVerify, updateOnlineStatus } =
+    useUserData();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -18,7 +19,7 @@ export default function LoginForm() {
       [name]: value,
     }));
   };
-  // POST
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -37,12 +38,12 @@ export default function LoginForm() {
       if (response.isTokenVerif) {
         updateUserData(userData);
         updateTokenVerify(isTokenVerif);
-        updateOnlineStatus('online');
-        localStorage.setItem('userId', userData._id);
-
-        console.log(userData._id);
+        updateOnlineStatus("online");
+        localStorage.setItem("userId", userData._id);
 
         navigate("/");
+      } else {
+        setErrorMessage(response.errorMessage);
       }
     } catch (error) {
       setErrorMessage(
@@ -70,6 +71,9 @@ export default function LoginForm() {
           onChange={handleInputChange}
           required
         />
+
+        {errorMessage && (<p className="error-message">{errorMessage}</p>)}
+
         <div className="login-button-div">
           <button type="submit" className="login-button">
             Log In
@@ -84,7 +88,6 @@ export default function LoginForm() {
             Sign Up
           </button>
         </div>
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
       </form>
     </div>
   );

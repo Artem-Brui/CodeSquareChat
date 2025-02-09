@@ -15,7 +15,7 @@ export const logInUser = async (req, res) => {
     const { email, password: inputPassword } = req.body;
     const user = (await User.findOne({ email: email })) || null;
     if (user === null) {
-        errorHandler(res, "User doesn't exist in the database...");
+        errorHandler(res, "Login failed. Please Sign Up.");
     }
     else {
         try {
