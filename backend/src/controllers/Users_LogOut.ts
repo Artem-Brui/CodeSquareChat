@@ -9,7 +9,10 @@ const logOutUser = async (req: Request<TokenVerifParams>, res: Response) => {
   try {
     await User.findByIdAndUpdate({ _id: id }, { token: '' });
 
-    res.status(200).json('Loged Out Successful');
+    res.status(200).json({
+      message: 'Loged Out Successful',
+      isLogedOut: true,
+    });
   } catch (error) {
     errorHandler(res, error);
   }

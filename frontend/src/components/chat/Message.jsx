@@ -1,4 +1,10 @@
-export default function Message({ message }) {
+import reactStringReplace from 'react-string-replace';
+import useTheme from '../../customHooks/useTheme';
+
+export default function Message({ message, searchedData }) {
+  const { owner, message: text } = message;
+  const { colorMode } = useTheme();
+
   const wasCreated = getTimeToShow(message.creatingDate);
 
   function getTimeToShow(time) {
@@ -14,15 +20,21 @@ export default function Message({ message }) {
 
   }
 
-  const { owner, message: text } = message;
-
+  const highLighter = (text, search) => {
+    return reactStringReplace(text, search, (match, i) => {
+      return (
+        <span key={i} className={`highlight-${colorMode}`}>{match}</span>
+      )
+    });
+  }
+  
   return (
     <div className="message-body">
       <div className="message-data">
-        <p className="message-owner">{owner.userDisplayName}</p>
+        <p className="message-owner">{highLighter(owner.userDisplayName, searchedData)}</p>
         <p className="message-created">{wasCreated}</p>
       </div>
-      <p className="message-text">{text}</p>
+      <p className="message-text">{highLighter(text, searchedData)}</p>
     </div>
   );
 }

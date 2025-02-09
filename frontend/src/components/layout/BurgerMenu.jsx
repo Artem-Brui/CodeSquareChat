@@ -8,19 +8,23 @@ export default function BurgerMenu() {
 
   const userId = localStorage.getItem("userId");
 
-  const logOut = async () => {
+  const handleLogOutClick = async () => {
     try {
-      await fetch(`http://localhost:5007/users/${userId}/logout`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
+      const DBresponse = await fetch(
+        `http://localhost:5007/users/${userId}/logout`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
 
-      updateTokenVerify(null);
-
-      navigate("/");
+      if (DBresponse.ok) {
+        navigate("/");
+        updateTokenVerify(null);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -28,7 +32,6 @@ export default function BurgerMenu() {
 
   return (
     <div className="burger-menu">
-      
       <CloseButton />
 
       <div className="burger-menu-mobile">
@@ -227,7 +230,7 @@ export default function BurgerMenu() {
                 </g>
               </svg>
             </div>
-            <div onClick={logOut} className="burger-button-name">
+            <div onClick={handleLogOutClick} className="burger-button-name">
               <h2>Log Out</h2>
             </div>
           </button>

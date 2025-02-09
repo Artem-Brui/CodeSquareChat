@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import UserProfileImage from "../users/Profile/UserProfileImage";
 import Message from "./Message";
 
-export default function ChatField({ room }) {
+export default function ChatField({ room, search }) {
   const chatRef = useRef(null);
 
   const { messages } = room;
@@ -28,7 +28,7 @@ export default function ChatField({ room }) {
                 key={message._id}
                 className={`messages-item ${messagePositionClassName}`}
               >
-                <Message message={message} />
+                <Message searchedData={search} message={message} />
                 <UserProfileImage id={message.owner.avatarId || '0'}/>
               </li>
             ) : (
@@ -37,7 +37,7 @@ export default function ChatField({ room }) {
                 className={`messages-item ${messagePositionClassName}`}
               >
                 <UserProfileImage id={message.owner.avatarId || '0'} />
-                <Message message={message} />
+                <Message searchedData={search} message={message} />
               </li>
             );
           })}

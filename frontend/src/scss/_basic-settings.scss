@@ -63,3 +63,15 @@ ul {
   color: $text-col-lm;
 }
 
+.highlight-light,
+.highlight-dark {
+  border-radius: 0;
+}
+.highlight-light {
+  background-color: rgb(5, 249, 82);
+}
+
+.highlight-dark {
+  background-color: rgb(2, 87, 29);
+}
+
