@@ -25,7 +25,7 @@ export default function LoginForm() {
     e.preventDefault();
 
     try {
-      const loginResponse = await fetch(`${SERVER_HOST}/users/login`, {
+      const DBResponse = await fetch(`${SERVER_HOST}/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,10 +33,11 @@ export default function LoginForm() {
         body: JSON.stringify(formValues),
         credentials: "include",
       });
-      const response = await loginResponse.json();
+      const response = await DBResponse.json();
       const { userData, isTokenVerif } = response;
+      
 
-      if (response.isTokenVerif) {
+      if (DBResponse.ok) {
         updateUserData(userData);
         updateTokenVerify(isTokenVerif);
         updateOnlineStatus("online");
