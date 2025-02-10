@@ -10,8 +10,8 @@ export default function LoginForm() {
   });
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const { updateUserData, updateTokenVerify, updateOnlineStatus } =
-    useUserData();
+
+  const { updateUserData, updateTokenVerify, isTokenVerifed } = useUserData();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,18 +35,16 @@ export default function LoginForm() {
       });
       const response = await DBResponse.json();
       const { userData, isTokenVerif } = response;
+
       
+      localStorage.setItem("userId", userData._id);
 
-      if (DBResponse.ok) {
-        updateUserData(userData);
-        updateTokenVerify(isTokenVerif);
-        updateOnlineStatus("online");
-        localStorage.setItem("userId", userData._id);
+      updateUserData(userData);
+      updateTokenVerify(isTokenVerif);
 
-        navigate("/");
-      } else {
-        setErrorMessage(response.errorMessage);
-      }
+      console.log(isTokenVerifed);
+
+      // navigate("/");
     } catch (error) {
       setErrorMessage(
         error.response?.data?.message || "Login failed! Please try again."
@@ -74,7 +72,7 @@ export default function LoginForm() {
           required
         />
 
-        {errorMessage && (<p className="error-message">{errorMessage}</p>)}
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
 
         <div className="login-button-div">
           <button type="submit" className="login-button">

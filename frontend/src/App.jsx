@@ -18,7 +18,7 @@ import useUserData from "./customHooks/useUserData";
 import { SERVER_HOST } from "./services/Hosts";
 
 function App() {
-  const { updateUserData, updateTokenVerify } = useUserData();
+  const { updateUserData, updateTokenVerify, isTokenVerifed } = useUserData();
   const [loading, setLoading] = useState(true);
 
   const userId = localStorage.getItem("userId");
@@ -45,7 +45,7 @@ function App() {
     };
 
     checkAuth();
-  }, []);
+  }, [isTokenVerifed]);
 
   if (loading) {
     return null;

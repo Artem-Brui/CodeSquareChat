@@ -24,7 +24,8 @@ export default function BurgerMenu() {
 
       if (DBresponse.ok) {
         navigate("/");
-        updateTokenVerify(null);
+        localStorage.setItem("userId", '');
+        updateTokenVerify(false);
       }
     } catch (error) {
       console.error(error);
