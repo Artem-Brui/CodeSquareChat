@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import useUserData from "../../../customHooks/useUserData";
+import { SERVER_HOST } from "../../../services/Hosts";
 
 export default function DeleteAccount({ callBack }) {
   const {userData, updateTokenVerify } = useUserData()
@@ -10,7 +11,7 @@ export default function DeleteAccount({ callBack }) {
   const handleYesClick = async() => {
 
     try {
-      const response = await fetch(`http://localhost:5007/users/${userData._id}`, {
+      const response = await fetch(`${SERVER_HOST}/users/${userData._id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

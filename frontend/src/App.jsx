@@ -15,6 +15,7 @@ import BurgerMenu from "./components/layout/BurgerMenu";
 import ProtectedRoute from "./Router/ProtectedRouter";
 import { useEffect, useState } from "react";
 import useUserData from "./customHooks/useUserData";
+import { SERVER_HOST } from "./services/Hosts";
 
 function App() {
   const { updateUserData, updateTokenVerify } = useUserData();
@@ -27,7 +28,7 @@ function App() {
       if (userId) {
         try {
           const tokenBDResponse = await fetch(
-            `http://localhost:5007/users/${userId}/token`
+            `${SERVER_HOST}/users/${userId}/token`
           );
           const responseData = await tokenBDResponse.json();
 

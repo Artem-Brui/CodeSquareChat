@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useUserData from "../../customHooks/useUserData";
+import { SERVER_HOST } from "../../services/Hosts";
 
 export default function LoginForm() {
   const [formValues, setFormValues] = useState({
@@ -24,7 +25,7 @@ export default function LoginForm() {
     e.preventDefault();
 
     try {
-      const loginResponse = await fetch("http://localhost:5007/users/login", {
+      const loginResponse = await fetch(`${SERVER_HOST}/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

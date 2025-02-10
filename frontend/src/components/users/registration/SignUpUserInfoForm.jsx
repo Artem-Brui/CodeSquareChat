@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useTheme from '../../../customHooks/useTheme';
 import Context from '../../../context/service';
+import { SERVER_HOST } from '../../../services/Hosts';
 
 export default function SignUpUserInfoForm() {
   const [condition, setConditionChecked] = useState(false);
@@ -74,7 +75,7 @@ export default function SignUpUserInfoForm() {
         avatarId,
       };
       
-      const DBresponse = await fetch('http://localhost:5007/users/signup', {
+      const DBresponse = await fetch(`${SERVER_HOST}/users/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import useUserData from "../../customHooks/useUserData";
 import CloseButton from "./CloseButton";
+import { SERVER_HOST } from "../../services/Hosts";
 
 export default function BurgerMenu() {
   const { updateTokenVerify, updateColorMode } = useUserData();
@@ -11,7 +12,7 @@ export default function BurgerMenu() {
   const handleLogOutClick = async () => {
     try {
       const DBresponse = await fetch(
-        `http://localhost:5007/users/${userId}/logout`,
+        `${SERVER_HOST}/users/${userId}/logout`,
         {
           method: "POST",
           headers: {
