@@ -16,7 +16,7 @@
 
 .chat-field {
   flex: 1;
-  width: 80%;
+  width: 90%;
   background-color: #e5a4eb;
   overflow: hidden;
 }
@@ -30,21 +30,22 @@
 .messages-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   padding: 25px 3px;
   justify-content: center;
 
   .right {
     justify-content: flex-end;
+    padding-left: 1rem;
   }
 
   .left {
     justify-content: flex-start;
+    padding-right: 1rem;
   }
 }
 
 .messages-item {
-  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -64,6 +65,7 @@
 }
 
 .message-owner {
+  flex: 0;
   font-weight: 800;
   font-size: 1.6rem;
 }
@@ -71,4 +73,14 @@
 .message-created {
   font-size: 1.1rem;
   padding-bottom: 1px;
+}
+
+@media (max-width: 500px) {
+  #room-page {
+    gap: 1.5rem;
+
+    .message-container {
+      padding: .3rem;
+    }
+  }
 }
