@@ -11,22 +11,22 @@ export default function BurgerMenu() {
 
   const handleLogOutClick = async () => {
     try {
-      const DBresponse = await fetch(
-        `${SERVER_HOST}/users/${userId}/logout`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        }
-      );
+      const DBResponse = await fetch(`${SERVER_HOST}/users/${userId}/logout`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
 
-      if (DBresponse.ok) {
-        navigate("/");
-        localStorage.setItem("userId", '');
-        updateTokenVerify(false);
+      if (!DBResponse.ok) {
+        console.error(new Error("LogOut wasn't sucessfull!"))
       }
+
+      localStorage.setItem("userId", "");
+      updateTokenVerify(false);
+
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
@@ -209,7 +209,7 @@ export default function BurgerMenu() {
         </div>
 
         <div className="burger-button">
-          <button className="burger-menu-buttons log-out-button">
+          <button className="burger-menu-buttons log-out-button" onClick={handleLogOutClick}>
             <div className="svg-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -232,7 +232,7 @@ export default function BurgerMenu() {
                 </g>
               </svg>
             </div>
-            <div onClick={handleLogOutClick} className="burger-button-name">
+            <div className="burger-button-name">
               <h2>Log Out</h2>
             </div>
           </button>

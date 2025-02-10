@@ -36,15 +36,15 @@ export default function LoginForm() {
       const response = await DBResponse.json();
       const { userData, isTokenVerif } = response;
 
+      if (!DBResponse.ok) {
+        console.error(new Error("LogIn wasn't sucessfull!"))
+      }
       
       localStorage.setItem("userId", userData._id);
 
       updateUserData(userData);
       updateTokenVerify(isTokenVerif);
 
-      console.log(isTokenVerifed);
-
-      // navigate("/");
     } catch (error) {
       setErrorMessage(
         error.response?.data?.message || "Login failed! Please try again."
