@@ -13,7 +13,7 @@ export default function UserProfileImage({ id }) {
     avatar = id;
   }
 
-  const imagePath = `url(${`../src/assets/images/avatars/avatar-${avatar}.svg`})`;
+  const imagePath = `url(${`/images/avatars/avatar-${avatar}.svg`})`;
   
   return (
     <div className="user-profile-img">

@@ -37,7 +37,7 @@ export default function RoomsList() {
               <div className="room-image">
                 <div className="room-placeholder">
                   <img
-                    src={`../src/assets/images/rooms/${name}.jpg`}
+                    src={`/images/rooms/${name}.jpg`}
                     alt="Room Image"
                   />
                 </div>
