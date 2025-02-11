@@ -30,24 +30,39 @@
 .messages-list {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 1rem;
   padding: 25px 3px;
   justify-content: center;
 
   .right {
     justify-content: flex-end;
     padding-left: 1rem;
+    .message-data {
+      justify-content: end;
+      .message-owner {
+        order: 1;
+      }
+    }
   }
 
   .left {
     justify-content: flex-start;
     padding-right: 1rem;
+    .message-data {
+      justify-content: start;
+    }
   }
 }
 
 .messages-item {
   display: flex;
-  align-items: center;
+  align-items: start;
+  gap: 1rem;
+
+  .user-profile-img {
+    margin: 0;
+  }
+
 }
 
 .message-data {
@@ -65,7 +80,6 @@
 }
 
 .message-owner {
-  flex: 0;
   font-weight: 800;
   font-size: 1.6rem;
 }
@@ -73,6 +87,10 @@
 .message-created {
   font-size: 1.1rem;
   padding-bottom: 1px;
+}
+
+.message-text {
+  text-align: justify;
 }
 
 @media (max-width: 500px) {

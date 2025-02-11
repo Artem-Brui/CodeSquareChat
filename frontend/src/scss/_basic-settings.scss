@@ -54,6 +54,11 @@ ul {
   list-style-type: none;
 }
 
+input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 .dark {
   background-color: $background-dm;
   color: $text-col-dm;

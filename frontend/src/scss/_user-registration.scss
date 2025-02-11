@@ -58,13 +58,40 @@
     align-items: center;
     width: 100%;
     gap: 2rem;
+
+    .date-group {
+      display: flex;
+      justify-content: space-between;
+
+      .datepicker-container {
+        flex: 1;
+        text-align: end;
+      }
+
+      input {
+        font-size: 1.7rem;
+        line-height: 3rem;
+        text-align: end;
+        padding-inline: 1rem;
+      }
+
+      p {
+        width: max-content;
+        font-size: 1.9rem;
+        line-height: 3rem;
+        padding-inline: 0.7rem;
+        margin: 0;
+        color: #757575;
+      }
+    }
   }
   .form-group {
     width: 80%;
     background-color: $background-lm;
     font-size: 1.7rem;
-    border-bottom: 0.038rem solid #ccc;
+    border-bottom: 0.038rem solid $frame;
     padding: 0.3rem;
+
   }
   .regis {
     font-size: 1.7rem;
@@ -72,6 +99,8 @@
     padding: 0.5rem;
     outline: none;
   }
+
+  
   // ========================================
   // Checkbox Group Section
   // ========================================

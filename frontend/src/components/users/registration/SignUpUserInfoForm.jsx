@@ -1,28 +1,28 @@
-import { useState, useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import useTheme from '../../../customHooks/useTheme';
-import Context from '../../../context/service';
-import { SERVER_HOST } from '../../../services/Hosts';
+import { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import useTheme from "../../../customHooks/useTheme";
+import Context from "../../../context/service";
+import { SERVER_HOST } from "../../../services/Hosts";
+import DatePicker from "./DateElement";
+import DateElement from "./DateElement";
 
 export default function SignUpUserInfoForm() {
   const [condition, setConditionChecked] = useState(false);
   const [submitDisabled, setSubmitDisabled] = useState(true);
-  const [isOlderThan18, setIsOlderThan18] = useState(false)
-  const [birthdate, setBirthdate] = useState('');
+  const [isOlderThan18, setIsOlderThan18] = useState(false);
+  const [birthdate, setBirthdate] = useState("");
   const [formValues, setFormValues] = useState({
-    userName: '',
-    userDisplayName: '',
-    email: '',
-    password: '',
+    userName: "",
+    userDisplayName: "",
+    email: "",
+    password: "",
   });
-  const [errorMessage, setErrorMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
 
   const context = useContext(Context);
   const { colorMode, avatarId } = context;
 
   const navigate = useNavigate();
-
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -31,12 +31,6 @@ export default function SignUpUserInfoForm() {
       ...prev,
       [name]: value,
     }));
-  };
-
-  const handleBirthdateChange = (e) => {
-    const inputDOB = e.target.value;
-    setBirthdate(inputDOB);
-    validateAge(inputDOB);
   };
 
   const validateAge = (birthdate) => {
@@ -50,16 +44,23 @@ export default function SignUpUserInfoForm() {
     }
     if (age >= 18 && age <= 100) {
       setIsOlderThan18(true);
-      setErrorMessage('');
+      setErrorMessage("");
     } else {
       setIsOlderThan18(false);
-      setErrorMessage('You must be between 18 and 100 years old.');
+      setErrorMessage("You must be older than 18 years old.");
     }
   };
 
   useEffect(() => {
     const { userName, userDisplayName, email, password } = formValues;
-    if (condition && userName && userDisplayName && email && password && avatarId !== '0') {
+    if (
+      condition &&
+      userName &&
+      userDisplayName &&
+      email &&
+      password &&
+      avatarId !== "0"
+    ) {
       setSubmitDisabled(false);
     } else {
       setSubmitDisabled(true);
@@ -68,36 +69,36 @@ export default function SignUpUserInfoForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const reqBody = {
         ...formValues,
         birthDate: birthdate,
         avatarId,
       };
-      
+
       const DBresponse = await fetch(`${SERVER_HOST}/users/signup`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(reqBody),
-        credentials: 'include',
+        credentials: "include",
       });
 
       const responseData = await DBresponse.json();
 
       if (responseData.status) {
-        localStorage.setItem('userId', responseData.userId);
-        
+        localStorage.setItem("userId", responseData.userId);
+
         setTimeout(() => {
-          navigate('/');
+          navigate("/");
         }, 0);
       }
-
     } catch (error) {
       setErrorMessage(
         error.response?.data?.message ||
-          'Registration failed! Please try again.'
+          "Registration failed! Please try again."
       );
     }
   };
@@ -152,17 +153,13 @@ export default function SignUpUserInfoForm() {
         />
       </div>
 
-      <div className="form-group">
-        <input
-          type="date"
-          placeholder="Birthdate (dd/mm/yyyy)"
-          className="input-field regis"
-          value={birthdate}
-          onChange={handleBirthdateChange}
-          required
-        />
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <div className="form-group date-group" data-type="date">
+        <p>Birthdate</p>
+        <div className="datepicker-container">
+          <DateElement updateDate={setBirthdate} validator={validateAge} />
+        </div>
       </div>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <div className="checkbox-group">
         <label>
@@ -188,7 +185,6 @@ export default function SignUpUserInfoForm() {
         >
           Sign Up
         </button>
-        {successMessage && <p className="success-message">{successMessage}</p>}
       </div>
     </form>
   );
