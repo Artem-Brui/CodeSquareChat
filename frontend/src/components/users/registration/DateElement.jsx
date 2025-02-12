@@ -6,7 +6,7 @@ import { getYear, getMonth } from "date-fns";
 
 export default function DateElement({ updateDate, validator }) {
   const [startDate, setStartDate] = useState(new Date());
-  const years = range(1990, getYear(new Date()) + 1, 1);
+  const years = range(1940, getYear(new Date()) + 1, 1);
   const months = [
     "January",
     "February",
